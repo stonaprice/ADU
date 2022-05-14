@@ -6,25 +6,25 @@ public class PlayerMove : MonoBehaviour
 {
     public Rigidbody rb;
     public Vector3 moving, latestPos;
-    //public int upForce;
-    //public bool isGround;
+    public float jumpPower;
+    public bool isGround;
     public float speed;
 
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-        //isGround = false;
+        isGround = false;
     }
 
     void Update()
     {
         MovementControll();
         Movement();
-        /*
+        
         if(isGround){
-            rb.AddForce(new Vector3(0,upForce,0));
+            rb.AddForce(transform.up * jumpPower, ForceMode.Impulse);
         }
-        */
+        
     }
 
 
@@ -41,7 +41,7 @@ public class PlayerMove : MonoBehaviour
     {
         rb.velocity = moving;
     }
-/*
+
     void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.name == "w" )
@@ -57,6 +57,5 @@ public class PlayerMove : MonoBehaviour
            isGround = false;
         }
     }
-*/
 
 }
