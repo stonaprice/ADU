@@ -12,7 +12,11 @@ public class DestroyClick : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
-            Destroy(this.gameObject);
+        // if (Input.GetMouseButtonDown(0))
+        //     Destroy(this.gameObject);
+    }
+
+    public void onClick(){
+        Destroy(this.gameObject);
     }
 }
