@@ -107,7 +107,6 @@
 -define:ENABLE_UNITY_COLLECTIONS_CHECKS
 -define:ENABLE_BURST_AOT
 -define:UNITY_TEAM_LICENSE
--define:UNITY_PRO_LICENSE
 -define:ENABLE_CUSTOM_RENDER_TEXTURE
 -define:ENABLE_DIRECTOR
 -define:ENABLE_LOCALIZATION
@@ -322,13 +321,13 @@
 -r:"C:/Program Files/Unity/Hub/Editor/2021.3.2f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Xml.XPath.XDocument.dll"
 -r:"C:/Program Files/Unity/Hub/Editor/2021.3.2f1/Editor/Data/NetStandard/Extensions/2.0.0/System.Runtime.InteropServices.WindowsRuntime.dll"
 -r:"C:/Program Files/Unity/Hub/Editor/2021.3.2f1/Editor/Data/NetStandard/ref/2.1.0/netstandard.dll"
--r:"C:/Users/kuma/Documents/GitHub/ADU/ADU/Library/PackageCache/com.unity.burst@1.6.5/Unity.Burst.CodeGen/Unity.Burst.Cecil.dll"
--r:"C:/Users/kuma/Documents/GitHub/ADU/ADU/Library/PackageCache/com.unity.burst@1.6.5/Unity.Burst.CodeGen/Unity.Burst.Cecil.Mdb.dll"
--r:"C:/Users/kuma/Documents/GitHub/ADU/ADU/Library/PackageCache/com.unity.burst@1.6.5/Unity.Burst.CodeGen/Unity.Burst.Cecil.Pdb.dll"
--r:"C:/Users/kuma/Documents/GitHub/ADU/ADU/Library/PackageCache/com.unity.burst@1.6.5/Unity.Burst.CodeGen/Unity.Burst.Cecil.Rocks.dll"
--r:"C:/Users/kuma/Documents/GitHub/ADU/ADU/Library/PackageCache/com.unity.burst@1.6.5/Unity.Burst.Unsafe.dll"
--r:"C:/Users/kuma/Documents/GitHub/ADU/ADU/Library/PackageCache/com.unity.nuget.newtonsoft-json@3.0.2/Runtime/Newtonsoft.Json.dll"
--r:"C:/Users/kuma/Documents/GitHub/ADU/ADU/Library/PackageCache/com.unity.visualscripting@1.7.6/Runtime/VisualScripting.Flow/Dependencies/NCalc/Unity.VisualScripting.Antlr3.Runtime.dll"
+-r:"C:/Users/sudora/Documents/GitHub/ADU/ADU/Library/PackageCache/com.unity.burst@1.6.5/Unity.Burst.CodeGen/Unity.Burst.Cecil.dll"
+-r:"C:/Users/sudora/Documents/GitHub/ADU/ADU/Library/PackageCache/com.unity.burst@1.6.5/Unity.Burst.CodeGen/Unity.Burst.Cecil.Mdb.dll"
+-r:"C:/Users/sudora/Documents/GitHub/ADU/ADU/Library/PackageCache/com.unity.burst@1.6.5/Unity.Burst.CodeGen/Unity.Burst.Cecil.Pdb.dll"
+-r:"C:/Users/sudora/Documents/GitHub/ADU/ADU/Library/PackageCache/com.unity.burst@1.6.5/Unity.Burst.CodeGen/Unity.Burst.Cecil.Rocks.dll"
+-r:"C:/Users/sudora/Documents/GitHub/ADU/ADU/Library/PackageCache/com.unity.burst@1.6.5/Unity.Burst.Unsafe.dll"
+-r:"C:/Users/sudora/Documents/GitHub/ADU/ADU/Library/PackageCache/com.unity.nuget.newtonsoft-json@3.0.2/Runtime/Newtonsoft.Json.dll"
+-r:"C:/Users/sudora/Documents/GitHub/ADU/ADU/Library/PackageCache/com.unity.visualscripting@1.7.6/Runtime/VisualScripting.Flow/Dependencies/NCalc/Unity.VisualScripting.Antlr3.Runtime.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/PPv2URPConverters.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/Unity.Burst.Editor.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/Unity.Burst.ref.dll"
@@ -409,11 +408,14 @@
 "Assets/Script(Control)/CollisionDetector.cs"
 "Assets/Script(Control)/DestroyClick.cs"
 "Assets/Script(Control)/EnemyMove.cs"
-"Assets/Script(Control)/HommingEnemy.cs"
 "Assets/Script(Control)/MousePoint.cs"
-"Assets/Script(Control)/MoveToTarget.cs"
 "Assets/Script(Control)/PlayerMove.cs"
-"Assets/Script(Control)/SummonUnit.cs"
+"Assets/Script(Control)/Unit/HommingEnemy.cs"
+"Assets/Script(Control)/Unit/MoveToTarget.cs"
+"Assets/Script(Control)/Unit/SummonUnit.cs"
+"Assets/Script(Control)/Unit/UnitHitPoint.cs"
+"Assets/Script(Control)/Unit/UnitMove.cs"
+"Assets/Script(Control)/Unit/UnitStatus.cs"
 "Assets/Scripts/VolumetricLight.cs"
 "Assets/Scripts/VolumetricLightRenderer.cs"
 "Assets/TutorialInfo/Scripts/Readme.cs"
