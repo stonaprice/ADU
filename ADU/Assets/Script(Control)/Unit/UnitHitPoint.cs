@@ -1,35 +1,35 @@
-// using System.Collections;
-// using System.Collections.Generic;
-// using UnityEngine;
-// using UnityEngine.UI;
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.UI;
 
-// public class UnitHitPoint : MonoBehaviour
-// {
-//     // Start is called before the first frame update
-//     void Start()
-//     {
+public class UnitHitPoint : MonoBehaviour
+{
+    // Start is called before the first frame update
+    void Start()
+    {
 
-//     }
+    }
 
-//     // Update is called once per frame
-//     void Update()
-//     {
+    // Update is called once per frame
+    void Update()
+    {
 
-//     }
+    }
 
-//     // 被ダメージ処理
-//     public void Damage(int value)
-//     {
-//         if(value <= 0)
-//         {
-//             return;
-//         }
+    // 被ダメージ処理
+    public void Damage(int value)
+    {
+        if(value <= 0)
+        {
+            return;
+        }
 
-//         Hp -= value;
+        Hp -= value;
 
-//         if(Hp <= 0)
-//         {
-//             Dead();
-//         }
-//     }
-// }
+        if(Hp <= 0)
+        {
+            Dead();
+        }
+    }
+}
