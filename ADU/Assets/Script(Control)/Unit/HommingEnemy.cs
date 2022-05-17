@@ -30,7 +30,7 @@ public class HommingEnemy : MonoBehaviour
                 SwitchOff();
             }
         }else{
-            targets = GameObject.FindGameObjectsWithTag("Enemy");
+            targets = GameObject.FindGameObjectsWithTag("EnemyUnit");
 
             float closeDist = 1000;
 
