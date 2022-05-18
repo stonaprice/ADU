@@ -8,29 +8,35 @@ public class UnitMove : MonoBehaviour
 
     private void Start()
     {
-        navMeshAgent = GetComponent<UnityEngine.AI.NavMeshAgent>(); // NavMeshAgent‚ğ•Û‚µ‚Ä‚¨‚­
+        navMeshAgent = GetComponent<UnityEngine.AI.NavMeshAgent>(); // NavMeshAgent
     }
 
-    // CollisionDetector.cs‚ÌonTriggerStay‚ÉƒZƒbƒg‚µAÕ“Ë’†‚ÉÀs‚³‚ê‚éB
     public void OnDetectObject(Collider collider)
     {
         if(this.gameObject.CompareTag("PlayerUnit")){
-            // ŒŸ’m‚µ‚½ƒIƒuƒWƒFƒNƒg‚ÉuEnemyv‚Ìƒ^ƒO‚ª‚Â‚¢‚Ä‚¢‚ê‚ÎA‚»‚ÌƒIƒuƒWƒFƒNƒg‚ğ’Ç‚¢‚©‚¯‚é
             if (collider.CompareTag("EnemyUnit"))
+            {
+                navMeshAgent.destination = collider.transform.position;
+            }
+            if (collider.CompareTag("EnemyTower"))
             {
                 navMeshAgent.destination = collider.transform.position;
             }
 
         }else if(this.gameObject.CompareTag("EnemyUnit")){
-            // ŒŸ’m‚µ‚½ƒIƒuƒWƒFƒNƒg‚ÉuPlayerv‚Ìƒ^ƒO‚ª‚Â‚¢‚Ä‚¢‚ê‚ÎA‚»‚ÌƒIƒuƒWƒFƒNƒg‚ğ’Ç‚¢‚©‚¯‚é
-            if (collider.CompareTag("Player"))
-            {
-                navMeshAgent.destination = collider.transform.position;
-            }
             if (collider.CompareTag("PlayerUnit"))
             {
                 navMeshAgent.destination = collider.transform.position;
             }
+            if (collider.CompareTag("Player"))
+            {
+                navMeshAgent.destination = collider.transform.position;
+            }
+            if (collider.CompareTag("PlayerTower"))
+            {
+                navMeshAgent.destination = collider.transform.position;
+            }
+
         }
     }
 
@@ -42,7 +48,7 @@ public class UnitMove : MonoBehaviour
     //     float step = speed * Time.deltaTime;
 
 
-    //     //©•ª‚ÌˆÊ’uAƒ^[ƒQƒbƒgA‘¬“x
+    //     //ï¿½ï¿½ï¿½ï¿½ï¿½ÌˆÊ’uï¿½Aï¿½^ï¿½[ï¿½Qï¿½bï¿½gï¿½Aï¿½ï¿½ï¿½x
     //     transform.position = Vector3.MoveTowards(transform.position, target.transform.position, step);
     // }
 }
