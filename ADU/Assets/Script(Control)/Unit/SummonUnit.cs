@@ -5,10 +5,15 @@ using UnityEngine;
 public class SummonUnit : MonoBehaviour
 {
     public GameObject Unit1;
+    public float vector_x;
+    public float vector_y;
+    public float vector_z;
+    
 
     public void UnitSummon()
     {
-        //Instantiate( ¶¬‚·‚éƒIƒuƒWƒFƒNƒg,  êŠ, ‰ñ“] );  ‰ñ“]‚Í‚»‚Ì‚Ü‚Ü‚È‚ç«
-        Instantiate(Unit1, new Vector3(-5.0f, 1.0f, -1.5f), Quaternion.identity);
+        //Instantiate( ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Iï¿½uï¿½Wï¿½Fï¿½Nï¿½g,  ï¿½êŠ, ï¿½ï¿½] );  ï¿½ï¿½]ï¿½Í‚ï¿½ï¿½Ì‚Ü‚Ü‚È‚ç«
+        Instantiate(Unit1, new Vector3(vector_x, vector_y, vector_z), Quaternion.identity);
+        //Instantiate(Unit1, new Vector3(-5.0f, 1.0f, -1.5f), Quaternion.identity);
     }
 }
