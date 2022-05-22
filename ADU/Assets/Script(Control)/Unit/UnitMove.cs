@@ -28,17 +28,18 @@ public class UnitMove : MonoBehaviour
             {
                 navMeshAgent.destination = collider.transform.position;
             }
-            if (collider.CompareTag("Player"))
+            if(collider.CompareTag("Player"))
             {
                 navMeshAgent.destination = collider.transform.position;
             }
-            if (collider.CompareTag("PlayerTower"))
+            if(collider.CompareTag("PlayerTower"))
             {
                 navMeshAgent.destination = collider.transform.position;
             }
 
         }
     }
+
 
     // public GameObject target;
     // [SerializeField] float speed;
@@ -47,8 +48,6 @@ public class UnitMove : MonoBehaviour
     // {
     //     float step = speed * Time.deltaTime;
 
-
-    //     //�����̈ʒu�A�^�[�Q�b�g�A���x
     //     transform.position = Vector3.MoveTowards(transform.position, target.transform.position, step);
     // }
 }
