@@ -6,6 +6,7 @@ using TMPro;
 public class TimerControl : MonoBehaviour
 {
     public ToGameOver gameOver;
+    public SummonUnit summonUnit;
     public TextMeshProUGUI TimerText;
     public TextMeshProUGUI WaveText;
     public float totalTime;
@@ -23,6 +24,12 @@ public class TimerControl : MonoBehaviour
     {
         this.gameObject.SetActive(false);
         WaveText.text = "Wave 2";
+
+        for (int i = 0; i <= 8; i++)
+        {
+            summonUnit.UnitSummon();
+        }
+
         Invoke(nameof(Display), 0f);
     }
 
@@ -30,6 +37,12 @@ public class TimerControl : MonoBehaviour
     {
         this.gameObject.SetActive(false);
         WaveText.text = "Wave 3";
+
+        for (int i = 0; i <= 11; i++)
+        {
+            summonUnit.UnitSummon();
+        }
+
         Invoke(nameof(Display), 0f);
     }
 
@@ -37,6 +50,12 @@ public class TimerControl : MonoBehaviour
     {
         this.gameObject.SetActive(false);
         WaveText.text = "Final Wave";
+
+        for (int i = 0; i <= 14; i++)
+        {
+            summonUnit.UnitSummon();
+        }
+
         Invoke(nameof(Display), 0f);
     }
 
@@ -54,11 +73,13 @@ public class TimerControl : MonoBehaviour
         seconds = (int)totalTime;
         TimerText.text = seconds.ToString();
 
+        //Gameoverへ移行
         if (totalTime < 0 && count == 3)
         {
             gameOver.GameOver();
         }
-        
+
+        //FinalWave移行の条件分岐
         if (totalTime < 0 && count == 2)
         {
             totalTime = 120;
@@ -66,6 +87,7 @@ public class TimerControl : MonoBehaviour
             Start4();
         }
 
+        //Wave3移行の条件分岐
         if (totalTime < 0 && count == 1)
         {
             totalTime = 30;
@@ -73,6 +95,7 @@ public class TimerControl : MonoBehaviour
             Start3();
         }
 
+        //Wave2移行の条件分岐
         if (totalTime < 0 && count == 0)
         {
             totalTime = 30;

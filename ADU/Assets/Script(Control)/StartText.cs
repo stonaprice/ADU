@@ -9,6 +9,7 @@ public class StartText : MonoBehaviour
     private TextMeshProUGUI Text;
     public GameObject button1;
     public GameObject button2;
+    public SummonUnit summonUnit;
 
     private void Start()
     {
@@ -61,5 +62,10 @@ public class StartText : MonoBehaviour
         GameObject playerObj = GameObject.Find("Player");
         PlayerMove playerMove = playerObj.GetComponent<PlayerMove>();
         playerMove.enabled = true;
+        
+        for(int i=0;i <= 5;i++)
+        {
+            summonUnit.UnitSummon();
+        }
     }
 }
