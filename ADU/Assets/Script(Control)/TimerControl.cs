@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using DG.Tweening;
 
 public class TimerControl : MonoBehaviour
 {
@@ -9,6 +10,7 @@ public class TimerControl : MonoBehaviour
     public SummonUnit summonUnit;
     public TextMeshProUGUI TimerText;
     public TextMeshProUGUI WaveText;
+    public TextMeshProUGUI WaveTextAnime;
     public float totalTime;
     int seconds;
     int count = 0;
@@ -24,6 +26,10 @@ public class TimerControl : MonoBehaviour
     {
         this.gameObject.SetActive(false);
         WaveText.text = "Wave 2";
+
+        //何故かカメラに追従しない。原因不明。演出面なのでとりあえず放置。
+        //Invoke(nameof(WaveAnime), 0f);
+        //Invoke(nameof(WaveAnime2), 2f);
 
         for (int i = 0; i <= 8; i++)
         {
@@ -63,7 +69,17 @@ public class TimerControl : MonoBehaviour
     {
         this.gameObject.SetActive(true);
     }
+/*
+    void WaveAnime()
+    {
+        WaveTextAnime.transform.DOMove(new Vector3(0f, 0f, 0f), 1f);
+    }
 
+    void WaveAnime2()
+    {
+        WaveTextAnime.transform.DOMove(new Vector3(-1000f, 0f, 0f), 1f);
+    }
+*/
 
     // Update is called once per frame
     void Update()
