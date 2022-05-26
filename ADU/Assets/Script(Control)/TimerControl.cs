@@ -26,10 +26,8 @@ public class TimerControl : MonoBehaviour
     {
         this.gameObject.SetActive(false);
         WaveText.text = "Wave 2";
-
-        //‰½ŒÌ‚©ƒJƒƒ‰‚É’Ç]‚µ‚È‚¢BŒ´ˆö•s–¾B‰‰o–Ê‚È‚Ì‚Å‚Æ‚è‚ ‚¦‚¸•ú’uB
-        //Invoke(nameof(WaveAnime), 0f);
-        //Invoke(nameof(WaveAnime2), 2f);
+        Invoke(nameof(WaveAnime), 0f);
+        Invoke(nameof(WaveAnime2), 2f);
 
         for (int i = 0; i <= 8; i++)
         {
@@ -43,6 +41,9 @@ public class TimerControl : MonoBehaviour
     {
         this.gameObject.SetActive(false);
         WaveText.text = "Wave 3";
+        //WaveTextAnime.text = "Wave 3";
+        //Invoke(nameof(WaveAnime), 0f);
+        //Invoke(nameof(WaveAnime2), 2f);
 
         for (int i = 0; i <= 11; i++)
         {
@@ -56,6 +57,9 @@ public class TimerControl : MonoBehaviour
     {
         this.gameObject.SetActive(false);
         WaveText.text = "Final Wave";
+        //WaveTextAnime.text = "Final Wave";
+        //Invoke(nameof(WaveAnime), 0f);
+        //Invoke(nameof(WaveAnime2), 2f);
 
         for (int i = 0; i <= 14; i++)
         {
@@ -69,33 +73,33 @@ public class TimerControl : MonoBehaviour
     {
         this.gameObject.SetActive(true);
     }
-/*
+
     void WaveAnime()
     {
-        WaveTextAnime.transform.DOMove(new Vector3(0f, 0f, 0f), 1f);
+        WaveTextAnime.transform.DOLocalMove(new Vector3(0, 0, 0), 1f);
     }
 
     void WaveAnime2()
     {
-        WaveTextAnime.transform.DOMove(new Vector3(-1000f, 0f, 0f), 1f);
+        WaveTextAnime.transform.DOLocalMove(new Vector3(-1000, 0, 0), 1f);
     }
-*/
+
 
     // Update is called once per frame
     void Update()
     {
-        //ƒJƒEƒ“ƒgƒ_ƒEƒ“‚Ìˆ—
+        //ï¿½Jï¿½Eï¿½ï¿½ï¿½gï¿½_ï¿½Eï¿½ï¿½ï¿½Ìï¿½ï¿½ï¿½
         totalTime -= Time.deltaTime;
         seconds = (int)totalTime;
         TimerText.text = seconds.ToString();
 
-        //Gameover‚ÖˆÚs
+        //Gameoverï¿½ÖˆÚs
         if (totalTime < 0 && count == 3)
         {
             gameOver.GameOver();
         }
 
-        //FinalWaveˆÚs‚ÌğŒ•ªŠò
+        //FinalWaveï¿½Úsï¿½Ìï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
         if (totalTime < 0 && count == 2)
         {
             totalTime = 120;
@@ -103,7 +107,7 @@ public class TimerControl : MonoBehaviour
             Start4();
         }
 
-        //Wave3ˆÚs‚ÌğŒ•ªŠò
+        //Wave3ï¿½Úsï¿½Ìï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
         if (totalTime < 0 && count == 1)
         {
             totalTime = 30;
@@ -111,7 +115,7 @@ public class TimerControl : MonoBehaviour
             Start3();
         }
 
-        //Wave2ˆÚs‚ÌğŒ•ªŠò
+        //Wave2ï¿½Úsï¿½Ìï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
         if (totalTime < 0 && count == 0)
         {
             totalTime = 30;
