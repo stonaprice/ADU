@@ -14,6 +14,7 @@ public class TimerControl : MonoBehaviour
     public float totalTime;
     int seconds;
     int count = 0;
+    
 
     // Start is called before the first frame update
     void Start()
@@ -41,9 +42,10 @@ public class TimerControl : MonoBehaviour
     {
         this.gameObject.SetActive(false);
         WaveText.text = "Wave 3";
-        //WaveTextAnime.text = "Wave 3";
-        //Invoke(nameof(WaveAnime), 0f);
-        //Invoke(nameof(WaveAnime2), 2f);
+        WaveAnimeReset();
+        WaveTextAnime.text = "Wave 3";
+        Invoke(nameof(WaveAnime), 0f);
+        Invoke(nameof(WaveAnime2), 2f);
 
         for (int i = 0; i <= 11; i++)
         {
@@ -57,9 +59,10 @@ public class TimerControl : MonoBehaviour
     {
         this.gameObject.SetActive(false);
         WaveText.text = "Final Wave";
-        //WaveTextAnime.text = "Final Wave";
-        //Invoke(nameof(WaveAnime), 0f);
-        //Invoke(nameof(WaveAnime2), 2f);
+        WaveAnimeReset();
+        WaveTextAnime.text = "Final Wave";
+        Invoke(nameof(WaveAnime), 0f);
+        Invoke(nameof(WaveAnime2), 2f);
 
         for (int i = 0; i <= 14; i++)
         {
@@ -84,6 +87,15 @@ public class TimerControl : MonoBehaviour
         WaveTextAnime.transform.DOLocalMove(new Vector3(-1000, 0, 0), 1f);
     }
 
+    void WaveAnimeReset()
+    {
+        Transform myTransform = WaveTextAnime.transform;
+
+        //WaveTextAnimeを右側に戻す
+        Vector3 localPos = myTransform.localPosition;
+        localPos.x = 2000f;
+        myTransform.localPosition = localPos;
+    }
 
     // Update is called once per frame
     void Update()
