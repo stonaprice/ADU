@@ -9,6 +9,8 @@ public class StartText : MonoBehaviour
     private TextMeshProUGUI Text;
     public GameObject button1;
     public GameObject button2;
+    public GameObject button3;
+    public GameObject sum;
     public SummonUnit summonUnit;
 
     private void Start()
@@ -19,6 +21,19 @@ public class StartText : MonoBehaviour
         //ボタンを非表示にする
         button1.SetActive(false);
         button2.SetActive(false);
+        button3.SetActive(false);
+        sum.SetActive(false);
+
+        //スクリプトの無効化（操作をできないようにするため）
+        GameObject playerObj = GameObject.Find("Player");
+        PlayerMove playerMove = playerObj.GetComponent<PlayerMove>();
+        playerMove.enabled = false;
+
+       /*ボタンのアニメーションのやつ無効化
+        GameObject buttonObj1 = GameObject.Find("Button1");
+        ButtonAnimation buttonAnime = button1.GetComponent<ButtonAnimation>();
+        buttonAnime.enabled = false;
+       */
 
         //0.5秒後に実行
         Invoke(nameof(DisplayOn), 0.5f);
@@ -34,11 +49,6 @@ public class StartText : MonoBehaviour
     {
         //オブジェクトを表示する
         this.gameObject.SetActive(true);
-
-        //スクリプトの無効化（操作をできないようにするため）
-        GameObject playerObj = GameObject.Find("Player");
-        PlayerMove playerMove = playerObj.GetComponent<PlayerMove>();
-        playerMove.enabled = false;
     }
 
     void ChangeText()
@@ -57,6 +67,8 @@ public class StartText : MonoBehaviour
         //ボタンを表示にする
         button1.SetActive(true);
         button2.SetActive(true);
+        button3.SetActive(true);
+        sum.SetActive(true);
 
         //スクリプトの有効化（操作を再開）
         GameObject playerObj = GameObject.Find("Player");

@@ -8,12 +8,15 @@ public class TimerControl : MonoBehaviour
 {
     public ToGameOver gameOver;
     public SummonUnit summonUnit;
+    public CostControl costControl;
     public TextMeshProUGUI TimerText;
     public TextMeshProUGUI WaveText;
     public TextMeshProUGUI WaveTextAnime;
+    public TextMeshProUGUI CostText;
     public float totalTime;
     int seconds;
     int count = 0;
+
     
 
     // Start is called before the first frame update
@@ -26,6 +29,7 @@ public class TimerControl : MonoBehaviour
     void Start2()
     {
         this.gameObject.SetActive(false);
+        costControl.cost = 10;
         WaveText.text = "Wave 2";
         Invoke(nameof(WaveAnime), 0f);
         Invoke(nameof(WaveAnime2), 2f);
@@ -41,6 +45,7 @@ public class TimerControl : MonoBehaviour
     void Start3()
     {
         this.gameObject.SetActive(false);
+        costControl.cost = 10;
         WaveText.text = "Wave 3";
         WaveAnimeReset();
         WaveTextAnime.text = "Wave 3";
@@ -58,6 +63,7 @@ public class TimerControl : MonoBehaviour
     void Start4()
     {
         this.gameObject.SetActive(false);
+        costControl.cost = 10;
         WaveText.text = "Final Wave";
         WaveAnimeReset();
         WaveTextAnime.text = "Final Wave";
@@ -104,6 +110,7 @@ public class TimerControl : MonoBehaviour
         totalTime -= Time.deltaTime;
         seconds = (int)totalTime;
         TimerText.text = seconds.ToString();
+        CostText.text = string.Format("{0} / 10", costControl.cost);
 
         //Gameover�ֈڍs
         if (totalTime < 0 && count == 3)
