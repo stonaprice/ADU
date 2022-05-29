@@ -5,10 +5,10 @@ using UnityEngine;
 public class CostControl : MonoBehaviour
 {
     public int cost = 10;
+    public int x;
     public GameObject button1;
     public GameObject button2;
     public GameObject button3;
-    bool sw;
 
     void CostOver()
     {
@@ -28,8 +28,10 @@ public class CostControl : MonoBehaviour
         }
     }
 
-    void CostPay()
-    {
 
+
+    public void CostPay()
+    {
+            cost -= x;
     }
 }
