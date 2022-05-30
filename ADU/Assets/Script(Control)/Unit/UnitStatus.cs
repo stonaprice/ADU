@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class UnitStatus : MonoBehaviour
 {
-	//ã€€ãƒ¦ãƒ‹ãƒƒãƒˆã®HP
+	// ƒ†ƒjƒbƒg‚ÌHP
 	[SerializeField]
 	private int hp = 3;
-	//ã€€ãƒ¦ãƒ‹ãƒƒãƒˆã®æ”»æ’ƒåŠ›
+	// ƒ†ƒjƒbƒg‚ÌUŒ‚—Í
 	[SerializeField]
 	private int attackPower = 1;
 
@@ -19,5 +19,5 @@ public class UnitStatus : MonoBehaviour
 		return hp;
 	}
 
-    //å‚è€ƒ ( https://gametukurikata.com/program/mystatus )
+    //ŽQl ( https://gametukurikata.com/program/mystatus )
 }
