@@ -31,14 +31,15 @@ public class TimerControl : MonoBehaviour
         this.gameObject.SetActive(false);
         // costControl.cost = 10;
         costControl.SetCost(10);
+        costControl.ActivButton();
         WaveText.text = "Wave 2";
         Invoke(nameof(WaveAnime), 0f);
         Invoke(nameof(WaveAnime2), 2f);
 
-        for (int i = 0; i <= 8; i++)
-        {
-            summonUnit.UnitSummon();
-        }
+        // for (int i = 0; i <= 8; i++)
+        // {
+        //     summonUnit.UnitSummon();
+        // }
 
         Invoke(nameof(Display), 0f);
     }
@@ -48,16 +49,17 @@ public class TimerControl : MonoBehaviour
         this.gameObject.SetActive(false);
         // costControl.cost = 10;
         costControl.SetCost(10);
+        costControl.ActivButton();
         WaveText.text = "Wave 3";
         WaveAnimeReset();
         WaveTextAnime.text = "Wave 3";
         Invoke(nameof(WaveAnime), 0f);
         Invoke(nameof(WaveAnime2), 2f);
 
-        for (int i = 0; i <= 11; i++)
-        {
-            summonUnit.UnitSummon();
-        }
+        // for (int i = 0; i <= 11; i++)
+        // {
+        //     summonUnit.UnitSummon();
+        // }
 
         Invoke(nameof(Display), 0f);
     }
@@ -67,16 +69,17 @@ public class TimerControl : MonoBehaviour
         this.gameObject.SetActive(false);
         // costControl.cost = 10;
         costControl.SetCost(10);
+        costControl.ActivButton();
         WaveText.text = "Final Wave";
         WaveAnimeReset();
         WaveTextAnime.text = "Final Wave";
         Invoke(nameof(WaveAnime), 0f);
         Invoke(nameof(WaveAnime2), 2f);
 
-        for (int i = 0; i <= 14; i++)
-        {
-            summonUnit.UnitSummon();
-        }
+        // for (int i = 0; i <= 14; i++)
+        // {
+        //     summonUnit.UnitSummon();
+        // }
 
         Invoke(nameof(Display), 0f);
     }

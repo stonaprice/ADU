@@ -33,6 +33,11 @@ public class CostControl : MonoBehaviour
         CostPay(coost);
     }
 
+    public void ActivButton(){
+        button1.SetActive(true);
+        button2.SetActive(true);
+        button3.SetActive(true);
+    }
 
 
     void CostPay(int x)

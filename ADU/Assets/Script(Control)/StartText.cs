@@ -75,9 +75,9 @@ public class StartText : MonoBehaviour
         PlayerMove playerMove = playerObj.GetComponent<PlayerMove>();
         playerMove.enabled = true;
         
-        for(int i=0;i <= 5;i++)
-        {
-            summonUnit.UnitSummon();
-        }
+        // for(int i=0;i <= 5;i++)
+        // {
+        //     summonUnit.UnitSummon();
+        // }
     }
 }

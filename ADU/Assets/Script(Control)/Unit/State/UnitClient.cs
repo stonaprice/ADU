@@ -9,14 +9,13 @@ public class UnitClient : MonoBehaviour
 
     [SerializeField] private Transform tower_tmp;
     [SerializeField] private GameObject unit_tmp;
+    public UnitStateChild_MoveToTower USTMTT;
 
 
     void Start()
     {
-        // var uc = new UnitClient();
-        // var mtt = new UnitStateChild_MoveToTower();
-        // mtt.SetTower(tower_tmp);
-        // mtt.SetUnit(unit_tmp);
+        USTMTT.SetTower(tower_tmp);
+        USTMTT.SetUnit(unit_tmp);
 
         stateController.Initialize((int)UnitStateController.StateType.MoveToTower);
     }
