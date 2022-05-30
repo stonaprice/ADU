@@ -90,7 +90,7 @@ public class TimerControl : MonoBehaviour
 
     void WaveAnime2()
     {
-        WaveTextAnime.transform.DOLocalMove(new Vector3(-1000, 0, 0), 1f);
+        WaveTextAnime.transform.DOLocalMove(new Vector3(-1500, 0, 0), 1f);
     }
 
     void WaveAnimeReset()
@@ -99,7 +99,7 @@ public class TimerControl : MonoBehaviour
 
         //WaveTextAnimeを右側に戻す
         Vector3 localPos = myTransform.localPosition;
-        localPos.x = 2000f;
+        localPos.x = 3000f;
         myTransform.localPosition = localPos;
     }
 

@@ -9,6 +9,11 @@ public class CardAnimation : UIBehaviour
 
     protected override void Start()
     {
+        Invoke(nameof(slideanime), 4.5f);
+        
+    }
+
+    void slideanime(){
         transform.DOLocalRotate(new Vector3(0,0,+Rate),2f);
     }
 }

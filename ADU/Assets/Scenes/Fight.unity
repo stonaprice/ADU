@@ -261,6 +261,7 @@ MonoBehaviour:
   button1: {fileID: 446981655}
   button2: {fileID: 348401309}
   button3: {fileID: 1409199220}
+  costcontrol: {fileID: 0}
 --- !u!4 &173685813
 Transform:
   m_ObjectHideFlags: 0
@@ -823,7 +824,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4099dd917db3569449f408e7eb4b6125, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Rate: 25
+  Rate: 0
 --- !u!114 &348401312
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -850,9 +851,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Unit1: {fileID: 3105289529304451360, guid: 98579e72a18120d4285ff1c733d98d3c, type: 3}
+  coost: 2
   vector_x: 0
   vector_y: 1
   vector_z: -1.71
+  costcontrol: {fileID: 0}
 --- !u!114 &348401314
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -904,6 +907,18 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: SummonUnit, Assembly-CSharp
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -1001,9 +1016,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Unit1: {fileID: 8857909479613860346, guid: 74bdef97ab2f7654ca154aa19afc8bd6, type: 3}
+  coost: 0
   vector_x: 8.3
   vector_y: 1
   vector_z: -1.5
+  costcontrol: {fileID: 0}
 --- !u!114 &364079234
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1533,9 +1550,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Unit1: {fileID: 3105289529304451360, guid: 98579e72a18120d4285ff1c733d98d3c, type: 3}
+  coost: 1
   vector_x: 0
   vector_y: 1
   vector_z: -1.71
+  costcontrol: {fileID: 0}
 --- !u!114 &446981659
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1583,18 +1602,6 @@ MonoBehaviour:
       - m_Target: {fileID: 446981658}
         m_TargetAssemblyTypeName: SummonUnit, Assembly-CSharp
         m_MethodName: UnitSummon
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 173685812}
-        m_TargetAssemblyTypeName: CostControl, Assembly-CSharp
-        m_MethodName: CostPay
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1654,7 +1661,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4099dd917db3569449f408e7eb4b6125, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Rate: 5
+  Rate: -60
 --- !u!1 &450807800
 GameObject:
   m_ObjectHideFlags: 0
@@ -1769,9 +1776,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Unit1: {fileID: 8857909479613860346, guid: 74bdef97ab2f7654ca154aa19afc8bd6, type: 3}
+  coost: 0
   vector_x: 20
   vector_y: 1.1
   vector_z: 0
+  costcontrol: {fileID: 0}
 --- !u!4 &458365810
 Transform:
   m_ObjectHideFlags: 0
@@ -1909,9 +1918,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Unit1: {fileID: 0}
+  coost: 0
   vector_x: 0
   vector_y: 0
   vector_z: 0
+  costcontrol: {fileID: 0}
 --- !u!114 &493608935
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1925,9 +1936,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Unit1: {fileID: 0}
+  coost: 0
   vector_x: 0
   vector_y: 0
   vector_z: 0
+  costcontrol: {fileID: 0}
 --- !u!1 &494046366
 GameObject:
   m_ObjectHideFlags: 0
@@ -2607,7 +2620,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 1000, y: 0}
+  m_AnchoredPosition: {x: 1500, y: 0}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &737983571
@@ -3170,9 +3183,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Unit1: {fileID: 3105289529304451360, guid: 98579e72a18120d4285ff1c733d98d3c, type: 3}
+  coost: 0
   vector_x: 0
   vector_y: 1
   vector_z: -1.71
+  costcontrol: {fileID: 0}
 --- !u!114 &942136198
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4330,9 +4345,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Unit1: {fileID: 3105289529304451360, guid: 98579e72a18120d4285ff1c733d98d3c, type: 3}
+  coost: 3
   vector_x: 0
   vector_y: 1
   vector_z: -1.71
+  costcontrol: {fileID: 0}
 --- !u!114 &1409199225
 MonoBehaviour:
   m_ObjectHideFlags: 0

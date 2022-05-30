@@ -4,13 +4,16 @@ using UnityEngine;
 
 public class CostControl : MonoBehaviour
 {
+
     public int cost = 10;
     public int x;
     public GameObject button1;
     public GameObject button2;
     public GameObject button3;
 
-    void CostOver()
+    public CostControl costcontrol;
+
+    public void CostOver()
     {
         if(cost <= 0)
         {
@@ -30,7 +33,7 @@ public class CostControl : MonoBehaviour
 
 
 
-    public void CostPay()
+    void CostPay()
     {
             cost -= x;
     }
