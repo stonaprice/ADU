@@ -29,7 +29,8 @@ public class TimerControl : MonoBehaviour
     void Start2()
     {
         this.gameObject.SetActive(false);
-        costControl.cost = 10;
+        // costControl.cost = 10;
+        costControl.SetCost(10);
         WaveText.text = "Wave 2";
         Invoke(nameof(WaveAnime), 0f);
         Invoke(nameof(WaveAnime2), 2f);
@@ -45,7 +46,8 @@ public class TimerControl : MonoBehaviour
     void Start3()
     {
         this.gameObject.SetActive(false);
-        costControl.cost = 10;
+        // costControl.cost = 10;
+        costControl.SetCost(10);
         WaveText.text = "Wave 3";
         WaveAnimeReset();
         WaveTextAnime.text = "Wave 3";
@@ -63,7 +65,8 @@ public class TimerControl : MonoBehaviour
     void Start4()
     {
         this.gameObject.SetActive(false);
-        costControl.cost = 10;
+        // costControl.cost = 10;
+        costControl.SetCost(10);
         WaveText.text = "Final Wave";
         WaveAnimeReset();
         WaveTextAnime.text = "Final Wave";
@@ -97,7 +100,7 @@ public class TimerControl : MonoBehaviour
     {
         Transform myTransform = WaveTextAnime.transform;
 
-        //WaveTextAnimeã‚’å³å´ã«æˆ»ã™
+        //WaveTextAnimeã‚’å³å´ã«æˆ»ã?
         Vector3 localPos = myTransform.localPosition;
         localPos.x = 3000f;
         myTransform.localPosition = localPos;
@@ -106,19 +109,19 @@ public class TimerControl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //ï¿½Jï¿½Eï¿½ï¿½ï¿½gï¿½_ï¿½Eï¿½ï¿½ï¿½Ìï¿½ï¿½ï¿½
+        //?¿½J?¿½E?¿½?¿½?¿½g?¿½_?¿½E?¿½?¿½?¿½Ìï¿½?¿½?¿½
         totalTime -= Time.deltaTime;
         seconds = (int)totalTime;
         TimerText.text = seconds.ToString();
-        CostText.text = string.Format("{0} / 10", costControl.cost);
+        CostText.text = string.Format("{0} / 10", costControl.GetCost());
 
-        //Gameoverï¿½ÖˆÚs
+        //Gameover?¿½ÖˆÚs
         if (totalTime < 0 && count == 3)
         {
             gameOver.GameOver();
         }
 
-        //FinalWaveï¿½Úsï¿½Ìï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+        //FinalWave?¿½Ús?¿½Ìï¿½?¿½?¿½?¿½?¿½?¿½?¿½
         if (totalTime < 0 && count == 2)
         {
             totalTime = 120;
@@ -126,7 +129,7 @@ public class TimerControl : MonoBehaviour
             Start4();
         }
 
-        //Wave3ï¿½Úsï¿½Ìï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+        //Wave3?¿½Ús?¿½Ìï¿½?¿½?¿½?¿½?¿½?¿½?¿½
         if (totalTime < 0 && count == 1)
         {
             totalTime = 30;
@@ -134,7 +137,7 @@ public class TimerControl : MonoBehaviour
             Start3();
         }
 
-        //Wave2ï¿½Úsï¿½Ìï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+        //Wave2?¿½Ús?¿½Ìï¿½?¿½?¿½?¿½?¿½?¿½?¿½
         if (totalTime < 0 && count == 0)
         {
             totalTime = 30;

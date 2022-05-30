@@ -5,7 +5,7 @@ using UnityEngine;
 public class SummonUnit : MonoBehaviour
 {
     public GameObject Unit1;
-    public int coost;
+    [SerializeField] private int cost;
     public float vector_x;
     public float vector_y;
     public float vector_z;
@@ -15,8 +15,8 @@ public class SummonUnit : MonoBehaviour
 
     public void UnitSummon()
     {
-        costcontrol.CostOver();
-        costcontrol.cost -= coost;
+        costcontrol.CostOver(cost);
+        // costcontrol.cost -= coost;
         Instantiate(Unit1, new Vector3(vector_x, vector_y, vector_z), Quaternion.identity);
         //Instantiate(Unit1, new Vector3(-5.0f, 1.0f, -1.5f), Quaternion.identity);
     }

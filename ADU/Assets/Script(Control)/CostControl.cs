@@ -5,7 +5,7 @@ using UnityEngine;
 public class CostControl : MonoBehaviour
 {
 
-    public int cost = 10;
+    [SerializeField] private int cost = 10;
     public int x;
     public GameObject button1;
     public GameObject button2;
@@ -13,28 +13,38 @@ public class CostControl : MonoBehaviour
 
     public CostControl costcontrol;
 
-    public void CostOver()
+    public void CostOver(int coost)
     {
-        if(cost <= 0)
+        if(cost <= 1)
         {
             button1.SetActive(false);
         }
 
-        if (cost <= 2)
+        if (cost <= 3)
         {
             button2.SetActive(false);
         }
 
-        if (cost <= 4)
+        if (cost <= 5)
         {
             button3.SetActive(false);
         }
+
+        CostPay(coost);
     }
 
 
 
-    void CostPay()
+    void CostPay(int x)
     {
             cost -= x;
+    }
+
+    public void SetCost(int cost){
+        this.cost = cost;
+    }
+
+    public int GetCost(){
+        return this.cost;
     }
 }
