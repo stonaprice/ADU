@@ -7,15 +7,14 @@ public class UnitClient : MonoBehaviour
     // ステートコントローラー
     [SerializeField] UnitStateController stateController = default;
 
-    [SerializeField] private Transform tower_tmp;
-    [SerializeField] private GameObject unit_tmp;
-    public UnitStateChild_MoveToTower USTMTT;
+    [SerializeField] private Transform tower;
+    [SerializeField] private GameObject unit;
 
 
     void Start()
     {
-        USTMTT.SetTower(tower_tmp);
-        USTMTT.SetUnit(unit_tmp);
+        stateController.SetTower(tower);
+        stateController.SetUnit(unit);
 
         stateController.Initialize((int)UnitStateController.StateType.MoveToTower);
     }
@@ -25,4 +24,9 @@ public class UnitClient : MonoBehaviour
         // stateController.UpdateSequence();
     }
 
+    // 近くに敵がいる場合
+    public void OnDetectObject(Collider collider)
+    {
+        Debug.Log("sekkin");
+    }
 }

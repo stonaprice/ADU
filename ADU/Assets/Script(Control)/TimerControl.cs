@@ -16,8 +16,8 @@ public class TimerControl : MonoBehaviour
     public float totalTime;
     int seconds;
     int count = 0;
+    int maxEnemyCost;
 
-    
 
     // Start is called before the first frame update
     void Start()
@@ -30,16 +30,19 @@ public class TimerControl : MonoBehaviour
     {
         this.gameObject.SetActive(false);
         // costControl.cost = 10;
-        costControl.SetCost(10);
+        costControl.SetPlayerCost(10);
         costControl.ActivButton();
         WaveText.text = "Wave 2";
         Invoke(nameof(WaveAnime), 0f);
         Invoke(nameof(WaveAnime2), 2f);
 
-        // for (int i = 0; i <= 8; i++)
-        // {
-        //     summonUnit.UnitSummon();
-        // }
+        // summonEnemyUnit
+        costControl.SetEnemyCost(10);
+        maxEnemyCost = costControl.GetEnemyCost();
+        for (int i = 0; i < maxEnemyCost; i++)
+        {
+            summonUnit.UnitSummon(true);
+        }
 
         Invoke(nameof(Display), 0f);
     }
@@ -48,7 +51,7 @@ public class TimerControl : MonoBehaviour
     {
         this.gameObject.SetActive(false);
         // costControl.cost = 10;
-        costControl.SetCost(10);
+        costControl.SetPlayerCost(10);
         costControl.ActivButton();
         WaveText.text = "Wave 3";
         WaveAnimeReset();
@@ -56,10 +59,13 @@ public class TimerControl : MonoBehaviour
         Invoke(nameof(WaveAnime), 0f);
         Invoke(nameof(WaveAnime2), 2f);
 
-        // for (int i = 0; i <= 11; i++)
-        // {
-        //     summonUnit.UnitSummon();
-        // }
+        // summonEnemyUnit
+        costControl.SetEnemyCost(10);
+        maxEnemyCost = costControl.GetEnemyCost();
+        for (int i = 0; i < maxEnemyCost; i++)
+        {
+            summonUnit.UnitSummon(true);
+        }
 
         Invoke(nameof(Display), 0f);
     }
@@ -68,7 +74,7 @@ public class TimerControl : MonoBehaviour
     {
         this.gameObject.SetActive(false);
         // costControl.cost = 10;
-        costControl.SetCost(10);
+        costControl.SetPlayerCost(10);
         costControl.ActivButton();
         WaveText.text = "Final Wave";
         WaveAnimeReset();
@@ -76,10 +82,13 @@ public class TimerControl : MonoBehaviour
         Invoke(nameof(WaveAnime), 0f);
         Invoke(nameof(WaveAnime2), 2f);
 
-        // for (int i = 0; i <= 14; i++)
-        // {
-        //     summonUnit.UnitSummon();
-        // }
+        // summonEnemyUnit
+        costControl.SetEnemyCost(10);
+        maxEnemyCost = costControl.GetEnemyCost();
+        for (int i = 0; i < maxEnemyCost; i++)
+        {
+            summonUnit.UnitSummon(true);
+        }
 
         Invoke(nameof(Display), 0f);
     }
@@ -116,7 +125,7 @@ public class TimerControl : MonoBehaviour
         totalTime -= Time.deltaTime;
         seconds = (int)totalTime;
         TimerText.text = seconds.ToString();
-        CostText.text = string.Format("{0} / 10", costControl.GetCost());
+        CostText.text = string.Format("{0} / 10", costControl.GetPlayerCost());
 
         //Gameover?¿½ÖˆÚs
         if (totalTime < 0 && count == 3)

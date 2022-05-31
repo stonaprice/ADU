@@ -6,7 +6,7 @@ public class UnitStateChild_MoveToTower : StateChildBase
 {
     // public GameObject target;
     // [SerializeField] float speed;
-    
+
     private UnityEngine.AI.NavMeshAgent navMeshAgent;
     public Transform enemyTower;
     public Transform playerTower;
@@ -44,12 +44,8 @@ public class UnitStateChild_MoveToTower : StateChildBase
     public override int StateUpdate()
     {
         // if(this.gameObject.CompareTag("PlayerUnit")){
-
-
         // }else if(this.gameObject.CompareTag("EnemyUnit")){
 
-
-        // return (int)UnitStateController.StateType.Attack;
         return (int)UnitStateController.StateType.MoveToTower;
     }
 

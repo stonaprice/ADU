@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.17535397, g: 0.21939613, b: 0.30171043, a: 1}
+  m_IndirectSpecularColor: {r: 0.17535438, g: 0.21939678, b: 0.3017116, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -219,12 +219,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b8c7a8a2e0bdee44813cae3a5d6d467, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cost: 10
-  x: 1
+  playerCost: 10
+  enemyCost: 10
   button1: {fileID: 446981655}
   button2: {fileID: 348401309}
   button3: {fileID: 1409199220}
-  costcontrol: {fileID: 0}
 --- !u!4 &173685813
 Transform:
   m_ObjectHideFlags: 0
@@ -790,7 +789,7 @@ MonoBehaviour:
       - m_Target: {fileID: 348401313}
         m_TargetAssemblyTypeName: SummonUnit, Assembly-CSharp
         m_MethodName: UnitSummon
-        m_Mode: 1
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -1489,7 +1488,7 @@ MonoBehaviour:
       - m_Target: {fileID: 446981658}
         m_TargetAssemblyTypeName: SummonUnit, Assembly-CSharp
         m_MethodName: UnitSummon
-        m_Mode: 1
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -1663,11 +1662,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Unit1: {fileID: 8857909479613860346, guid: 74bdef97ab2f7654ca154aa19afc8bd6, type: 3}
-  cost: 0
+  cost: 1
   vector_x: 20
   vector_y: 1.1
   vector_z: 0
-  costcontrol: {fileID: 0}
+  costcontrol: {fileID: 173685812}
 --- !u!4 &458365810
 Transform:
   m_ObjectHideFlags: 0
@@ -4017,7 +4016,7 @@ MonoBehaviour:
       - m_Target: {fileID: 1409199224}
         m_TargetAssemblyTypeName: SummonUnit, Assembly-CSharp
         m_MethodName: UnitSummon
-        m_Mode: 1
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -4631,6 +4630,7 @@ MonoBehaviour:
   button3: {fileID: 1409199220}
   sum: {fileID: 1065912327}
   summonUnit: {fileID: 458365809}
+  costControl: {fileID: 173685812}
 --- !u!1 &1879366570
 GameObject:
   m_ObjectHideFlags: 0

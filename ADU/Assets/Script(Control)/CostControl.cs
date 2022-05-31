@@ -5,32 +5,28 @@ using UnityEngine;
 public class CostControl : MonoBehaviour
 {
 
-    [SerializeField] private int cost = 10;
-    public int x;
+    [SerializeField] private int playerCost = 10;
+    [SerializeField] private int enemyCost = 10;
     public GameObject button1;
     public GameObject button2;
     public GameObject button3;
 
-    public CostControl costcontrol;
-
-    public void CostOver(int coost)
+    public void CostOver()
     {
-        if(cost <= 1)
+        if(playerCost < 1)
         {
             button1.SetActive(false);
         }
 
-        if (cost <= 3)
+        if (playerCost < 2)
         {
             button2.SetActive(false);
         }
 
-        if (cost <= 5)
+        if (playerCost < 4)
         {
             button3.SetActive(false);
         }
-
-        CostPay(coost);
     }
 
     public void ActivButton(){
@@ -39,17 +35,24 @@ public class CostControl : MonoBehaviour
         button3.SetActive(true);
     }
 
+    // public void CostPay(int x)
+    // {
+    //         cost -= x;
+    // }
 
-    void CostPay(int x)
-    {
-            cost -= x;
+    public void SetPlayerCost(int cost){
+        this.playerCost = cost;
     }
 
-    public void SetCost(int cost){
-        this.cost = cost;
+    public void SetEnemyCost(int cost){
+        this.enemyCost = cost;
     }
 
-    public int GetCost(){
-        return this.cost;
+    public int GetPlayerCost(){
+        return this.playerCost;
+    }
+
+    public int GetEnemyCost(){
+        return this.enemyCost;
     }
 }

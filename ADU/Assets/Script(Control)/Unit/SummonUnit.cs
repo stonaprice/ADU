@@ -13,10 +13,18 @@ public class SummonUnit : MonoBehaviour
     public CostControl costcontrol;
 
 
-    public void UnitSummon()
+    public void UnitSummon(bool enemy)
     {
-        costcontrol.CostOver(cost);
-        // costcontrol.cost -= coost;
+
+        // enemyUnit
+        if(enemy == true){
+            costcontrol.SetEnemyCost(costcontrol.GetEnemyCost() - cost);
+        }
+        // playerUnit
+        else{
+            costcontrol.SetPlayerCost(costcontrol.GetPlayerCost() - cost);
+            costcontrol.CostOver();
+        }
         Instantiate(Unit1, new Vector3(vector_x, vector_y, vector_z), Quaternion.identity);
         //Instantiate(Unit1, new Vector3(-5.0f, 1.0f, -1.5f), Quaternion.identity);
     }

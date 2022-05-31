@@ -12,6 +12,7 @@ public class StartText : MonoBehaviour
     public GameObject button3;
     public GameObject sum;
     public SummonUnit summonUnit;
+    public CostControl costControl;
 
     private void Start()
     {
@@ -74,10 +75,13 @@ public class StartText : MonoBehaviour
         GameObject playerObj = GameObject.Find("Player");
         PlayerMove playerMove = playerObj.GetComponent<PlayerMove>();
         playerMove.enabled = true;
-        
-        // for(int i=0;i <= 5;i++)
-        // {
-        //     summonUnit.UnitSummon();
-        // }
+
+        // summonEnemyUnit
+        costControl.SetEnemyCost(10);
+        int maxEnemyCost = costControl.GetEnemyCost();
+        for(int i=0;i < maxEnemyCost;i++)
+        {
+            summonUnit.UnitSummon(true);
+        }
     }
 }

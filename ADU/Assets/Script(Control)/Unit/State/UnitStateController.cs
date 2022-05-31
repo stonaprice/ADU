@@ -4,6 +4,12 @@ using UnityEngine;
 
 public class UnitStateController : StateControllerBase
 {
+    // ステート
+    [SerializeField] UnitStateChild_MoveToTower mtt = default;
+
+    private Transform tower;
+    private GameObject unit;
+
     public enum StateType
     {
         MoveToTower,
@@ -14,6 +20,8 @@ public class UnitStateController : StateControllerBase
     public override void Initialize(int initializeStateType)
     {
         // 塔へ移動
+        mtt.SetTower(tower);
+        mtt.SetUnit(unit);
         stateDic[(int)StateType.MoveToTower] = gameObject.AddComponent<UnitStateChild_MoveToTower>();
         stateDic[(int)StateType.MoveToTower].Initialize((int)StateType.MoveToTower);
 
@@ -34,9 +42,17 @@ public class UnitStateController : StateControllerBase
     // {
     // }
 
-    // 近くに敵がいる場合
-    public void OnDetectObject(Collider collider)
-    {
-        Debug.Log("sekkin");
-    }
+    // // 近くに敵がいる場合
+    // public void OnDetectObject(Collider collider)
+    // {
+    //     Debug.Log("sekkin");
+    // }
+
+    public void SetUnit(GameObject unit) {
+		this.unit = unit;
+	}
+
+    public void SetTower(Transform tower) {
+		this.tower = tower;
+	}
 }

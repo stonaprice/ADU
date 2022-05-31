@@ -38,8 +38,9 @@ public class HommingBullet : MonoBehaviour
             }
         }
 
-        // 砲弾が生成されて0.5秒後に、一番近い敵に向かって移動を開始する。
-        Invoke("SwitchOn", 0.5f);
+        SwitchOn();
+        // // 砲弾が生成されて0.5秒後に、一番近い敵に向かって移動を開始する。
+        // Invoke("SwitchOn", 0.5f);
     }
 
     void Update()
