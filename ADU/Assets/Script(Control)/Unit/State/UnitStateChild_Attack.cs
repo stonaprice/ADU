@@ -7,7 +7,7 @@ public class UnitStateChild_Attack : StateChildBase
 
     public override void OnEnter()
     {
-        Debug.Log("kani");
+        Debug.Log("uni");
     }
 
     public override void OnExit()

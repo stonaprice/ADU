@@ -8,6 +8,7 @@ public class UnitStateChild_MoveToEnemy : StateChildBase
 
     public override void OnEnter()
     {
+        Debug.Log("suitou");
         navMeshAgent = GetComponent<UnityEngine.AI.NavMeshAgent>(); // NavMeshAgent
     }
 
@@ -22,24 +23,22 @@ public class UnitStateChild_MoveToEnemy : StateChildBase
             if (GetComponent<Collider>().CompareTag("EnemyUnit"))
             {
                 navMeshAgent.destination = GetComponent<Collider>().transform.position;
-            }
-            if (GetComponent<Collider>().CompareTag("EnemyTower"))
-            {
-                navMeshAgent.destination = GetComponent<Collider>().transform.position;
+
+                return (int)UnitStateController.StateType.MoveToEnemy;
             }
 
         }else if(this.gameObject.CompareTag("EnemyUnit")){
             if (GetComponent<Collider>().CompareTag("PlayerUnit"))
             {
                 navMeshAgent.destination = GetComponent<Collider>().transform.position;
+
+                return (int)UnitStateController.StateType.MoveToEnemy;
             }
             if (GetComponent<Collider>().CompareTag("Player"))
             {
                 navMeshAgent.destination = GetComponent<Collider>().transform.position;
-            }
-            if (GetComponent<Collider>().CompareTag("PlayerTower"))
-            {
-                navMeshAgent.destination = GetComponent<Collider>().transform.position;
+
+                return (int)UnitStateController.StateType.MoveToEnemy;
             }
         }
 

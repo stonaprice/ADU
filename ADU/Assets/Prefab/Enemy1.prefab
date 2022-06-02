@@ -1,5 +1,63 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &343600705538038067
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5722444330186068304}
+  - component: {fileID: 787469938913301843}
+  - component: {fileID: 5532987711045849574}
+  m_Layer: 0
+  m_Name: State
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5722444330186068304
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 343600705538038067}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 3.333333, y: 3.333333, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8857909479613860344}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &787469938913301843
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 343600705538038067}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3dfbab1b94e6f42079564c4c1cb1af05, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!135 &5532987711045849574
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 343600705538038067}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 1
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &8857909479607325737
 GameObject:
   m_ObjectHideFlags: 0
@@ -114,12 +172,12 @@ GameObject:
   - component: {fileID: 8857909479613860102}
   - component: {fileID: 8857909479613860101}
   - component: {fileID: 8857909479613860099}
-  - component: {fileID: 8857909479613860100}
   - component: {fileID: 8857909479613860098}
   - component: {fileID: 360482156021865074}
   - component: {fileID: 8463087982644732412}
   - component: {fileID: 5559411409927969768}
   - component: {fileID: 9198111452203210554}
+  - component: {fileID: 8870677798981740963}
   m_Layer: 0
   m_Name: Enemy1
   m_TagString: EnemyUnit
@@ -141,6 +199,7 @@ Transform:
   m_Children:
   - {fileID: 8857909481132815891}
   - {fileID: 8857909479607325736}
+  - {fileID: 5722444330186068304}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -260,18 +319,6 @@ NavMeshAgent:
   m_BaseOffset: 2.87
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 1
---- !u!114 &8857909479613860100
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8857909479613860346}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3e543b0c76fb1ae41a7f44ee3a3a0d89, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &8857909479613860098
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -339,6 +386,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   unit1: {fileID: 8857909479613860346}
+--- !u!114 &8870677798981740963
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8857909479613860346}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 75c1bd1773a854dbfbd92ffb2be4fd22, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stateController: {fileID: 787469938913301843}
+  tower: {fileID: 4885498968945072444, guid: 449a450e4f1df4b9d8e95a3918db4988, type: 3}
+  unit: {fileID: 8857909479613860346}
 --- !u!1 &8857909480018716011
 GameObject:
   m_ObjectHideFlags: 0
@@ -513,7 +575,7 @@ MonoBehaviour:
   onTriggerStay:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 8857909479613860100}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: EnemyMove, Assembly-CSharp
         m_MethodName: OnDetectObject
         m_Mode: 0

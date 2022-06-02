@@ -10,6 +10,9 @@ public abstract class StateChildBase : MonoBehaviour
     // 登録されたステートタイプ
     protected int StateType { set; get; }
 
+    private Transform tower;
+    private GameObject unit;
+
     // 初期化処理
     public virtual void Initialize(int stateType)
     {
@@ -25,4 +28,12 @@ public abstract class StateChildBase : MonoBehaviour
 
     /// 更新処理
     public abstract int StateUpdate();
+
+    public void SetUnit(GameObject unit) {
+		this.unit = unit;
+	}
+
+    public void SetTower(Transform tower) {
+		this.tower = tower;
+	}
 }

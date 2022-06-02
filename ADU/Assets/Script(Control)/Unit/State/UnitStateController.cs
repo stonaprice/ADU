@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class UnitStateController : StateControllerBase
 {
-    // ステート
-    [SerializeField] UnitStateChild_MoveToTower mtt = default;
 
     private Transform tower;
     private GameObject unit;
@@ -20,33 +18,27 @@ public class UnitStateController : StateControllerBase
     public override void Initialize(int initializeStateType)
     {
         // 塔へ移動
-        mtt.SetTower(tower);
-        mtt.SetUnit(unit);
         stateDic[(int)StateType.MoveToTower] = gameObject.AddComponent<UnitStateChild_MoveToTower>();
         stateDic[(int)StateType.MoveToTower].Initialize((int)StateType.MoveToTower);
 
-        // // 敵へ移動
-        // stateDic[(int)StateType.MoveToEnemy] = gameObject.AddComponent<UnitStateChild_MoveToEnemy>();
-        // stateDic[(int)StateType.MoveToEnemy].Initialize((int)StateType.MoveToEnemy);
+        // 同じオブジェクト内の他のスクリプトを参照する場合
+		UnitStateChild_MoveToTower mmt = GetComponent<UnitStateChild_MoveToTower>();
+        mmt.SetTower(tower);
+        mmt.SetUnit(unit);
 
-        // // 攻撃
-        // stateDic[(int)StateType.Attack] = gameObject.AddComponent<UnitStateChild_Attack>();
-        // stateDic[(int)StateType.Attack].Initialize((int)StateType.Attack);
+        // 敵へ移動
+        stateDic[(int)StateType.MoveToEnemy] = gameObject.AddComponent<UnitStateChild_MoveToEnemy>();
+        stateDic[(int)StateType.MoveToEnemy].Initialize((int)StateType.MoveToEnemy);
+
+        // 攻撃
+        stateDic[(int)StateType.Attack] = gameObject.AddComponent<UnitStateChild_Attack>();
+        stateDic[(int)StateType.Attack].Initialize((int)StateType.Attack);
 
         CurrentState = initializeStateType;
+        // stateDic[CurrentState].SetTower(tower);
+        // stateDic[CurrentState].SetUnit(unit);
         stateDic[CurrentState].OnEnter();
     }
-
-    // // ステートの自動遷移
-    // protected override void AutoStateTransitionSequence(int nextState)
-    // {
-    // }
-
-    // // 近くに敵がいる場合
-    // public void OnDetectObject(Collider collider)
-    // {
-    //     Debug.Log("sekkin");
-    // }
 
     public void SetUnit(GameObject unit) {
 		this.unit = unit;

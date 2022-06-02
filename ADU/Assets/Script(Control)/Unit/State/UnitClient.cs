@@ -21,7 +21,7 @@ public class UnitClient : MonoBehaviour
 
     void Update()
     {
-        // stateController.UpdateSequence();
+        stateController.UpdateSequence();
     }
 
     // ‹ß‚­‚É“G‚ª‚¢‚éê‡
