@@ -16,62 +16,66 @@ public class StartText : MonoBehaviour
 
     private void Start()
     {
-        //•¶š‚ğ”ñ•\¦‚É‚·‚é
+        //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½\ï¿½ï¿½ï¿½É‚ï¿½ï¿½ï¿½
         this.gameObject.SetActive(false);
 
-        //ƒ{ƒ^ƒ“‚ğ”ñ•\¦‚É‚·‚é
+        //ï¿½{ï¿½^ï¿½ï¿½ï¿½ï¿½ï¿½\ï¿½ï¿½ï¿½É‚ï¿½ï¿½ï¿½
         button1.SetActive(false);
         button2.SetActive(false);
         button3.SetActive(false);
         sum.SetActive(false);
 
-        //ƒXƒNƒŠƒvƒg‚Ì–³Œø‰»i‘€ì‚ğ‚Å‚«‚È‚¢‚æ‚¤‚É‚·‚é‚½‚ßj
+        //ï¿½Xï¿½Nï¿½ï¿½ï¿½vï¿½gï¿½Ì–ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½iï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Å‚ï¿½ï¿½È‚ï¿½ï¿½æ‚¤ï¿½É‚ï¿½ï¿½é‚½ï¿½ßj
         GameObject playerObj = GameObject.Find("Player");
         PlayerMove playerMove = playerObj.GetComponent<PlayerMove>();
         playerMove.enabled = false;
 
-       /*ƒ{ƒ^ƒ“‚ÌƒAƒjƒ[ƒVƒ‡ƒ“‚Ì‚â‚Â–³Œø‰»
+       /*ï¿½{ï¿½^ï¿½ï¿½ï¿½ÌƒAï¿½jï¿½ï¿½ï¿½[ï¿½Vï¿½ï¿½ï¿½ï¿½ï¿½Ì‚ï¿½Â–ï¿½ï¿½ï¿½ï¿½ï¿½
         GameObject buttonObj1 = GameObject.Find("Button1");
         ButtonAnimation buttonAnime = button1.GetComponent<ButtonAnimation>();
         buttonAnime.enabled = false;
        */
 
-        //0.5•bŒã‚ÉÀs
+        //0.5ï¿½bï¿½ï¿½Éï¿½ï¿½s
         Invoke(nameof(DisplayOn), 0.5f);
 
-        //2.5•bŒã‚ÉÀs
+        //2.5ï¿½bï¿½ï¿½Éï¿½ï¿½s
         Invoke(nameof(ChangeText), 2.5f);
 
-        //4.5•bŒã‚ÉÀs
+        //4.5ï¿½bï¿½ï¿½Éï¿½ï¿½s
         Invoke(nameof(DisplayOff), 4.5f);
     }
 
     void DisplayOn()
     {
-        //ƒIƒuƒWƒFƒNƒg‚ğ•\¦‚·‚é
+        //ï¿½Iï¿½uï¿½Wï¿½Fï¿½Nï¿½gï¿½ï¿½\ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
         this.gameObject.SetActive(true);
     }
 
     void ChangeText()
     {
-        //•¶š‚ğ•ÏX
+        //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ÏX
         Text.text = "START!!";
-        //•¶šF‚ğ•ÏX
+        //ï¿½ï¿½ï¿½ï¿½ï¿½Fï¿½ï¿½ÏX
         Text.color = Color.red;
+    }
+
+    void KusoUIOn(){
+        sum.SetActive(true);
     }
 
     void DisplayOff()
     {
-        //•¶š‚ğ•\¦‚·‚é
+        //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½\ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
         this.gameObject.SetActive(false);
 
-        //ƒ{ƒ^ƒ“‚ğ•\¦‚É‚·‚é
+        //ï¿½{ï¿½^ï¿½ï¿½ï¿½ï¿½\ï¿½ï¿½ï¿½É‚ï¿½ï¿½ï¿½
         button1.SetActive(true);
         button2.SetActive(true);
         button3.SetActive(true);
-        sum.SetActive(true);
+        //Invoke(nameof(KusoUIOn),2.5f);
 
-        //ƒXƒNƒŠƒvƒg‚Ì—LŒø‰»i‘€ì‚ğÄŠJj
+        //ï¿½Xï¿½Nï¿½ï¿½ï¿½vï¿½gï¿½Ì—Lï¿½ï¿½ï¿½ï¿½ï¿½iï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ÄŠJï¿½j
         GameObject playerObj = GameObject.Find("Player");
         PlayerMove playerMove = playerObj.GetComponent<PlayerMove>();
         playerMove.enabled = true;
