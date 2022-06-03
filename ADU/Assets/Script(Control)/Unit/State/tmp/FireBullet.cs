@@ -45,5 +45,4 @@ public class FireBullet : MonoBehaviour
         // oŒ»‚³‚¹‚½ƒ{[ƒ‹‚ğ0.8•bŒã‚ÉÁ‚·
         Destroy(newBall, 2.0f);
     }
-
 }

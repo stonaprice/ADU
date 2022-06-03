@@ -4,10 +4,9 @@ using UnityEngine;
 
 public class UnitStateController : StateControllerBase
 {
-
     private Transform tower;
     private GameObject unit;
-    // UnitStateChild_MoveToTower mmt = default; 
+    // UnitStateChild_MoveToTower mmt = default;
 
     public enum StateType
     {
@@ -44,29 +43,34 @@ public class UnitStateController : StateControllerBase
     // 近くに敵がいる場合
     public void OnDetectObject(Collider collider)
     {
-        Debug.Log("sekkin");
         // 同じオブジェクト内の他のスクリプトを参照する場合
-		UnitStateChild_MoveToTower mmt = GetComponent<UnitStateChild_MoveToTower>();
-        // mmt.SetNear(true);
+		UnitStateChild_MoveToTower mtt = GetComponent<UnitStateChild_MoveToTower>();
+        UnitStateChild_MoveToEnemy mte = GetComponent<UnitStateChild_MoveToEnemy>();
+
+        Debug.Log(collider.tag);
 
         if(this.gameObject.CompareTag("PlayerUnit")){
-            mmt.SetNear(true);
-            // GameObject item = GameObject.FindWithTag("EnemyUnit");
-            // Debug.Log(item.name);
-            
             if (collider.CompareTag("EnemyUnit"))
             {
-                mmt.SetNear(true);
+                mte.SetTarget(collider);
+                mtt.SetNear(true);
+            }
+            if (collider.CompareTag("Enemy"))
+            {
+                mte.SetTarget(collider);
+                mtt.SetNear(true);
             }
 
         }else if(this.gameObject.CompareTag("EnemyUnit")){
             if (collider.CompareTag("PlayerUnit"))
             {
-                mmt.SetNear(true);
+                mte.SetTarget(collider);
+                mtt.SetNear(true);
             }
             if (collider.CompareTag("Player"))
             {
-                mmt.SetNear(true);
+                mte.SetTarget(collider);
+                mtt.SetNear(true);
             }
         }
     }
