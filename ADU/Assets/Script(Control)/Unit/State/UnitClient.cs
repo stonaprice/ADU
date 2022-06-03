@@ -23,10 +23,4 @@ public class UnitClient : MonoBehaviour
     {
         stateController.UpdateSequence();
     }
-
-    // ‹ß‚­‚É“G‚ª‚¢‚éê‡
-    public void OnDetectObject(Collider collider)
-    {
-        Debug.Log("sekkin");
-    }
 }

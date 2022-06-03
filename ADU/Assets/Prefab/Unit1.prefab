@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1010155865358261532}
   - component: {fileID: 314987627278175006}
-  - component: {fileID: 1207657881437029832}
   m_Layer: 0
   m_Name: State
   m_TagString: Untagged
@@ -27,11 +26,11 @@ Transform:
   m_GameObject: {fileID: 359442349779440791}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2, y: 1.9776527, z: 2}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3105289529304451373}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &314987627278175006
 MonoBehaviour:
@@ -45,19 +44,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3dfbab1b94e6f42079564c4c1cb1af05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!135 &1207657881437029832
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 359442349779440791}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 1
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &651297132406889051
 GameObject:
   m_ObjectHideFlags: 0
@@ -175,11 +161,11 @@ Transform:
   m_GameObject: {fileID: 1566236209981411661}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 17.96799, y: 17.96799, z: 17.96799}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3105289529304451373}
-  m_RootOrder: 0
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!135 &6850735542610411707
 SphereCollider:
@@ -192,7 +178,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 999
+  m_Radius: 10
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &5234273324703874740
 MonoBehaviour:
@@ -209,13 +195,13 @@ MonoBehaviour:
   onTriggerStay:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: EnemyMove, Assembly-CSharp
+      - m_Target: {fileID: 314987627278175006}
+        m_TargetAssemblyTypeName: UnitStateController, Assembly-CSharp
         m_MethodName: OnDetectObject
-        m_Mode: 0
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 6850735542610411707}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Collider, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -334,9 +320,9 @@ Transform:
   m_LocalScale: {x: 0.5, y: 0.50565, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 3350868242330821934}
   - {fileID: 845741378054924466}
   - {fileID: 1010155865358261532}
+  - {fileID: 3350868242330821934}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -656,7 +642,7 @@ RectTransform:
   m_Children:
   - {fileID: 1954288947553038731}
   m_Father: {fileID: 3105289529304451373}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}

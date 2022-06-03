@@ -14,6 +14,7 @@ public class UnitStateChild_MoveToTower : StateChildBase
 
     private Transform tower;
     private GameObject unit;
+    private bool near = false;
 
     // private GameObject nearObj;         //最も近いオブジェクト
 
@@ -51,12 +52,16 @@ public class UnitStateChild_MoveToTower : StateChildBase
         // if(dis < 10){
         //     return (int)UnitStateController.StateType.MoveToEnemy;
         // }
-        Debug.Log(this.gameObject.tag);
+        Debug.Log(near);
 
-        if(gameObject.CompareTag("PlayerUnit") & GetComponent<Collider>().CompareTag("EnemyUnit")){
-        // if(GetComponent<Collider>().CompareTag("EnemyUnit")){
-            return (int)UnitStateController.StateType.MoveToEnemy;
-        }else if(this.gameObject.CompareTag("EnemyUnit") & GetComponent<Collider>().CompareTag("PlayerUnit")){
+        // if(gameObject.CompareTag("PlayerUnit") & GetComponent<Collider>().CompareTag("EnemyUnit")){
+        // // if(GetComponent<Collider>().CompareTag("EnemyUnit")){
+        //     return (int)UnitStateController.StateType.MoveToEnemy;
+        // }else if(this.gameObject.CompareTag("EnemyUnit") & GetComponent<Collider>().CompareTag("PlayerUnit")){
+        //     return (int)UnitStateController.StateType.MoveToEnemy;
+        // }
+
+        if(near == true){
             return (int)UnitStateController.StateType.MoveToEnemy;
         }
 
@@ -94,12 +99,6 @@ public class UnitStateChild_MoveToTower : StateChildBase
         return targetObj;
     }
 
-    // 近くに敵がいる場合
-    public void OnDetectObject(Collider collider)
-    {
-        Debug.Log("sekkin");
-    }
-
     public void SetUnit(GameObject unit) {
 		this.unit = unit;
 	}
@@ -107,4 +106,8 @@ public class UnitStateChild_MoveToTower : StateChildBase
     public void SetTower(Transform tower) {
 		this.tower = tower;
 	}
+
+    public void SetNear(bool near){
+        this.near = near;
+    }
 }

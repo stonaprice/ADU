@@ -7,6 +7,7 @@ public class UnitStateController : StateControllerBase
 
     private Transform tower;
     private GameObject unit;
+    // UnitStateChild_MoveToTower mmt = default; 
 
     public enum StateType
     {
@@ -38,6 +39,36 @@ public class UnitStateController : StateControllerBase
         // stateDic[CurrentState].SetTower(tower);
         // stateDic[CurrentState].SetUnit(unit);
         stateDic[CurrentState].OnEnter();
+    }
+
+    // 近くに敵がいる場合
+    public void OnDetectObject(Collider collider)
+    {
+        Debug.Log("sekkin");
+        // 同じオブジェクト内の他のスクリプトを参照する場合
+		UnitStateChild_MoveToTower mmt = GetComponent<UnitStateChild_MoveToTower>();
+        // mmt.SetNear(true);
+
+        if(this.gameObject.CompareTag("PlayerUnit")){
+            mmt.SetNear(true);
+            // GameObject item = GameObject.FindWithTag("EnemyUnit");
+            // Debug.Log(item.name);
+            
+            if (collider.CompareTag("EnemyUnit"))
+            {
+                mmt.SetNear(true);
+            }
+
+        }else if(this.gameObject.CompareTag("EnemyUnit")){
+            if (collider.CompareTag("PlayerUnit"))
+            {
+                mmt.SetNear(true);
+            }
+            if (collider.CompareTag("Player"))
+            {
+                mmt.SetNear(true);
+            }
+        }
     }
 
     public void SetUnit(GameObject unit) {
