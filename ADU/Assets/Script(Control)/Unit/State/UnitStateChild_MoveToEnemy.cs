@@ -5,10 +5,11 @@ using UnityEngine;
 public class UnitStateChild_MoveToEnemy : StateChildBase
 {
     private UnityEngine.AI.NavMeshAgent navMeshAgent;
-    private Collider target;
+    // private Collider target;
+    private GameObject target;
 
-    float attackDistance = 2;
-    bool isAttacking = false;
+    float attackDistance = 5;
+    private bool isAttacking = false;
 
     public override void OnEnter()
     {
@@ -19,7 +20,9 @@ public class UnitStateChild_MoveToEnemy : StateChildBase
         UnitStateChild_MoveToTower mtt = GetComponent<UnitStateChild_MoveToTower>();
         mtt.SetIsFinding(false);
 
-        navMeshAgent.destination = target.transform.position;
+        if(target){
+            navMeshAgent.destination = target.transform.position;
+        }
     }
 
     public override void OnExit()
@@ -29,17 +32,20 @@ public class UnitStateChild_MoveToEnemy : StateChildBase
 
     public override int StateUpdate()
     {
-        CheckDistance();
+        if(target){
+            CheckDistance();
+        }else{
+            return (int)UnitStateController.StateType.MoveToTower;
+        }
 
         if(isAttacking){
+		    UnitStateChild_Attack usca = GetComponent<UnitStateChild_Attack>();
+            usca.SetTarget(target);
+
             return (int)UnitStateController.StateType.Attack;
         }
 
-        // navMeshAgent.destination = target.transform.position;
         return (int)UnitStateController.StateType.MoveToEnemy;
-
-
-        // return (int)UnitStateController.StateType.Attack;
     }
 
     void CheckDistance()
@@ -54,7 +60,11 @@ public class UnitStateChild_MoveToEnemy : StateChildBase
         }
     }
 
-    public void SetTarget(Collider target){
+    public void SetTarget(GameObject target){
         this.target = target;
     }
+
+    // public void SetTarget(Collider target){
+    //     this.target = target;
+    // }
 }

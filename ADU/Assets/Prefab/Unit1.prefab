@@ -55,7 +55,7 @@ GameObject:
   - component: {fileID: 1954288947553038731}
   - component: {fileID: 5506385179269993201}
   m_Layer: 5
-  m_Name: Slider
+  m_Name: HPBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -80,7 +80,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 3}
+  m_AnchoredPosition: {x: 0, y: 50}
   m_SizeDelta: {x: 160, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &5506385179269993201
@@ -130,7 +130,7 @@ MonoBehaviour:
   m_MinValue: 0
   m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 0
+  m_Value: 1
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -297,7 +297,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0.56367254, b: 1, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -324,8 +324,6 @@ GameObject:
   m_Component:
   - component: {fileID: 3105289529304451373}
   - component: {fileID: 3105289529304451374}
-  - component: {fileID: 3105289529304451375}
-  - component: {fileID: 3105289529304451372}
   - component: {fileID: 3105289529304451370}
   - component: {fileID: -2828045480730264960}
   - component: {fileID: 6535051865313325972}
@@ -333,6 +331,7 @@ GameObject:
   - component: {fileID: 220539452013257076}
   - component: {fileID: 1520333128960340548}
   - component: {fileID: 722988428991465878}
+  - component: {fileID: 1911146676307279621}
   m_Layer: 0
   m_Name: Unit1
   m_TagString: PlayerUnit
@@ -405,39 +404,12 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 20.48, y: 20.48}
+  m_Size: {x: 1.29, y: 3.58}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &3105289529304451375
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3105289529304451360}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a23b9eb1c14bbfd41856d8a425719050, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 5
---- !u!114 &3105289529304451372
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3105289529304451360}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 76dd9137f31015f4095be6cb7639b2ab, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  target: {fileID: 4077045423793812795, guid: 192c70229cc45934488572d2045b3599, type: 3}
-  speed: 5
 --- !u!65 &3105289529304451370
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -460,7 +432,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 3105289529304451360}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 1.62
+  m_Radius: 0.7
   m_Speed: 1
   m_Acceleration: 1
   avoidancePriority: 0
@@ -469,8 +441,8 @@ NavMeshAgent:
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
-  m_Height: 3.52
-  m_BaseOffset: 2.02
+  m_Height: 4
+  m_BaseOffset: 2
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 1
 --- !u!114 &6535051865313325972
@@ -544,6 +516,20 @@ MonoBehaviour:
   firingPoint: {fileID: 2099861956860352325}
   bullet: {fileID: 2385141376720844248, guid: 30fb3716072df354cb45d0aa110f711c, type: 3}
   speed: 10
+--- !u!114 &1911146676307279621
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3105289529304451360}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 072c917418c14a5468a33715190531ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHp: 3
+  HPUI: {fileID: 8187409161632541147}
 --- !u!1 &4765797912837270003
 GameObject:
   m_ObjectHideFlags: 0
@@ -603,7 +589,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Color: {r: 0, g: 0.63323593, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -670,7 +656,7 @@ GameObject:
   - component: {fileID: 7754784068232853375}
   - component: {fileID: 2811947333538864173}
   m_Layer: 0
-  m_Name: PlayerUnitCanvas
+  m_Name: HPUI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -694,7 +680,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 2}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 150, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &7451228868736091178

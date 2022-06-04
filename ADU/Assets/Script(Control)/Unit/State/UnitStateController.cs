@@ -43,36 +43,33 @@ public class UnitStateController : StateControllerBase
     // 近くに敵がいる場合
     public void OnDetectObject(Collider collider)
     {
-        // 同じオブジェクト内の他のスクリプトを参照する場合
-		UnitStateChild_MoveToTower mtt = GetComponent<UnitStateChild_MoveToTower>();
-        UnitStateChild_MoveToEnemy mte = GetComponent<UnitStateChild_MoveToEnemy>();
+        // // 同じオブジェクト内の他のスクリプトを参照する場合
+		// UnitStateChild_MoveToTower mtt = GetComponent<UnitStateChild_MoveToTower>();
+        // UnitStateChild_MoveToEnemy mte = GetComponent<UnitStateChild_MoveToEnemy>();
 
-        // Debug.Log(collider.tag);
+        // // Debug.Log(collider.tag);
 
-        if(this.gameObject.CompareTag("PlayerUnit")){
-            if (collider.CompareTag("EnemyUnit"))
-            {
-                mte.SetTarget(collider);
-                mtt.SetIsFinding(true);
-            }
-            // if (collider.CompareTag("Enemy"))
-            // {
-            //     mte.SetTarget(collider);
-            //     mtt.SetIsFinding(true);
-            // }
-
-        }else if(this.gameObject.CompareTag("EnemyUnit")){
-            if (collider.CompareTag("PlayerUnit"))
-            {
-                mte.SetTarget(collider);
-                mtt.SetIsFinding(true);
-            }
-            // if (collider.CompareTag("Player"))
-            // {
-            //     mte.SetTarget(collider);
-            //     mtt.SetIsFinding(true);
-            // }
-        }
+        // if(CurrentState == (int)StateType.MoveToTower){
+        //     if(this.gameObject.CompareTag("PlayerUnit")){
+        //         if(collider.CompareTag("EnemyUnit")){
+        //             mte.SetTarget(collider);
+        //             mtt.SetIsFinding(true);
+        //         }
+        //         // if (collider.CompareTag("Enemy")){
+        //         //     mte.SetTarget(collider);
+        //         //     mtt.SetIsFinding(true);
+        //         // }
+        //     }else if(this.gameObject.CompareTag("EnemyUnit")){
+        //         if(collider.CompareTag("PlayerUnit")){
+        //             mte.SetTarget(collider);
+        //             mtt.SetIsFinding(true);
+        //         }
+        //         if(collider.CompareTag("Player")){
+        //             mte.SetTarget(collider);
+        //             mtt.SetIsFinding(true);
+        //         }
+        //     }
+        // }
     }
 
     public void SetUnit(GameObject unit) {

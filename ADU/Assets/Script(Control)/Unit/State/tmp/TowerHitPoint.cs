@@ -10,7 +10,7 @@ public class TowerHitPoint : MonoBehaviour
 	private int maxHp;
     // 塔のHP
     // [SerializeField]
-    private int hp;
+    private int currentHp;
     // HP表示用UI
     [SerializeField]
     private GameObject HPUI;
@@ -20,7 +20,7 @@ public class TowerHitPoint : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        hp = maxHp;
+        currentHp = maxHp;
         hpSlider = HPUI.transform.Find("HPBar").GetComponent<Slider>();
         hpSlider.value = 1f;
     }
@@ -39,14 +39,14 @@ public class TowerHitPoint : MonoBehaviour
             return;
         }
 
-        hp -= value;
+        currentHp -= value;
 
-        Debug.Log(hp);
+        Debug.Log(currentHp);
 
         // HP表示用UIのアップデート
         UpdateHPValue();
 
-        // if(Hp <= 0)
+        // if(currentHp <= 0)
         // {
         //     Dead();
         // }
@@ -67,23 +67,22 @@ public class TowerHitPoint : MonoBehaviour
                 Damage(value);
             }
         }
-
     }
 
-    public void SetHp(int hp) {
-        this.hp = hp;
+    public void SetCurrentHp(int currentHp) {
+        this.currentHp = currentHp;
 
         // HP表示用UIのアップデート
         UpdateHPValue();
 
-        // if (hp <= 0) {
+        // if (currentHp <= 0) {
         //     // HP表示用UIを非表示にする
         //     HideStatusUI();
         // }
     }
 
-    public int GetHp() {
-        return hp;
+    public int GetCurrentHp() {
+        return currentHp;
     }
 
     public int GetMaxHp() {
@@ -91,6 +90,6 @@ public class TowerHitPoint : MonoBehaviour
     }
 
     public void UpdateHPValue() {
-        hpSlider.value = (float)GetHp() / (float)GetMaxHp();
+        hpSlider.value = (float)GetCurrentHp() / (float)GetMaxHp();
     }
 }

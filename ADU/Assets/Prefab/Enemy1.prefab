@@ -88,7 +88,7 @@ GameObject:
   - component: {fileID: 8857909479607325750}
   - component: {fileID: 8857909479607325751}
   m_Layer: 0
-  m_Name: EnemyUnitCanvas
+  m_Name: HPUI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -189,13 +189,13 @@ GameObject:
   - component: {fileID: 8857909479613860102}
   - component: {fileID: 8857909479613860101}
   - component: {fileID: 8857909479613860099}
-  - component: {fileID: 8857909479613860098}
   - component: {fileID: 360482156021865074}
   - component: {fileID: 8463087982644732412}
   - component: {fileID: 5559411409927969768}
   - component: {fileID: 9198111452203210554}
   - component: {fileID: 8870677798981740963}
   - component: {fileID: 5696197684353293420}
+  - component: {fileID: 3596630069634074306}
   m_Layer: 0
   m_Name: Enemy1
   m_TagString: EnemyUnit
@@ -338,20 +338,6 @@ NavMeshAgent:
   m_BaseOffset: 6.5
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 1
---- !u!114 &8857909479613860098
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8857909479613860346}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f641ae93d0f420049b44ed7f50fd1884, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  hp: 3
-  attackPower: 1
 --- !u!114 &360482156021865074
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -435,6 +421,20 @@ MonoBehaviour:
   firingPoint: {fileID: 5567432647054052567}
   bullet: {fileID: 2385141376720844248, guid: 799b18c5b65e56548bd7623d03d9347a, type: 3}
   speed: 10
+--- !u!114 &3596630069634074306
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8857909479613860346}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 072c917418c14a5468a33715190531ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHp: 3
+  HPUI: {fileID: 8857909479607325737}
 --- !u!1 &8857909480018716011
 GameObject:
   m_ObjectHideFlags: 0
@@ -494,7 +494,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0.9505619, b: 0, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -574,8 +574,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8857909481132815892}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.000000043122, z: 0}
-  m_LocalScale: {x: 0.39985, y: 0.47877592, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8857909479613860344}
@@ -592,7 +592,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 50
+  m_Radius: 20
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &8857909481132815890
 MonoBehaviour:
@@ -632,7 +632,7 @@ GameObject:
   - component: {fileID: 8857909481199968192}
   - component: {fileID: 8857909481199968207}
   m_Layer: 5
-  m_Name: Slider
+  m_Name: HPBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -707,7 +707,7 @@ MonoBehaviour:
   m_MinValue: 0
   m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 0.1
+  m_Value: 1
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -770,7 +770,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Color: {r: 1, g: 0.96657693, b: 0, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
