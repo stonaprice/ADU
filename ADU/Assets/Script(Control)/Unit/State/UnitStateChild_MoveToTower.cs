@@ -22,6 +22,7 @@ public class UnitStateChild_MoveToTower : StateChildBase
         // navMeshAgent = GetComponent<UnityEngine.AI.NavMeshAgent>(); // NavMeshAgent
 
         navMeshAgent = unit.GetComponent<UnityEngine.AI.NavMeshAgent>();
+        navMeshAgent.destination = tower.position;
     }
 
     public override void OnExit()
@@ -35,7 +36,7 @@ public class UnitStateChild_MoveToTower : StateChildBase
             return (int)UnitStateController.StateType.MoveToEnemy;
         }
 
-        navMeshAgent.destination = tower.position;
+        // navMeshAgent.destination = tower.position;
 
         return (int)UnitStateController.StateType.MoveToTower;
 

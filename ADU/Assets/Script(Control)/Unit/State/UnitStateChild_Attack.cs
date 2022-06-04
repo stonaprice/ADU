@@ -7,7 +7,7 @@ public class UnitStateChild_Attack : StateChildBase
 
     public override void OnEnter()
     {
-        Debug.Log("popup");
+        Debug.Log("Attack");
     }
 
     public override void OnExit()

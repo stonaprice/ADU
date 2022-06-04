@@ -47,7 +47,7 @@ public class UnitStateController : StateControllerBase
 		UnitStateChild_MoveToTower mtt = GetComponent<UnitStateChild_MoveToTower>();
         UnitStateChild_MoveToEnemy mte = GetComponent<UnitStateChild_MoveToEnemy>();
 
-        Debug.Log(collider.tag);
+        // Debug.Log(collider.tag);
 
         if(this.gameObject.CompareTag("PlayerUnit")){
             if (collider.CompareTag("EnemyUnit"))
@@ -55,11 +55,11 @@ public class UnitStateController : StateControllerBase
                 mte.SetTarget(collider);
                 mtt.SetNear(true);
             }
-            if (collider.CompareTag("Enemy"))
-            {
-                mte.SetTarget(collider);
-                mtt.SetNear(true);
-            }
+            // if (collider.CompareTag("Enemy"))
+            // {
+            //     mte.SetTarget(collider);
+            //     mtt.SetNear(true);
+            // }
 
         }else if(this.gameObject.CompareTag("EnemyUnit")){
             if (collider.CompareTag("PlayerUnit"))
@@ -67,11 +67,11 @@ public class UnitStateController : StateControllerBase
                 mte.SetTarget(collider);
                 mtt.SetNear(true);
             }
-            if (collider.CompareTag("Player"))
-            {
-                mte.SetTarget(collider);
-                mtt.SetNear(true);
-            }
+            // if (collider.CompareTag("Player"))
+            // {
+            //     mte.SetTarget(collider);
+            //     mtt.SetNear(true);
+            // }
         }
     }
 
