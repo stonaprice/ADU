@@ -52,7 +52,7 @@ public class UnitStateChild_MoveToEnemy : StateChildBase
         {
             isAttacking = true;
         }
-  }
+    }
 
     public void SetTarget(Collider target){
         this.target = target;

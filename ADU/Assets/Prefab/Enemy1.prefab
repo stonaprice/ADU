@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 5722444330186068304}
   - component: {fileID: 787469938913301843}
-  - component: {fileID: 5532987711045849574}
   m_Layer: 0
   m_Name: State
   m_TagString: EnemyUnit
@@ -45,19 +44,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3dfbab1b94e6f42079564c4c1cb1af05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!135 &5532987711045849574
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 343600705538038067}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 3
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &5567432647054052567
 GameObject:
   m_ObjectHideFlags: 0
@@ -82,7 +68,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5567432647054052567}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -2, z: 0}
+  m_LocalPosition: {x: 0, y: 4.453, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -225,8 +211,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8857909479613860346}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 14.46, y: 2, z: 0.05}
-  m_LocalScale: {x: 0.3, y: 0.3, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8857909481132815891}
@@ -277,7 +263,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 0879251ae7113ad4b8e88b17f2cf47e7, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 23232a79c9b39ef41bae5a3513b2b4fd, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -299,8 +285,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.87, y: 0.96, z: 0.2}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 8.6, y: 14.8, z: 0.2}
+  m_Center: {x: 0, y: 0.2, z: 0}
 --- !u!114 &8857909479613860101
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -339,7 +325,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 8857909479613860346}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 0.55
+  m_Radius: 4.5
   m_Speed: 1
   m_Acceleration: 1
   avoidancePriority: 0
@@ -348,8 +334,8 @@ NavMeshAgent:
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
-  m_Height: 2.92
-  m_BaseOffset: 2.87
+  m_Height: 14
+  m_BaseOffset: 6.5
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 1
 --- !u!114 &8857909479613860098
@@ -447,8 +433,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   firingPoint: {fileID: 5567432647054052567}
-  bullet: {fileID: 1531961766000577402, guid: 5ef143ac2a7150a4e91e9f6ab14d0ed7, type: 3}
-  speed: 30
+  bullet: {fileID: 2385141376720844248, guid: 799b18c5b65e56548bd7623d03d9347a, type: 3}
+  speed: 10
 --- !u!1 &8857909480018716011
 GameObject:
   m_ObjectHideFlags: 0

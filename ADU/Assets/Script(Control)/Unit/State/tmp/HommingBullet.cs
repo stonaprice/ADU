@@ -8,14 +8,26 @@ public class HommingBullet : MonoBehaviour
     private GameObject[] targets;
     private bool isSwitch = false;
 
-    // private String tagname;
-
     private GameObject closeEnemy;
 
     private void Start()
     {
-        // タグを使って画面上の全ての敵の情報を取得
+        // // タグを使って画面上の全ての敵の情報を取得
+        // if(this.gameObject.CompareTag("PlayerWeapon")){
+        //     // targets = GameObject.FindGameObjectsWithTag("Enemy","EnemyUnit","EnemyTower");
+        //     // targets = GameObject.FindGameObjectsWithTag("Enemy") + GameObject.FindGameObjectsWithTag("EnemyUnit") + GameObject.FindGameObjectsWithTag("EnemyTower");
+        //     // targets = GameObject.FindGameObjectsWithTag("Enemy");
+        //     targets = GameObject.FindGameObjectsWithTag("EnemyUnit");
+        //     targets = InsertLast(GameObject.FindGameObjectsWithTag("EnemyTower"));
+        // }
+        // else if(this.gameObject.CompareTag("EnemyWeapon")){
+        //     // targets = GameObject.FindGameObjectsWithTag("Enemy");
+        //     // targets = GameObject.FindGameObjectsWithTag("EnemyUnit");
+        //     // targets = GameObject.FindGameObjectsWithTag("EnemyTower");
+        // }
+
         targets = GameObject.FindGameObjectsWithTag("EnemyTower");
+
 
         // 「初期値」の設定
         float closeDist = 1000;

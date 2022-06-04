@@ -55,11 +55,19 @@ public class TowerHitPoint : MonoBehaviour
     //ïêäÌÇ…êGÇÍÇΩÇÁÉ_ÉÅÅ[ÉW
     protected void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.CompareTag("Weapon"))
-        {
-            int value = 1;
-            Damage(value);
+        if(this.gameObject.CompareTag("PlayerTower")){
+            if (collision.gameObject.CompareTag("EnemyWeapon")){
+                int value = 1;
+                Damage(value);
+            }
         }
+        else if(this.gameObject.CompareTag("EnemyTower")){
+            if (collision.gameObject.CompareTag("PlayerWeapon")){
+                int value = 1;
+                Damage(value);
+            }
+        }
+
     }
 
     public void SetHp(int hp) {
