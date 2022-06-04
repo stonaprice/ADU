@@ -207,6 +207,37 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!1 &2099861956860352325
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2308743068725910969}
+  m_Layer: 0
+  m_Name: FiringPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2308743068725910969
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2099861956860352325}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.32, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3105289529304451373}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2133218396793523781
 GameObject:
   m_ObjectHideFlags: 0
@@ -301,6 +332,7 @@ GameObject:
   - component: {fileID: 4019217794294559404}
   - component: {fileID: 220539452013257076}
   - component: {fileID: 1520333128960340548}
+  - component: {fileID: 722988428991465878}
   m_Layer: 0
   m_Name: Unit1
   m_TagString: PlayerUnit
@@ -323,6 +355,7 @@ Transform:
   - {fileID: 845741378054924466}
   - {fileID: 1010155865358261532}
   - {fileID: 3350868242330821934}
+  - {fileID: 2308743068725910969}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -496,6 +529,21 @@ MonoBehaviour:
   stateController: {fileID: 314987627278175006}
   tower: {fileID: 3860934116305549652, guid: f0d61b57f80df8a45a4abf548fb7049f, type: 3}
   unit: {fileID: 3105289529304451360}
+--- !u!114 &722988428991465878
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3105289529304451360}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0774032ab558fb84289e3892a6576e73, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  firingPoint: {fileID: 2099861956860352325}
+  bullet: {fileID: 1531961766000577402, guid: 5ef143ac2a7150a4e91e9f6ab14d0ed7, type: 3}
+  speed: 30
 --- !u!1 &4765797912837270003
 GameObject:
   m_ObjectHideFlags: 0

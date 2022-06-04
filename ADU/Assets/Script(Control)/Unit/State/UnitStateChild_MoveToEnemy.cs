@@ -17,7 +17,7 @@ public class UnitStateChild_MoveToEnemy : StateChildBase
         // navMeshAgent = GetComponent<UnityEngine.AI.NavMeshAgent>(); // NavMeshAgent
 
         UnitStateChild_MoveToTower mtt = GetComponent<UnitStateChild_MoveToTower>();
-        mtt.SetNear(false);
+        mtt.SetIsFinding(false);
 
         navMeshAgent.destination = target.transform.position;
     }

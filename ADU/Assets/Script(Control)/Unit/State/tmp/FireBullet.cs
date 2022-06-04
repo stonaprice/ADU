@@ -16,6 +16,8 @@ public class FireBullet : MonoBehaviour
     [Tooltip("’e‚Ì‘¬‚³")]
     private float speed = 30f;
 
+    private bool isAttacking = false;
+
     // Update is called once per frame
     void Update()
     {
@@ -24,6 +26,13 @@ public class FireBullet : MonoBehaviour
         {
             // ’e‚ğ”­Ë‚·‚é
             LauncherShot();
+        }
+
+        if(isAttacking){
+            // ’e‚ğ”­Ë‚·‚é
+            LauncherShot();
+
+            isAttacking = false;
         }
     }
 
@@ -44,5 +53,9 @@ public class FireBullet : MonoBehaviour
         newBall.name = bullet.name;
         // oŒ»‚³‚¹‚½ƒ{[ƒ‹‚ğ0.8•bŒã‚ÉÁ‚·
         Destroy(newBall, 2.0f);
+    }
+
+    public void SetIsAttacking(bool isAttacking){
+        this.isAttacking = isAttacking;
     }
 }

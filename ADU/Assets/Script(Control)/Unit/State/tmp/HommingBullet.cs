@@ -8,6 +8,8 @@ public class HommingBullet : MonoBehaviour
     private GameObject[] targets;
     private bool isSwitch = false;
 
+    // private String tagname;
+
     private GameObject closeEnemy;
 
     private void Start()

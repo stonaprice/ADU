@@ -8,7 +8,7 @@ public class UnitStateChild_MoveToTower : StateChildBase
 
     private Transform tower;
     private GameObject unit;
-    private bool near = false;
+    private bool isFinding = false;
 
     // void Start(){
     //     // navMeshAgent = GetComponent<UnityEngine.AI.NavMeshAgent>();
@@ -32,7 +32,7 @@ public class UnitStateChild_MoveToTower : StateChildBase
 
     public override int StateUpdate()
     {
-        if(near == true){
+        if(isFinding){
             return (int)UnitStateController.StateType.MoveToEnemy;
         }
 
@@ -74,7 +74,7 @@ public class UnitStateChild_MoveToTower : StateChildBase
 		this.tower = tower;
 	}
 
-    public void SetNear(bool near){
-        this.near = near;
+    public void SetIsFinding(bool isFinding){
+        this.isFinding = isFinding;
     }
 }

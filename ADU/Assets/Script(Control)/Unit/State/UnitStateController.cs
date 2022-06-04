@@ -53,24 +53,24 @@ public class UnitStateController : StateControllerBase
             if (collider.CompareTag("EnemyUnit"))
             {
                 mte.SetTarget(collider);
-                mtt.SetNear(true);
+                mtt.SetIsFinding(true);
             }
             // if (collider.CompareTag("Enemy"))
             // {
             //     mte.SetTarget(collider);
-            //     mtt.SetNear(true);
+            //     mtt.SetIsFinding(true);
             // }
 
         }else if(this.gameObject.CompareTag("EnemyUnit")){
             if (collider.CompareTag("PlayerUnit"))
             {
                 mte.SetTarget(collider);
-                mtt.SetNear(true);
+                mtt.SetIsFinding(true);
             }
             // if (collider.CompareTag("Player"))
             // {
             //     mte.SetTarget(collider);
-            //     mtt.SetNear(true);
+            //     mtt.SetIsFinding(true);
             // }
         }
     }
