@@ -40,9 +40,31 @@ public class UnitStateChild_MoveToTower : StateChildBase
 
         return (int)UnitStateController.StateType.MoveToTower;
 
-        // if(this.gameObject.CompareTag("PlayerUnit")){
-        // }else if(this.gameObject.CompareTag("EnemyUnit")){
+
     }
+
+//     void CheckDistance()
+//     {
+//         // プレイヤーまでの距離（二乗された値）を取得
+//         // sqrMagnitudeは平方根の計算を行わないので高速。距離を比較するだけならそちらを使った方が良い
+//         float diff = (player.position - thisTransform.position).sqrMagnitude;
+//         // 距離を比較。比較対象も二乗するのを忘れずに
+//         if (diff < attackDistance * attackDistance)
+//         {
+//             if(!isAttacking)
+//             {
+//             StartCoroutine(nameof(Attack));
+//             }
+//         }
+//         else if (diff < chaseDistance * chaseDistance)
+//         {
+//             target = player;
+//         }
+//         else
+//         {
+//             target = defaultTarget;
+//         }
+//   }
 
     public void SetUnit(GameObject unit) {
 		this.unit = unit;
