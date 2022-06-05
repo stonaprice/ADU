@@ -10,11 +10,11 @@ public class StartText : MonoBehaviour
     public GameObject button1;
     public GameObject button2;
     public GameObject button3;
-    public GameObject sum;
     public SummonUnit summonUnit;
     public CostControl costControl;
+    //public GameObject sum;
 
-    public void Start()
+    public void PlayStart()
     {
         //?��?��?��?��?��?��?��\?��?��?��ɂ�?��?��
         this.gameObject.SetActive(false);
@@ -23,7 +23,7 @@ public class StartText : MonoBehaviour
         button1.SetActive(false);
         button2.SetActive(false);
         button3.SetActive(false);
-        sum.SetActive(false);
+        //sum.SetActive(false);
 
         //?��X?��N?��?��?��v?��g?��̖�?��?��?��?��?��i?��?��?��?��?��?��ł�?��Ȃ�?��悤?��ɂ�?��邽?��߁j
         GameObject playerObj = GameObject.Find("Player");

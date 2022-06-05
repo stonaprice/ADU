@@ -1,0 +1,61 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &532285643277231588
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 532285643277231595}
+  - component: {fileID: 532285643277231594}
+  m_Layer: 0
+  m_Name: Timer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &532285643277231595
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 532285643277231588}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 490.76437, y: 267.77386, z: 73.78518}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &532285643277231594
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 532285643277231588}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 347ce7eb05d1be14b8a6ead6f701be74, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameOver: {fileID: 2955458740173800256, guid: c1d1ae790daf44d428549bce4cd8e34b,
+    type: 3}
+  summonUnit: {fileID: 2199159709348932860, guid: 7ddfe65654b702b46882b1890936daf0,
+    type: 3}
+  costControl: {fileID: 7419734839025923206, guid: 177d08be8f1b3b6459f5eb9fac397815,
+    type: 3}
+  TimerText: {fileID: 8767098972275813999, guid: c903863e535947145aaaa0270596c73a,
+    type: 3}
+  WaveText: {fileID: 6432921982757239686, guid: baae45f62a5f21a45aca117d39e3cd51,
+    type: 3}
+  WaveTextAnime: {fileID: 371670830397891144, guid: 4bb6bc90e1deb0c439ca6c68579341f0,
+    type: 3}
+  CostText: {fileID: 1063265197290061237, guid: 1645abe3514502042bfe7c672e480081,
+    type: 3}
+  totalTime: 5

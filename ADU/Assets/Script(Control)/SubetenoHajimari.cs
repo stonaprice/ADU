@@ -4,14 +4,20 @@ using UnityEngine;
 
 public class SubetenoHajimari : MonoBehaviour
 {
-    private StartText starttext;
-    private TimerControl timercontrol;
+    public StartText starttext;
+    public TimerControl timercontrol;
 
 
     //　会話終わったあとにWave1を呼び出すメソッド
     private void battleStart(){
-        starttext.Start();
-        timercontrol.Start();
+        starttext.PlayStart();
+        timercontrol.TimerStart();
+
+        //GameObject obj = (GameObject)Resources.Load("Timer");
+        //GameObject instance = (GameObject)Instantiate(obj);
+
+
+        //Time.timeScale = 1;
     }
 
 }

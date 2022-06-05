@@ -20,8 +20,9 @@ public class TimerControl : MonoBehaviour
 
 
     // Start is called before the first frame update
-    public void Start()
+    public void TimerStart()
     {
+        //Time.timeScale = 0;
         this.gameObject.SetActive(false);
         Invoke(nameof(Display), 4.5f);
     }
