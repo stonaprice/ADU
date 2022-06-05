@@ -8,12 +8,14 @@ public class TanbaCutInTest : MonoBehaviour
 {
     [SerializeField] private GameObject Character;
     [SerializeField] private GameObject Panel;
+    [SerializeField] private GameObject Sword;
     
 
     private void Cutin()
     {
         CutinCharacter();
         CutinBackGround();        
+        CutinSword();
     }
 
     private void CutinCharacter()
@@ -37,5 +39,18 @@ public class TanbaCutInTest : MonoBehaviour
                 .AppendInterval(0.5f)
                 .Append(Panel.transform.DOScale(new Vector3(panelscale.x, 0 , panelscale.z), 1f));
 
+    }
+
+    private void CutinSword()
+    {
+         var sequence3 = DOTween.Sequence();
+                sequence3.AppendInterval(0.2f)
+                        .Append(Sword.transform.DOLocalMove(new Vector3(0, 0, 0), 1f))
+                        .Append(Sword.transform.DOScale(new Vector3(12,9,12), 1f))
+                        .Append(Sword.transform.DOShakeScale(
+                            duration: 1f,
+                            strength: 2.2f
+                        ))
+                        .Append(Sword.transform.DOScale(new Vector3(0,0,0), 0.1f));
     }
 }
