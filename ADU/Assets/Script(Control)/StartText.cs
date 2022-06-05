@@ -14,68 +14,64 @@ public class StartText : MonoBehaviour
     public SummonUnit summonUnit;
     public CostControl costControl;
 
-    private void Start()
+    public void Start()
     {
-        //?¿½?¿½?¿½?¿½?¿½?¿½?¿½\?¿½?¿½?¿½É‚ï¿½?¿½?¿½
+        //?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½\?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½É‚ï¿½?ï¿½ï¿½?ï¿½ï¿½
         this.gameObject.SetActive(false);
 
-        //?¿½{?¿½^?¿½?¿½?¿½?¿½?¿½\?¿½?¿½?¿½É‚ï¿½?¿½?¿½
+        //?ï¿½ï¿½{?ï¿½ï¿½^?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½\?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½É‚ï¿½?ï¿½ï¿½?ï¿½ï¿½
         button1.SetActive(false);
         button2.SetActive(false);
         button3.SetActive(false);
         sum.SetActive(false);
 
-        //?¿½X?¿½N?¿½?¿½?¿½v?¿½g?¿½Ì–ï¿½?¿½?¿½?¿½?¿½?¿½i?¿½?¿½?¿½?¿½?¿½?¿½Å‚ï¿½?¿½È‚ï¿½?¿½æ‚¤?¿½É‚ï¿½?¿½é‚½?¿½ßj
+        //?ï¿½ï¿½X?ï¿½ï¿½N?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½v?ï¿½ï¿½g?ï¿½ï¿½Ì–ï¿½?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½i?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½Å‚ï¿½?ï¿½ï¿½È‚ï¿½?ï¿½ï¿½æ‚¤?ï¿½ï¿½É‚ï¿½?ï¿½ï¿½é‚½?ï¿½ï¿½ßj
         GameObject playerObj = GameObject.Find("Player");
         PlayerMove playerMove = playerObj.GetComponent<PlayerMove>();
         playerMove.enabled = false;
 
-       /*?¿½{?¿½^?¿½?¿½?¿½ÌƒA?¿½j?¿½?¿½?¿½[?¿½V?¿½?¿½?¿½?¿½?¿½Ì‚ï¿½Â–ï¿½?¿½?¿½?¿½?¿½
+       /*?ï¿½ï¿½{?ï¿½ï¿½^?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½ÌƒA?ï¿½ï¿½j?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½[?ï¿½ï¿½V?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½Ì‚ï¿½Â–ï¿½?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½
         GameObject buttonObj1 = GameObject.Find("Button1");
         ButtonAnimation buttonAnime = button1.GetComponent<ButtonAnimation>();
         buttonAnime.enabled = false;
        */
 
-        //0.5?¿½b?¿½?¿½Éï¿½?¿½s
+        //0.5?ï¿½ï¿½b?ï¿½ï¿½?ï¿½ï¿½Éï¿½?ï¿½ï¿½s
         Invoke(nameof(DisplayOn), 0.5f);
 
-        //2.5?¿½b?¿½?¿½Éï¿½?¿½s
+        //2.5?ï¿½ï¿½b?ï¿½ï¿½?ï¿½ï¿½Éï¿½?ï¿½ï¿½s
         Invoke(nameof(ChangeText), 2.5f);
 
-        //4.5?¿½b?¿½?¿½Éï¿½?¿½s
+        //4.5?ï¿½ï¿½b?ï¿½ï¿½?ï¿½ï¿½Éï¿½?ï¿½ï¿½s
         Invoke(nameof(DisplayOff), 4.5f);
     }
 
     void DisplayOn()
     {
-        //?¿½I?¿½u?¿½W?¿½F?¿½N?¿½g?¿½?¿½\?¿½?¿½?¿½?¿½?¿½?¿½
+        //?ï¿½ï¿½I?ï¿½ï¿½u?ï¿½ï¿½W?ï¿½ï¿½F?ï¿½ï¿½N?ï¿½ï¿½g?ï¿½ï¿½?ï¿½ï¿½\?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½
         this.gameObject.SetActive(true);
     }
 
     void ChangeText()
     {
-        //?¿½?¿½?¿½?¿½?¿½?¿½ÏX
+        //?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½ÏX
         Text.text = "START!!";
-        //?¿½?¿½?¿½?¿½?¿½F?¿½?¿½ÏX
+        //?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½F?ï¿½ï¿½?ï¿½ï¿½ÏX
         Text.color = Color.red;
-    }
-
-    void KusoUIOn(){
-        sum.SetActive(true);
     }
 
     void DisplayOff()
     {
-        //?¿½?¿½?¿½?¿½?¿½?¿½\?¿½?¿½?¿½?¿½?¿½?¿½
+        //?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½\?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½
         this.gameObject.SetActive(false);
 
-        //?¿½{?¿½^?¿½?¿½?¿½?¿½\?¿½?¿½?¿½É‚ï¿½?¿½?¿½
+        //?ï¿½ï¿½{?ï¿½ï¿½^?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½\?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½É‚ï¿½?ï¿½ï¿½?ï¿½ï¿½
         button1.SetActive(true);
         button2.SetActive(true);
         button3.SetActive(true);
         //Invoke(nameof(KusoUIOn),2.5f);
 
-        //?¿½X?¿½N?¿½?¿½?¿½v?¿½g?¿½Ì—L?¿½?¿½?¿½?¿½?¿½i?¿½?¿½?¿½?¿½?¿½?¿½ÄŠJ?¿½j
+        //?ï¿½ï¿½X?ï¿½ï¿½N?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½v?ï¿½ï¿½g?ï¿½ï¿½Ì—L?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½i?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½ÄŠJ?ï¿½ï¿½j
         GameObject playerObj = GameObject.Find("Player");
         PlayerMove playerMove = playerObj.GetComponent<PlayerMove>();
         playerMove.enabled = true;

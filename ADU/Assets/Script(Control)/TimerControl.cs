@@ -20,7 +20,7 @@ public class TimerControl : MonoBehaviour
 
 
     // Start is called before the first frame update
-    void Start()
+    public void Start()
     {
         this.gameObject.SetActive(false);
         Invoke(nameof(Display), 4.5f);
@@ -112,7 +112,7 @@ public class TimerControl : MonoBehaviour
     {
         Transform myTransform = WaveTextAnime.transform;
 
-        //WaveTextAnimeã‚’å³å´ã«æˆ»ã?
+        //WaveTextAnimeã‚’å³å´ã«æˆ»ï¿½?
         Vector3 localPos = myTransform.localPosition;
         localPos.x = 3000f;
         myTransform.localPosition = localPos;
@@ -121,19 +121,19 @@ public class TimerControl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //?¿½J?¿½E?¿½?¿½?¿½g?¿½_?¿½E?¿½?¿½?¿½Ìï¿½?¿½?¿½
+        //?ï¿½ï¿½J?ï¿½ï¿½E?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½g?ï¿½ï¿½_?ï¿½ï¿½E?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½Ìï¿½?ï¿½ï¿½?ï¿½ï¿½
         totalTime -= Time.deltaTime;
         seconds = (int)totalTime;
         TimerText.text = seconds.ToString();
         CostText.text = string.Format("{0} / 10", costControl.GetPlayerCost());
 
-        //Gameover?¿½ÖˆÚs
+        //Gameover?ï¿½ï¿½ÖˆÚs
         if (totalTime < 0 && count == 3)
         {
             gameOver.GameOver();
         }
 
-        //FinalWave?¿½Ús?¿½Ìï¿½?¿½?¿½?¿½?¿½?¿½?¿½
+        //FinalWave?ï¿½ï¿½Ús?ï¿½ï¿½Ìï¿½?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½
         if (totalTime < 0 && count == 2)
         {
             totalTime = 120;
@@ -141,7 +141,7 @@ public class TimerControl : MonoBehaviour
             Start4();
         }
 
-        //Wave3?¿½Ús?¿½Ìï¿½?¿½?¿½?¿½?¿½?¿½?¿½
+        //Wave3?ï¿½ï¿½Ús?ï¿½ï¿½Ìï¿½?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½
         if (totalTime < 0 && count == 1)
         {
             totalTime = 30;
@@ -149,7 +149,7 @@ public class TimerControl : MonoBehaviour
             Start3();
         }
 
-        //Wave2?¿½Ús?¿½Ìï¿½?¿½?¿½?¿½?¿½?¿½?¿½
+        //Wave2?ï¿½ï¿½Ús?ï¿½ï¿½Ìï¿½?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½
         if (totalTime < 0 && count == 0)
         {
             totalTime = 30;
