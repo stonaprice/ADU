@@ -27,12 +27,14 @@ public class UnitStateChild_Attack : StateChildBase
 
     public override int StateUpdate()
     {
-        // ƒQ[ƒ€ŠJn‚©‚çC‚à‚µ‚­‚ÍUŒ‚‚µ‚Ä‚©‚ç‚ÌŠÔ
+        // ã‚²ãƒ¼ãƒ é–‹å§‹ã‹ã‚‰ï¼Œã‚‚ã—ãã¯æ”»æ’ƒã—ã¦ã‹ã‚‰ã®æ™‚é–“
         countTime += Time.deltaTime;
 
         if(target){
             CheckDistance();
         }
+
+        // Debug.Log(countTime);
 
         if(isAttacking){
             if(1000 < countTime){
@@ -47,10 +49,10 @@ public class UnitStateChild_Attack : StateChildBase
 
     void CheckDistance()
     {
-        // ƒvƒŒƒCƒ„[‚Ü‚Å‚Ì‹——£i“ñæ‚³‚ê‚½’lj‚ğæ“¾
-        // sqrMagnitude‚Í•½•ûª‚ÌŒvZ‚ğs‚í‚È‚¢‚Ì‚Å‚‘¬B‹——£‚ğ”äŠr‚·‚é‚¾‚¯‚È‚ç‚»‚¿‚ç‚ğg‚Á‚½•û‚ª—Ç‚¢
+        // ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ã¾ã§ã®è·é›¢ï¼ˆäºŒä¹—ã•ã‚ŒãŸå€¤ï¼‰ã‚’å–å¾—
+        // sqrMagnitudeã¯å¹³æ–¹æ ¹ã®è¨ˆç®—ã‚’è¡Œã‚ãªã„ã®ã§é«˜é€Ÿã€‚è·é›¢ã‚’æ¯”è¼ƒã™ã‚‹ã ã‘ãªã‚‰ãã¡ã‚‰ã‚’ä½¿ã£ãŸæ–¹ãŒè‰¯ã„
         float diff = (target.transform.position - this.transform.position).sqrMagnitude;
-        // ‹——£‚ğ”äŠrB”äŠr‘ÎÛ‚à“ñæ‚·‚é‚Ì‚ğ–Y‚ê‚¸‚É
+        // è·é›¢ã‚’æ¯”è¼ƒã€‚æ¯”è¼ƒå¯¾è±¡ã‚‚äºŒä¹—ã™ã‚‹ã®ã‚’å¿˜ã‚Œãšã«
         if (attackDistance * attackDistance < diff)
         {
             isAttacking = false;

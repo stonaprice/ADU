@@ -5,16 +5,19 @@ using UnityEngine;
 public class FireBullet : MonoBehaviour
 {
     [SerializeField]
-    [Tooltip("’e‚Ì”­ËêŠ")]
+    [Tooltip("å¼¾ã®ç™ºå°„å ´æ‰€")]
     private GameObject firingPoint;
 
     [SerializeField]
-    [Tooltip("’e")]
+    [Tooltip("å¼¾")]
     private GameObject bullet;
 
     [SerializeField]
-    [Tooltip("’e‚Ì‘¬‚³")]
+    [Tooltip("å¼¾ã®é€Ÿã•")]
     private float speed = 10f;
+
+    private float timer = 0;
+    private float attackInterval = 1000;
 
     private GameObject newBall;
     private bool isAttacking = false;
@@ -30,53 +33,56 @@ public class FireBullet : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // ƒXƒy[ƒXƒL[‚ª‰Ÿ‚³‚ê‚½‚©‚ğ”»’è
+        // if(attackInterval <= timer){
+            if(isAttacking){
+                // å¼¾ã‚’ç™ºå°„ã™ã‚‹
+                LauncherShot();
+
+                isAttacking = false;
+            }
+        // }
+        // ã‚¹ãƒšãƒ¼ã‚¹ã‚­ãƒ¼ãŒæŠ¼ã•ã‚ŒãŸã‹ã‚’åˆ¤å®š
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            // ’e‚ğ”­Ë‚·‚é
+            // å¼¾ã‚’ç™ºå°„ã™ã‚‹
             LauncherShot();
         }
 
-        if(isAttacking){
-            // ’e‚ğ”­Ë‚·‚é
-            LauncherShot();
-
-            isAttacking = false;
-        }
+        // timer += Time.deltaTime;
 
         // if(isSwitch)
         // {
         //     float step = speed * Time.deltaTime;
 
-        //     // š‚Å“¾‚ç‚ê‚½closeEnemy‚ğ–Ú“I’n‚Æ‚µ‚Äİ’è‚·‚éB
+        //     // â˜…ã§å¾—ã‚‰ã‚ŒãŸcloseEnemyã‚’ç›®çš„åœ°ã¨ã—ã¦è¨­å®šã™ã‚‹ã€‚
         //     newBall.transform.position = Vector3.MoveTowards(newBall.transform.position, closeEnemy.transform.position, step);
         // }
     }
 
     /// <summary>
-	/// ’e‚Ì”­Ë
+	/// å¼¾ã®ç™ºå°„
 	/// </summary>
     private void LauncherShot()
     {
-        // ’e‚ğ”­Ë‚·‚éêŠ‚ğæ“¾
+        // å¼¾ã‚’ç™ºå°„ã™ã‚‹å ´æ‰€ã‚’å–å¾—
         Vector3 bulletPosition = firingPoint.transform.position;
-        // ã‚Åæ“¾‚µ‚½êŠ‚ÉA"bullet"‚ÌPrefab‚ğoŒ»‚³‚¹‚é
+        // ä¸Šã§å–å¾—ã—ãŸå ´æ‰€ã«ã€"bullet"ã®Prefabã‚’å‡ºç¾ã•ã›ã‚‹
         newBall = Instantiate(bullet, bulletPosition, transform.rotation);
-        // // oŒ»‚³‚¹‚½ƒ{[ƒ‹‚Ìforward(z²•ûŒü)
+        // // å‡ºç¾ã•ã›ãŸãƒœãƒ¼ãƒ«ã®forward(zè»¸æ–¹å‘)
         // Vector3 direction = newBall.transform.forward;
-        // // ’e‚Ì”­Ë•ûŒü‚ÉnewBall‚Ìz•ûŒü(ƒ[ƒJƒ‹À•W)‚ğ“ü‚êA’eƒIƒuƒWƒFƒNƒg‚Ìrigidbody‚ÉÕŒ‚—Í‚ğ‰Á‚¦‚é
+        // // å¼¾ã®ç™ºå°„æ–¹å‘ã«newBallã®zæ–¹å‘(ãƒ­ãƒ¼ã‚«ãƒ«åº§æ¨™)ã‚’å…¥ã‚Œã€å¼¾ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã®rigidbodyã«è¡æ’ƒåŠ›ã‚’åŠ ãˆã‚‹
         // newBall.GetComponent<Rigidbody>().AddForce(direction * speed, ForceMode.Impulse);
-        // oŒ»‚³‚¹‚½ƒ{[ƒ‹‚Ì–¼‘O‚ğ"bullet"‚É•ÏX
+        // å‡ºç¾ã•ã›ãŸãƒœãƒ¼ãƒ«ã®åå‰ã‚’"bullet"ã«å¤‰æ›´
         newBall.name = bullet.name;
-        // oŒ»‚³‚¹‚½ƒ{[ƒ‹‚ğ0.8•bŒã‚ÉÁ‚·
+        // å‡ºç¾ã•ã›ãŸãƒœãƒ¼ãƒ«ã‚’0.8ç§’å¾Œã«æ¶ˆã™
         Destroy(newBall, 2.0f);
         // Invoke("SwitchOff", 2.0f);
 
 
-        // // u‰Šú’lv‚Ìİ’è
+        // // ã€ŒåˆæœŸå€¤ã€ã®è¨­å®š
         // float closeDist = 1000;
 
-        // // ƒ^ƒO‚ğg‚Á‚Ä‰æ–Êã‚Ì‘S‚Ä‚Ì“G‚Ìî•ñ‚ğæ“¾
+        // // ã‚¿ã‚°ã‚’ä½¿ã£ã¦ç”»é¢ä¸Šã®å…¨ã¦ã®æ•µã®æƒ…å ±ã‚’å–å¾—
         // if(this.gameObject.CompareTag("PlayerUnit")){
         //     // targets1 = GameObject.FindGameObjectsWithTag("Enemy");
         //     // targets2 = GameObject.FindGameObjectsWithTag("EnemyUnit");
@@ -98,26 +104,26 @@ public class FireBullet : MonoBehaviour
 
         // foreach (GameObject t in targets)
         // {
-        //     // ƒRƒ“ƒ\[ƒ‹‰æ–Ê‚Å‚ÌŠm”F—pƒR[ƒh
+        //     // ã‚³ãƒ³ã‚½ãƒ¼ãƒ«ç”»é¢ã§ã®ç¢ºèªç”¨ã‚³ãƒ¼ãƒ‰
         //     print(Vector3.Distance(newBall.transform.position, t.transform.position));
 
-        //     // ‚±‚ÌƒIƒuƒWƒFƒNƒgi–C’ej‚Æ“G‚Ü‚Å‚Ì‹——£‚ğŒv‘ª
+        //     // ã“ã®ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆï¼ˆç ²å¼¾ï¼‰ã¨æ•µã¾ã§ã®è·é›¢ã‚’è¨ˆæ¸¬
         //     float tDist = Vector3.Distance(newBall.transform.position, t.transform.position);
 
-        //     // ‚à‚µ‚àu‰Šú’lv‚æ‚è‚àuŒv‘ª‚µ‚½“G‚Ü‚Å‚Ì‹——£v‚Ì•û‚ª‹ß‚¢‚È‚ç‚ÎA
+        //     // ã‚‚ã—ã‚‚ã€ŒåˆæœŸå€¤ã€ã‚ˆã‚Šã‚‚ã€Œè¨ˆæ¸¬ã—ãŸæ•µã¾ã§ã®è·é›¢ã€ã®æ–¹ãŒè¿‘ã„ãªã‚‰ã°ã€
         //     if(closeDist > tDist)
         //     {
-        //         // ucloseDistv‚ğutDisti‚»‚Ì“G‚Ü‚Å‚Ì‹——£jv‚É’u‚«Š·‚¦‚éB
-        //         // ‚±‚ê‚ğŒJ‚è•Ô‚·‚±‚Æ‚ÅAˆê”Ô‹ß‚¢“G‚ğŒ©‚Â‚¯o‚·‚±‚Æ‚ª‚Å‚«‚éB
+        //         // ã€ŒcloseDistã€ã‚’ã€ŒtDistï¼ˆãã®æ•µã¾ã§ã®è·é›¢ï¼‰ã€ã«ç½®ãæ›ãˆã‚‹ã€‚
+        //         // ã“ã‚Œã‚’ç¹°ã‚Šè¿”ã™ã“ã¨ã§ã€ä¸€ç•ªè¿‘ã„æ•µã‚’è¦‹ã¤ã‘å‡ºã™ã“ã¨ãŒã§ãã‚‹ã€‚
         //         closeDist = tDist;
 
-        //         // ˆê”Ô‹ß‚¢“G‚Ìî•ñ‚ğcloseEnemy‚Æ‚¢‚¤•Ï”‚ÉŠi”[‚·‚éišj
+        //         // ä¸€ç•ªè¿‘ã„æ•µã®æƒ…å ±ã‚’closeEnemyã¨ã„ã†å¤‰æ•°ã«æ ¼ç´ã™ã‚‹ï¼ˆâ˜…ï¼‰
         //         closeEnemy = t;
         //     }
         // }
 
         // SwitchOn();
-        // // // –C’e‚ª¶¬‚³‚ê‚Ä0.5•bŒã‚ÉAˆê”Ô‹ß‚¢“G‚ÉŒü‚©‚Á‚ÄˆÚ“®‚ğŠJn‚·‚éB
+        // // // ç ²å¼¾ãŒç”Ÿæˆã•ã‚Œã¦0.5ç§’å¾Œã«ã€ä¸€ç•ªè¿‘ã„æ•µã«å‘ã‹ã£ã¦ç§»å‹•ã‚’é–‹å§‹ã™ã‚‹ã€‚
         // // Invoke("SwitchOn", 0.5f);
     }
 

@@ -4,7 +4,8 @@ using UnityEngine;
  
 public class CameraMove : MonoBehaviour
 {
-    public GameObject target;
+    [SerializeField]
+    private GameObject target;
     private Vector3 distance;
  
     void Start()
@@ -15,5 +16,9 @@ public class CameraMove : MonoBehaviour
     void LateUpdate()
     {
         transform.position = target.transform.position + distance;
+    }
+
+    public void SetTarget(GameObject target){
+        this.target = target;
     }
 }
