@@ -7,9 +7,7 @@ public class StartText : MonoBehaviour
 {
     [SerializeField]
     private TextMeshProUGUI Text;
-    public GameObject button1;
-    public GameObject button2;
-    public GameObject button3;
+    public GameObject cardbutton;
     public SummonUnit summonUnit;
     public CostControl costControl;
     //public GameObject sum;
@@ -20,9 +18,7 @@ public class StartText : MonoBehaviour
         this.gameObject.SetActive(false);
 
         //?��{?��^?��?��?��?��?��\?��?��?��ɂ�?��?��
-        button1.SetActive(false);
-        button2.SetActive(false);
-        button3.SetActive(false);
+        cardbutton.SetActive(false);
         //sum.SetActive(false);
 
         //?��X?��N?��?��?��v?��g?��̖�?��?��?��?��?��i?��?��?��?��?��?��ł�?��Ȃ�?��悤?��ɂ�?��邽?��߁j
@@ -66,9 +62,7 @@ public class StartText : MonoBehaviour
         this.gameObject.SetActive(false);
 
         //?��{?��^?��?��?��?��\?��?��?��ɂ�?��?��
-        button1.SetActive(true);
-        button2.SetActive(true);
-        button3.SetActive(true);
+        cardbutton.SetActive(true);
         //Invoke(nameof(KusoUIOn),2.5f);
 
         //?��X?��N?��?��?��v?��g?��̗L?��?��?��?��?��i?��?��?��?��?��?��ĊJ?��j
