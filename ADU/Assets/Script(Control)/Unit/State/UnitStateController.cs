@@ -14,23 +14,23 @@ public class UnitStateController : StateControllerBase
         MoveToEnemy,
         Attack,
     }
-    // ‰Šú‰»ˆ—
+    // åˆæœŸåŒ–å‡¦ç†
     public override void Initialize(int initializeStateType)
     {
-        // “ƒ‚ÖˆÚ“®
+        // å¡”ã¸ç§»å‹•
         stateDic[(int)StateType.MoveToTower] = gameObject.AddComponent<UnitStateChild_MoveToTower>();
         stateDic[(int)StateType.MoveToTower].Initialize((int)StateType.MoveToTower);
 
-        // “¯‚¶ƒIƒuƒWƒFƒNƒg“à‚Ì‘¼‚ÌƒXƒNƒŠƒvƒg‚ğQÆ‚·‚éê‡
+        // åŒã˜ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆå†…ã®ä»–ã®ã‚¹ã‚¯ãƒªãƒ—ãƒˆã‚’å‚ç…§ã™ã‚‹å ´åˆ
 		UnitStateChild_MoveToTower mmt = GetComponent<UnitStateChild_MoveToTower>();
         mmt.SetTower(tower);
         mmt.SetUnit(unit);
 
-        // “G‚ÖˆÚ“®
+        // æ•µã¸ç§»å‹•
         stateDic[(int)StateType.MoveToEnemy] = gameObject.AddComponent<UnitStateChild_MoveToEnemy>();
         stateDic[(int)StateType.MoveToEnemy].Initialize((int)StateType.MoveToEnemy);
 
-        // UŒ‚
+        // æ”»æ’ƒ
         stateDic[(int)StateType.Attack] = gameObject.AddComponent<UnitStateChild_Attack>();
         stateDic[(int)StateType.Attack].Initialize((int)StateType.Attack);
 
@@ -40,10 +40,10 @@ public class UnitStateController : StateControllerBase
         stateDic[CurrentState].OnEnter();
     }
 
-    // ‹ß‚­‚É“G‚ª‚¢‚éê‡
+    // è¿‘ãã«æ•µãŒã„ã‚‹å ´åˆ
     public void OnDetectObject(Collider collider)
     {
-        // // “¯‚¶ƒIƒuƒWƒFƒNƒg“à‚Ì‘¼‚ÌƒXƒNƒŠƒvƒg‚ğQÆ‚·‚éê‡
+        // // åŒã˜ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆå†…ã®ä»–ã®ã‚¹ã‚¯ãƒªãƒ—ãƒˆã‚’å‚ç…§ã™ã‚‹å ´åˆ
 		// UnitStateChild_MoveToTower mtt = GetComponent<UnitStateChild_MoveToTower>();
         // UnitStateChild_MoveToEnemy mte = GetComponent<UnitStateChild_MoveToEnemy>();
 

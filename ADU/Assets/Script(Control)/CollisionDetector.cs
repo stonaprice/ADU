@@ -8,16 +8,16 @@ public class CollisionDetector : MonoBehaviour
     [SerializeField] private TriggerEvent onTriggerStay = new TriggerEvent();
 
     /// <summary>
-    /// Is Trigger‚ªON‚Å‘¼‚ÌCollider‚Æd‚È‚Á‚Ä‚¢‚é‚Æ‚«‚ÉŒÄ‚Î‚ê‘±‚¯‚é
+    /// Is TriggerãŒONã§ä»–ã®Colliderã¨é‡ãªã£ã¦ã„ã‚‹ã¨ãã«å‘¼ã°ã‚Œç¶šã‘ã‚‹
     /// </summary>
     /// <param name="other"></param>
     private void OnTriggerStay(Collider other)
     {
-        // Inspectorƒ^ƒu‚ÌonTriggerStay‚Åw’è‚³‚ê‚½ˆ—‚ğÀs‚·‚é
+        // Inspectorã‚¿ãƒ–ã®onTriggerStayã§æŒ‡å®šã•ã‚ŒãŸå‡¦ç†ã‚’å®Ÿè¡Œã™ã‚‹
         onTriggerStay.Invoke(other);
     }
 
-    // UnityEvent‚ğŒp³‚µ‚½ƒNƒ‰ƒX‚É[Serializable]‘®«‚ğ•t—^‚·‚é‚±‚Æ‚ÅAInspectorƒEƒCƒ“ƒhƒEã‚É•\¦‚Å‚«‚é‚æ‚¤‚É‚È‚éB
+    // UnityEventã‚’ç¶™æ‰¿ã—ãŸã‚¯ãƒ©ã‚¹ã«[Serializable]å±æ€§ã‚’ä»˜ä¸ã™ã‚‹ã“ã¨ã§ã€Inspectorã‚¦ã‚¤ãƒ³ãƒ‰ã‚¦ä¸Šã«è¡¨ç¤ºã§ãã‚‹ã‚ˆã†ã«ãªã‚‹ã€‚
     [Serializable]
     public class TriggerEvent : UnityEvent<Collider>
     {

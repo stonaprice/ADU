@@ -48,7 +48,7 @@ public class UnitMove : MonoBehaviour
     //     float step = speed * Time.deltaTime;
 
 
-    //     //Ql
+    //     //å‚è€ƒ
     //     transform.position = Vector3.MoveTowards(transform.position, target.transform.position, step);
     // }
 }

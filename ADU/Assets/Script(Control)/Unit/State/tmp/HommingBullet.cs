@@ -14,12 +14,12 @@ public class HommingBullet : MonoBehaviour
     private GameObject[] targets2;
     private GameObject[] targets3;
 
-    // �u�����l�v�̐ݒ�
+    // 「初期値」の設定
     private float closeDist = 1000;
 
     private void Start()
     {
-        // �^�O���g���ĉ�ʏ�̑S�Ă̓G�̏����擾
+        // タグを使って画面上の全ての敵の情報を取得
         if(this.gameObject.CompareTag("PlayerWeapon")){
             // targets1 = GameObject.FindGameObjectsWithTag("Enemy");
             targets2 = GameObject.FindGameObjectsWithTag("EnemyUnit");
@@ -33,7 +33,7 @@ public class HommingBullet : MonoBehaviour
 
         // targets = GameObject.FindGameObjectsWithTag("EnemyTower");
 
-        // // �u�����l�v�̐ݒ�
+        // // 「初期値」の設定
         // float closeDist = 1000;
 
         if(this.gameObject.CompareTag("EnemyWeapon")){
@@ -49,20 +49,20 @@ public class HommingBullet : MonoBehaviour
         }
 
         SwitchOn();
-        // // �C�e�����������0.5�b��ɁA��ԋ߂��G�Ɍ������Ĉړ����J�n����B
+        // // 砲弾が生成されて0.5秒後に、一番近い敵に向かって移動を開始する。
         // Invoke("SwitchOn", 0.5f);
     }
 
     void Update()
     {
         if(isSwitch){
-            // closeEnemy���Ȃ��ꍇStart�ɖ߂�
+            // closeEnemyがない場合Startに戻る
             if(!closeEnemy){
                 Start();
             }else{
                 float step = speed * Time.deltaTime;
 
-                // ���œ���ꂽcloseEnemy��ړI�n�Ƃ��Đݒ肷��B
+                // ★で得られたcloseEnemyを目的地として設定する。
                 transform.position = Vector3.MoveTowards(transform.position, closeEnemy.transform.position, step);
             }
         }
@@ -71,19 +71,19 @@ public class HommingBullet : MonoBehaviour
     void SearchNearest(GameObject t){
 
         if(t){
-            // �R���\�[����ʂł̊m�F�p�R�[�h
+            // コンソール画面での確認用コード
             print(Vector3.Distance(transform.position, t.transform.position));
-            // ���̃I�u�W�F�N�g�i�C�e�j�ƓG�܂ł̋������v��
+            // このオブジェクト（砲弾）と敵までの距離を計測
             float tDist = Vector3.Distance(transform.position, t.transform.position);
 
-            // �������u�����l�v�����u�v�������G�܂ł̋����v�̕����߂��Ȃ�΁A
+            // もしも「初期値」よりも「計測した敵までの距離」の方が近いならば、
             if(closeDist > tDist)
             {
-                // �ucloseDist�v���utDist�i���̓G�܂ł̋����j�v�ɒu��������B
-                // ������J��Ԃ����ƂŁA��ԋ߂��G�������o�����Ƃ��ł���B
+                // 「closeDist」を「tDist（その敵までの距離）」に置き換える。
+                // これを繰り返すことで、一番近い敵を見つけ出すことができる。
                 closeDist = tDist;
 
-                // ��ԋ߂��G�̏���closeEnemy�Ƃ����ϐ��Ɋi�[����i���j
+                // 一番近い敵の情報をcloseEnemyという変数に格納する（★）
                 closeEnemy = t;
             }
         }

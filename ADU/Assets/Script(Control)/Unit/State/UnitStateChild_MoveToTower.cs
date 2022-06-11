@@ -17,7 +17,7 @@ public class UnitStateChild_MoveToTower : StateChildBase
     private GameObject[] targets2;
     private GameObject[] targets3;
 
-    // u‰Šú’lv‚Ìİ’è
+    // ã€ŒåˆæœŸå€¤ã€ã®è¨­å®š
     private float closeDist = 1000;
 
     // void Start(){
@@ -34,7 +34,7 @@ public class UnitStateChild_MoveToTower : StateChildBase
         navMeshAgent = unit.GetComponent<UnityEngine.AI.NavMeshAgent>();
         navMeshAgent.destination = tower.position;
 
-        // ƒ^ƒO‚ğg‚Á‚Ä‰æ–Êã‚Ì‘S‚Ä‚Ì“G‚Ìî•ñ‚ğæ“¾
+        // ã‚¿ã‚°ã‚’ä½¿ã£ã¦ç”»é¢ä¸Šã®å…¨ã¦ã®æ•µã®æƒ…å ±ã‚’å–å¾—
         if(this.gameObject.CompareTag("PlayerUnit")){
             // targets1 = GameObject.FindGameObjectsWithTag("Enemy");
             targets2 = GameObject.FindGameObjectsWithTag("EnemyUnit");
@@ -84,20 +84,20 @@ public class UnitStateChild_MoveToTower : StateChildBase
     }
 
     void SearchNearest(GameObject t){
-        // // ƒRƒ“ƒ\[ƒ‹‰æ–Ê‚Å‚ÌŠm”F—pƒR[ƒh
+        // // ã‚³ãƒ³ã‚½ãƒ¼ãƒ«ç”»é¢ã§ã®ç¢ºèªç”¨ã‚³ãƒ¼ãƒ‰
         // print(Vector3.Distance(transform.position, t.transform.position));
         if(t){
-            // ‚±‚ÌƒIƒuƒWƒFƒNƒgi–C’ej‚Æ“G‚Ü‚Å‚Ì‹——£‚ğŒv‘ª
+            // ã“ã®ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆï¼ˆç ²å¼¾ï¼‰ã¨æ•µã¾ã§ã®è·é›¢ã‚’è¨ˆæ¸¬
             float tDist = Vector3.Distance(transform.position, t.transform.position);
 
-            // ‚à‚µ‚àu‰Šú’lv‚æ‚è‚àuŒv‘ª‚µ‚½“G‚Ü‚Å‚Ì‹——£v‚Ì•û‚ª‹ß‚¢‚È‚ç‚ÎA
+            // ã‚‚ã—ã‚‚ã€ŒåˆæœŸå€¤ã€ã‚ˆã‚Šã‚‚ã€Œè¨ˆæ¸¬ã—ãŸæ•µã¾ã§ã®è·é›¢ã€ã®æ–¹ãŒè¿‘ã„ãªã‚‰ã°ã€
             if(closeDist > tDist)
             {
-                // ucloseDistv‚ğutDisti‚»‚Ì“G‚Ü‚Å‚Ì‹——£jv‚É’u‚«Š·‚¦‚éB
-                // ‚±‚ê‚ğŒJ‚è•Ô‚·‚±‚Æ‚ÅAˆê”Ô‹ß‚¢“G‚ğŒ©‚Â‚¯o‚·‚±‚Æ‚ª‚Å‚«‚éB
+                // ã€ŒcloseDistã€ã‚’ã€ŒtDistï¼ˆãã®æ•µã¾ã§ã®è·é›¢ï¼‰ã€ã«ç½®ãæ›ãˆã‚‹ã€‚
+                // ã“ã‚Œã‚’ç¹°ã‚Šè¿”ã™ã“ã¨ã§ã€ä¸€ç•ªè¿‘ã„æ•µã‚’è¦‹ã¤ã‘å‡ºã™ã“ã¨ãŒã§ãã‚‹ã€‚
                 closeDist = tDist;
 
-                // ˆê”Ô‹ß‚¢“G‚Ìî•ñ‚ğcloseEnemy‚Æ‚¢‚¤•Ï”‚ÉŠi”[‚·‚éišj
+                // ä¸€ç•ªè¿‘ã„æ•µã®æƒ…å ±ã‚’closeEnemyã¨ã„ã†å¤‰æ•°ã«æ ¼ç´ã™ã‚‹ï¼ˆâ˜…ï¼‰
                 closeEnemy = t;
             }
         }
@@ -105,10 +105,10 @@ public class UnitStateChild_MoveToTower : StateChildBase
 
     void CheckDistance()
     {
-        // ƒvƒŒƒCƒ„[‚Ü‚Å‚Ì‹——£i“ñæ‚³‚ê‚½’lj‚ğæ“¾
-        // sqrMagnitude‚Í•½•ûª‚ÌŒvZ‚ğs‚í‚È‚¢‚Ì‚Å‚‘¬B‹——£‚ğ”äŠr‚·‚é‚¾‚¯‚È‚ç‚»‚¿‚ç‚ğg‚Á‚½•û‚ª—Ç‚¢
+        // ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ã¾ã§ã®è·é›¢ï¼ˆäºŒä¹—ã•ã‚ŒãŸå€¤ï¼‰ã‚’å–å¾—
+        // sqrMagnitudeã¯å¹³æ–¹æ ¹ã®è¨ˆç®—ã‚’è¡Œã‚ãªã„ã®ã§é«˜é€Ÿã€‚è·é›¢ã‚’æ¯”è¼ƒã™ã‚‹ã ã‘ãªã‚‰ãã¡ã‚‰ã‚’ä½¿ã£ãŸæ–¹ãŒè‰¯ã„
         float diff = (closeEnemy.transform.position - this.transform.position).sqrMagnitude;
-        // ‹——£‚ğ”äŠrB”äŠr‘ÎÛ‚à“ñæ‚·‚é‚Ì‚ğ–Y‚ê‚¸‚É
+        // è·é›¢ã‚’æ¯”è¼ƒã€‚æ¯”è¼ƒå¯¾è±¡ã‚‚äºŒä¹—ã™ã‚‹ã®ã‚’å¿˜ã‚Œãšã«
         if (diff < findDistance * findDistance)
         {
             isFinding = true;

@@ -12,7 +12,7 @@ public class ToGameOver : MonoBehaviour
 
     public void ChangeScene()
     {
-        //GameOverƒV[ƒ“‚ÖˆÚs
+        //GameOverã‚·ãƒ¼ãƒ³ã¸ç§»è¡Œ
         FadeManager.Instance.LoadScene("GameOver", 0.3f);
     }
 }

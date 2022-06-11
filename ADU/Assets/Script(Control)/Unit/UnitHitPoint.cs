@@ -5,16 +5,16 @@ using UnityEngine.UI;
 
 public class UnitHitPoint : MonoBehaviour
 {
-    // ƒ†ƒjƒbƒg‚ÌÅ‘åHP
+    // ãƒ¦ãƒ‹ãƒƒãƒˆã®æœ€å¤§HP
 	[SerializeField]
 	private int maxHp = 3;
-    // ƒ†ƒjƒbƒg‚ÌŒ»İHP
+    // ãƒ¦ãƒ‹ãƒƒãƒˆã®ç¾åœ¨HP
 	// [SerializeField]
 	private int currentHp = 3;
-    // HP•\¦—pUI
+    // HPè¡¨ç¤ºç”¨UI
     [SerializeField]
     private GameObject HPUI;
-    // HP•\¦—pƒXƒ‰ƒCƒ_[
+    // HPè¡¨ç¤ºç”¨ã‚¹ãƒ©ã‚¤ãƒ€ãƒ¼
     private Slider hpSlider;
 
     // Start is called before the first frame update
@@ -31,7 +31,7 @@ public class UnitHitPoint : MonoBehaviour
 
     }
 
-    // ”íƒ_ƒ[ƒWˆ—
+    // è¢«ãƒ€ãƒ¡ãƒ¼ã‚¸å‡¦ç†
     public void Damage(int value)
     {
         if(value <= 0)
@@ -41,7 +41,7 @@ public class UnitHitPoint : MonoBehaviour
 
         currentHp -= value;
 
-        // HP•\¦—pUI‚ÌƒAƒbƒvƒf[ƒg
+        // HPè¡¨ç¤ºç”¨UIã®ã‚¢ãƒƒãƒ—ãƒ‡ãƒ¼ãƒˆ
         UpdateHPValue();
 
         if(currentHp <= 0)
@@ -50,13 +50,13 @@ public class UnitHitPoint : MonoBehaviour
         }
     }
 
-  // €–S‚Ìˆ—
+  // æ­»äº¡æ™‚ã®å‡¦ç†
     void Dead()
     {
         Destroy(gameObject);
     }
 
-    //•Ší‚ÉG‚ê‚½‚çƒ_ƒ[ƒW
+    //æ­¦å™¨ã«è§¦ã‚ŒãŸã‚‰ãƒ€ãƒ¡ãƒ¼ã‚¸
     protected void OnCollisionEnter(Collision collision)
     {
         if(this.gameObject.CompareTag("PlayerUnit")){

@@ -6,20 +6,20 @@ public abstract class StateControllerBase : MonoBehaviour
 {
     protected Dictionary<int, StateChildBase> stateDic = new Dictionary<int, StateChildBase>();
 
-    // Œ»İ‚ÌƒXƒe[ƒg
+    // ç¾åœ¨ã®ã‚¹ãƒ†ãƒ¼ãƒˆ
     public int CurrentState { protected set; get; }
 
-    // ‰Šú‰»ˆ—
+    // åˆæœŸåŒ–å‡¦ç†
     public abstract void Initialize(int initializeStateType);
 
-    // XVˆ—
+    // æ›´æ–°å‡¦ç†
     public void UpdateSequence()
     {
         int nextState = (int)stateDic[CurrentState].StateUpdate();
         AutoStateTransitionSequence(nextState);
     }
 
-    // ƒXƒe[ƒg‚Ì©“®‘JˆÚ
+    // ã‚¹ãƒ†ãƒ¼ãƒˆã®è‡ªå‹•é·ç§»
     protected void AutoStateTransitionSequence(int nextState)
     {
         if (CurrentState == nextState)

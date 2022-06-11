@@ -12,7 +12,7 @@ public class MoveToTarget : MonoBehaviour
         float step = speed * Time.deltaTime;
 
 
-        //�����̈ʒu�A�^�[�Q�b�g�A���x
+        //自分の位置、ターゲット、速度
         transform.position = Vector3.MoveTowards(transform.position, target.transform.position, step);
     }
 }

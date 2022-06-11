@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class UnitClient : MonoBehaviour
 {
-    // ƒXƒe[ƒgƒRƒ“ƒgƒ[ƒ‰[
+    // ã‚¹ãƒ†ãƒ¼ãƒˆã‚³ãƒ³ãƒˆãƒ­ãƒ¼ãƒ©ãƒ¼
     [SerializeField] UnitStateController stateController = default;
 
     [SerializeField] private Transform tower;
@@ -23,11 +23,11 @@ public class UnitClient : MonoBehaviour
         stateController.UpdateSequence();
     }
 
-    // // ‹ß‚­‚É“G‚ª‚¢‚éê‡
+    // // è¿‘ãã«æ•µãŒã„ã‚‹å ´åˆ
     // public void OnDetectObject(Collider collider)
     // {
     //     Debug.Log("sekkin");
-    //     // “¯‚¶ƒIƒuƒWƒFƒNƒg“à‚Ì‘¼‚ÌƒXƒNƒŠƒvƒg‚ğQÆ‚·‚éê‡
+    //     // åŒã˜ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆå†…ã®ä»–ã®ã‚¹ã‚¯ãƒªãƒ—ãƒˆã‚’å‚ç…§ã™ã‚‹å ´åˆ
 
     //     Debug.Log(collider.tag);
     // }

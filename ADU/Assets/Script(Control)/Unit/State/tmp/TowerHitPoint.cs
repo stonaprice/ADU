@@ -5,16 +5,16 @@ using UnityEngine.UI;
 
 public class TowerHitPoint : MonoBehaviour
 {
-    // “ƒ‚ÌHP
+    // å¡”ã®HP
 	[SerializeField]
 	private int maxHp;
-    // “ƒ‚ÌHP
+    // å¡”ã®HP
     // [SerializeField]
     private int currentHp;
-    // HP•\¦—pUI
+    // HPè¡¨ç¤ºç”¨UI
     [SerializeField]
     private GameObject HPUI;
-    // HP•\¦—pƒXƒ‰ƒCƒ_[
+    // HPè¡¨ç¤ºç”¨ã‚¹ãƒ©ã‚¤ãƒ€ãƒ¼
     private Slider hpSlider;
 
     // Start is called before the first frame update
@@ -31,7 +31,7 @@ public class TowerHitPoint : MonoBehaviour
 
     }
 
-    // ”íƒ_ƒ[ƒWˆ—
+    // è¢«ãƒ€ãƒ¡ãƒ¼ã‚¸å‡¦ç†
     public void Damage(int value)
     {
         if(value <= 0)
@@ -43,7 +43,7 @@ public class TowerHitPoint : MonoBehaviour
 
         Debug.Log(currentHp);
 
-        // HP•\¦—pUI‚ÌƒAƒbƒvƒf[ƒg
+        // HPè¡¨ç¤ºç”¨UIã®ã‚¢ãƒƒãƒ—ãƒ‡ãƒ¼ãƒˆ
         UpdateHPValue();
 
         // if(currentHp <= 0)
@@ -52,7 +52,7 @@ public class TowerHitPoint : MonoBehaviour
         // }
     }
 
-    //•Ší‚ÉG‚ê‚½‚çƒ_ƒ[ƒW
+    //æ­¦å™¨ã«è§¦ã‚ŒãŸã‚‰ãƒ€ãƒ¡ãƒ¼ã‚¸
     protected void OnCollisionEnter(Collision collision)
     {
         if(this.gameObject.CompareTag("PlayerTower")){
@@ -72,11 +72,11 @@ public class TowerHitPoint : MonoBehaviour
     public void SetCurrentHp(int currentHp) {
         this.currentHp = currentHp;
 
-        // HP•\¦—pUI‚ÌƒAƒbƒvƒf[ƒg
+        // HPè¡¨ç¤ºç”¨UIã®ã‚¢ãƒƒãƒ—ãƒ‡ãƒ¼ãƒˆ
         UpdateHPValue();
 
         // if (currentHp <= 0) {
-        //     // HP•\¦—pUI‚ğ”ñ•\¦‚É‚·‚é
+        //     // HPè¡¨ç¤ºç”¨UIã‚’éè¡¨ç¤ºã«ã™ã‚‹
         //     HideStatusUI();
         // }
     }

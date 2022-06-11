@@ -14,7 +14,7 @@ public class UnitStateChild_MoveToEnemy : StateChildBase
     public override void OnEnter()
     {
         Debug.Log("suitou");
-        navMeshAgent = GetComponentInParent<UnityEngine.AI.NavMeshAgent>();//ˆê”Ôã‚Ìe‚É‚Â‚¢‚Ä‚¢‚éƒRƒ“ƒ|[ƒlƒ“ƒg‚ğæ“¾‚·‚é
+        navMeshAgent = GetComponentInParent<UnityEngine.AI.NavMeshAgent>();//ä¸€ç•ªä¸Šã®è¦ªã«ã¤ã„ã¦ã„ã‚‹ã‚³ãƒ³ãƒãƒ¼ãƒãƒ³ãƒˆã‚’å–å¾—ã™ã‚‹
         // navMeshAgent = GetComponent<UnityEngine.AI.NavMeshAgent>(); // NavMeshAgent
 
         UnitStateChild_MoveToTower mtt = GetComponent<UnitStateChild_MoveToTower>();
@@ -50,10 +50,10 @@ public class UnitStateChild_MoveToEnemy : StateChildBase
 
     void CheckDistance()
     {
-        // ƒvƒŒƒCƒ„[‚Ü‚Å‚Ì‹——£i“ñæ‚³‚ê‚½’lj‚ğæ“¾
-        // sqrMagnitude‚Í•½•ûª‚ÌŒvZ‚ğs‚í‚È‚¢‚Ì‚Å‚‘¬B‹——£‚ğ”äŠr‚·‚é‚¾‚¯‚È‚ç‚»‚¿‚ç‚ğg‚Á‚½•û‚ª—Ç‚¢
+        // ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ã¾ã§ã®è·é›¢ï¼ˆäºŒä¹—ã•ã‚ŒãŸå€¤ï¼‰ã‚’å–å¾—
+        // sqrMagnitudeã¯å¹³æ–¹æ ¹ã®è¨ˆç®—ã‚’è¡Œã‚ãªã„ã®ã§é«˜é€Ÿã€‚è·é›¢ã‚’æ¯”è¼ƒã™ã‚‹ã ã‘ãªã‚‰ãã¡ã‚‰ã‚’ä½¿ã£ãŸæ–¹ãŒè‰¯ã„
         float diff = (target.transform.position - this.transform.position).sqrMagnitude;
-        // ‹——£‚ğ”äŠrB”äŠr‘ÎÛ‚à“ñæ‚·‚é‚Ì‚ğ–Y‚ê‚¸‚É
+        // è·é›¢ã‚’æ¯”è¼ƒã€‚æ¯”è¼ƒå¯¾è±¡ã‚‚äºŒä¹—ã™ã‚‹ã®ã‚’å¿˜ã‚Œãšã«
         if (diff < attackDistance * attackDistance)
         {
             isAttacking = true;

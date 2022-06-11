@@ -4,29 +4,29 @@ using UnityEngine;
 
 public abstract class StateChildBase : MonoBehaviour
 {
-    // ƒXƒe[ƒgƒRƒ“ƒgƒ[ƒ‰[
+    // ã‚¹ãƒ†ãƒ¼ãƒˆã‚³ãƒ³ãƒˆãƒ­ãƒ¼ãƒ©ãƒ¼
     protected StateControllerBase controller;
 
-    // “o˜^‚³‚ê‚½ƒXƒe[ƒgƒ^ƒCƒv
+    // ç™»éŒ²ã•ã‚ŒãŸã‚¹ãƒ†ãƒ¼ãƒˆã‚¿ã‚¤ãƒ—
     protected int StateType { set; get; }
 
     private Transform tower;
     private GameObject unit;
 
-    // ‰Šú‰»ˆ—
+    // åˆæœŸåŒ–å‡¦ç†
     public virtual void Initialize(int stateType)
     {
         StateType = stateType;
         controller = GetComponent<StateControllerBase>();
     }
 
-    // “üêˆ—
+    // å…¥å ´å‡¦ç†
     public abstract void OnEnter();
 
-    // ‘Şêˆ—
+    // é€€å ´å‡¦ç†
     public abstract void OnExit();
 
-    /// XVˆ—
+    /// æ›´æ–°å‡¦ç†
     public abstract int StateUpdate();
 
     public void SetUnit(GameObject unit) {

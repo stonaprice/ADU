@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class UnitStatus : MonoBehaviour
 {
-    // // “ƒ‚ÌHP
+    // // å¡”ã®HP
 	// [SerializeField]
 	// private int maxHp;
-	// // ƒ†ƒjƒbƒg‚ÌHP
+	// // ãƒ¦ãƒ‹ãƒƒãƒˆã®HP
 	// [SerializeField]
 	// private int hp = 3;
-	// // ƒ†ƒjƒbƒg‚ÌUŒ‚—Í
+	// // ãƒ¦ãƒ‹ãƒƒãƒˆã®æ”»æ’ƒåŠ›
 	// [SerializeField]
 	// private int attackPower = 1;
 
@@ -22,5 +22,5 @@ public class UnitStatus : MonoBehaviour
 	// 	return hp;
 	// }
 
-    // //ŽQl ( https://gametukurikata.com/program/mystatus )
+    // //å‚è€ƒ ( https://gametukurikata.com/program/mystatus )
 }
