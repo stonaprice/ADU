@@ -7,15 +7,21 @@ public class StopControl : MonoBehaviour
 {
     [SerializeField]
     private TextMeshProUGUI Text;
-    public GameObject gameobject;
+    public GameObject cardbutton;
+    public GameObject starttext;
+    public GameObject CardSelectButton;
+    public GameObject TimerObject;
 
     public void StopMethod()
     {
-        gameobject.SetActive(false);
+        TimerObject.SetActive(false);
+        starttext.SetActive(false);
+        cardbutton.SetActive(false);
+        CardSelectButton.SetActive(false);
     }
 
     public void RestartMethod()
     {
-        gameobject.SetActive(true);
+        TimerObject.SetActive(true);
     }
 }

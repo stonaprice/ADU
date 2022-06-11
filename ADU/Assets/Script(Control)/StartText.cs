@@ -10,6 +10,7 @@ public class StartText : MonoBehaviour
     public GameObject cardbutton;
     public SummonUnit summonUnit;
     public CostControl costControl;
+    public GameObject CardSelectButton;
     //public GameObject sum;
 
     public void PlayStart()
@@ -54,6 +55,7 @@ public class StartText : MonoBehaviour
         Text.text = "START!!";
         //?��?��?��?��?��F?��?��ύX
         Text.color = Color.red;
+        CardSelectButton.SetActive(true);
     }
 
     void DisplayOff()
