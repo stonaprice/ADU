@@ -292,7 +292,8 @@ GameObject:
   - component: {fileID: 186832850}
   - component: {fileID: 186832849}
   - component: {fileID: 186832873}
-  - component: {fileID: 186832872}
+  - component: {fileID: 186832874}
+  - component: {fileID: 186832875}
   m_Layer: 0
   m_Name: Flowchart
   m_TagString: Untagged
@@ -327,7 +328,7 @@ MonoBehaviour:
   selectedBlocks:
   - {fileID: 186832820}
   selectedCommands:
-  - {fileID: 186832872}
+  - {fileID: 186832875}
   variables: []
   description: 
   stepPause: 0
@@ -365,7 +366,8 @@ MonoBehaviour:
   eventHandler: {fileID: 186832821}
   commandList:
   - {fileID: 186832847}
-  - {fileID: 186832872}
+  - {fileID: 186832874}
+  - {fileID: 186832875}
   - {fileID: 186832873}
   suppressAllAutoSelections: 0
 --- !u!114 &186832821
@@ -1082,27 +1084,6 @@ MonoBehaviour:
   move: 0
   shiftIntoPlace: 0
   waitUntilFinished: 0
---- !u!114 &186832872
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 186832817}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d81be3d7e84da460788dccea95a3313a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemId: 51
-  indentLevel: 0
-  _targetGameObject:
-    gameObjectRef: {fileID: 0}
-    gameObjectVal: {fileID: 599051376}
-  destroyInXSeconds:
-    floatRef: {fileID: 0}
-    floatVal: 0.3
-  targetGameObjectOLD: {fileID: 0}
 --- !u!114 &186832873
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -1124,6 +1105,41 @@ MonoBehaviour:
     stringVal: 
   startIndex: 0
   callMode: 1
+--- !u!114 &186832874
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 186832817}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17a200dbd67304446a3019434503338a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 51
+  indentLevel: 0
+  targetObject: {fileID: 529446482}
+  methodName: PlayAnimation
+  delay: 0
+--- !u!114 &186832875
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 186832817}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3315ad2ebb85443909a1203d56d9344e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 52
+  indentLevel: 0
+  _duration:
+    floatRef: {fileID: 0}
+    floatVal: 2
+  durationOLD: 0
 --- !u!1 &237567924
 GameObject:
   m_ObjectHideFlags: 0
@@ -2557,6 +2573,7 @@ GameObject:
   - component: {fileID: 529446486}
   - component: {fileID: 529446485}
   - component: {fileID: 529446484}
+  - component: {fileID: 529446487}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -2648,6 +2665,21 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!114 &529446487
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 529446482}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13e854db10d701d499962a45a256a5e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Cube: {fileID: 1082105644}
+  Panel1: {fileID: 904637086}
+  Panel2: {fileID: 1998526950}
 --- !u!1 &578573026
 GameObject:
   m_ObjectHideFlags: 0
@@ -4550,7 +4582,7 @@ RectTransform:
   m_GameObject: {fileID: 904637086}
   m_LocalRotation: {x: 0.000000029802315, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -100}
-  m_LocalScale: {x: 7, y: 7, z: 7}
+  m_LocalScale: {x: -7, y: 7, z: 7}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 529446483}
@@ -4581,7 +4613,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 4cba48f17d83f44828e13c3de6dc3aa1, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c5e876bc4e1934c41baff4b92f626a12, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -6396,7 +6428,7 @@ GameObject:
   - component: {fileID: 1082105647}
   - component: {fileID: 1082105646}
   m_Layer: 5
-  m_Name: RightDoor (1)
+  m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6409,7 +6441,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1082105644}
-  m_LocalRotation: {x: 0.000000029802315, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0.00000003633116, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -100}
   m_LocalScale: {x: 1.01, y: 1.01, z: 1.01}
   m_ConstrainProportionsScale: 1
@@ -6419,7 +6451,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -2, y: -0.000015258789}
+  m_AnchoredPosition: {x: -2, y: 373.84}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1082105646
@@ -6442,7 +6474,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 4cba48f17d83f44828e13c3de6dc3aa1, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 6dada37c5dabeeb448ee90153ad1b521, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -8410,7 +8442,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 4cba48f17d83f44828e13c3de6dc3aa1, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c5e876bc4e1934c41baff4b92f626a12, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
