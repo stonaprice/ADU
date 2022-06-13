@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.17535438, g: 0.21939678, b: 0.3017116, a: 1}
+  m_IndirectSpecularColor: {r: 0.17535397, g: 0.21939613, b: 0.30171043, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -314,11 +314,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 1
-  scrollPos: {x: 146.70212, y: 22.01065}
+  scrollPos: {x: 182.8609, y: 68.07596}
   variablesScrollPos: {x: 0, y: 0}
   variablesExpanded: 1
   blockViewHeight: 387
-  zoom: 1
+  zoom: 0.8014986
   scrollViewRect:
     serializedVersion: 2
     x: -343
@@ -327,8 +327,7 @@ MonoBehaviour:
     height: 859
   selectedBlocks:
   - {fileID: 186832822}
-  selectedCommands:
-  - {fileID: 186832871}
+  selectedCommands: []
   variables: []
   description: 
   stepPause: 0
@@ -356,7 +355,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: -75.70212
     y: 49.48935
-    width: 92
+    width: 97.41119
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -400,8 +399,8 @@ MonoBehaviour:
   nodeRect:
     serializedVersion: 2
     x: 84.25531
-    y: 53.936172
-    width: 71
+    y: 52.68851
+    width: 70.58644
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -1124,7 +1123,7 @@ MonoBehaviour:
   delay: 0
 --- !u!114 &186832875
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -4908,6 +4907,12 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 935675002}
   m_CullTransparentMesh: 1
+--- !u!1 &937615402 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2629211508657227554, guid: de0e6f9e7b6b79243b3559f999b0a634,
+    type: 3}
+  m_PrefabInstance: {fileID: 2629211507954854062}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &941934884
 GameObject:
   m_ObjectHideFlags: 0
@@ -5617,7 +5622,7 @@ MonoBehaviour:
   listEnhanceItems:
   - {fileID: 912020052}
   - {fileID: 1068261650}
-  - {fileID: 0}
+  - {fileID: 1877389200}
   factor: 0.001
 --- !u!114 &981203597
 MonoBehaviour:
@@ -7564,6 +7569,18 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 2629211507954854062}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1877389200 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2629211508657227582, guid: de0e6f9e7b6b79243b3559f999b0a634,
+    type: 3}
+  m_PrefabInstance: {fileID: 2629211507954854062}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 937615402}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 75f260c5d81b56e4da4faae507a0456d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1879366570
 GameObject:
   m_ObjectHideFlags: 0
@@ -8433,7 +8450,7 @@ PrefabInstance:
     - target: {fileID: 2629211508657227555, guid: de0e6f9e7b6b79243b3559f999b0a634,
         type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2629211508657227555, guid: de0e6f9e7b6b79243b3559f999b0a634,
         type: 3}
@@ -8804,7 +8821,7 @@ PrefabInstance:
     - target: {fileID: 4091600948247792641, guid: 0df958a085b51cb4297c4d0d7ccdc51f,
         type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4091600948247792641, guid: 0df958a085b51cb4297c4d0d7ccdc51f,
         type: 3}
@@ -8900,6 +8917,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Image
+      objectReference: {fileID: 0}
+    - target: {fileID: 4091600948247792642, guid: 0df958a085b51cb4297c4d0d7ccdc51f,
+        type: 3}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 4091600948247792644, guid: 0df958a085b51cb4297c4d0d7ccdc51f,
         type: 3}
@@ -8997,7 +9019,7 @@ PrefabInstance:
     - target: {fileID: 6290207163138672192, guid: a9d2c8564345e4143a6f84e992315598,
         type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6290207163138672192, guid: a9d2c8564345e4143a6f84e992315598,
         type: 3}
@@ -9320,7 +9342,7 @@ PrefabInstance:
         type: 3}
       propertyPath: button3
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 937615402}
     - target: {fileID: 7419734839025923207, guid: 177d08be8f1b3b6459f5eb9fac397815,
         type: 3}
       propertyPath: m_RootOrder
