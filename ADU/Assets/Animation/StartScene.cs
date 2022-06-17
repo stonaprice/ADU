@@ -28,9 +28,9 @@ public class StartScene : MonoBehaviour
                 .Append(Cube.transform.DOLocalMoveY(0,1.5f))
                 .Insert(1.7f,Cube.transform.DOScale(new Vector3(1f,1f),0.2f));
 
-        sequence.Join(Cube.transform.DOLocalMoveX(1000,1.7f)).SetEase(Ease.InOutCubic)
-                .Join(Panel1.transform.DOLocalMoveX(1000,1.7f)).SetEase(Ease.InOutCubic)
-                .Join(Panel2.transform.DOLocalMoveX(-1000,1.7f)).SetEase(Ease.InOutCubic);   
+        sequence.Join(Panel1.transform.DOLocalMoveX(2000,1.7f)).SetEase(Ease.InOutCubic)
+                .Join(Panel2.transform.DOLocalMoveX(-2000,1.7f)).SetEase(Ease.InOutCubic)
+                .Append(Cube.transform.DOLocalMoveX(-1500,1.7f)).SetEase(Ease.InOutCubic);   
     }
 
     private void Hinanjo()
