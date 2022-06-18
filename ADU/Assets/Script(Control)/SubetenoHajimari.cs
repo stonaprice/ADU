@@ -6,11 +6,18 @@ public class SubetenoHajimari : MonoBehaviour
 {
     public StartText starttext;
     public TimerControl timercontrol;
+    public SoundStart soundstart;
+    public AudioClip loop;
+    private AudioSource audioSource;
 
 
     //　会話終わったあとにWave1を呼び出すメソッド
     private void battleStart(){
         starttext.PlayStart();
+        soundstart.SoundStop();
+        audioSource = gameObject.GetComponent<AudioSource>();
+        audioSource.clip = loop;
+        audioSource.Play();
         timercontrol.TimerStart();
 
         //GameObject obj = (GameObject)Resources.Load("Timer");
