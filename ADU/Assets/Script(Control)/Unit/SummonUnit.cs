@@ -9,6 +9,7 @@ public class SummonUnit : MonoBehaviour
     public float vector_x;
     public float vector_y;
     public float vector_z;
+    public CostGaugeAnime CostGaugeAnime;
 
     public CostControl costcontrol;
 
@@ -23,6 +24,7 @@ public class SummonUnit : MonoBehaviour
         // playerUnit
         else{
             costcontrol.SetPlayerCost(costcontrol.GetPlayerCost() - cost);
+            //CostGaugeAnime.gaugeMove((float)costcontrol.GetPlayerCost());
             costcontrol.CostOver();
         }
         Instantiate(Unit1, new Vector3(vector_x, vector_y, vector_z), Quaternion.identity);
