@@ -9,14 +9,11 @@ public class SummonUnit : MonoBehaviour
     public float vector_x;
     public float vector_y;
     public float vector_z;
-    public CostGaugeAnime CostGaugeAnime;
-
+    // public CostGaugeAnime CostGaugeAnime;
     public CostControl costcontrol;
-
 
     public void UnitSummon(bool enemy)
     {
-
         // enemyUnit
         if(enemy == true){
             costcontrol.SetEnemyCost(costcontrol.GetEnemyCost() - cost);
@@ -24,8 +21,10 @@ public class SummonUnit : MonoBehaviour
         // playerUnit
         else{
             costcontrol.SetPlayerCost(costcontrol.GetPlayerCost() - cost);
-            //CostGaugeAnime.gaugeMove((float)costcontrol.GetPlayerCost());
             costcontrol.CostOver();
+            //CostGaugeAnime.gaugeMove((float)costcontrol.GetPlayerCost());
+            // CostGaugeAnime.gaugeMove(10);
+            costcontrol.CostAnimation();
         }
         Instantiate(Unit1, new Vector3(vector_x, vector_y, vector_z), Quaternion.identity);
         //Instantiate(Unit1, new Vector3(-5.0f, 1.0f, -1.5f), Quaternion.identity);

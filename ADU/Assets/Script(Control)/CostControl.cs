@@ -5,11 +5,14 @@ using UnityEngine;
 public class CostControl : MonoBehaviour
 {
 
-    [SerializeField] private int playerCost = 10;
-    [SerializeField] private int enemyCost = 10;
+    [SerializeField] private float playerCost = 10;
+    [SerializeField] private float playerMaxCost = 10;
+    [SerializeField] private float enemyCost = 10;
     public GameObject button1;
     public GameObject button2;
     public GameObject button3;
+
+    public CostGaugeAnime CostGaugeAnime;
 
     public void CostOver()
     {
@@ -35,24 +38,28 @@ public class CostControl : MonoBehaviour
         button3.SetActive(true);
     }
 
+    public void CostAnimation(){
+      CostGaugeAnime.gaugeMove(playerCost/playerMaxCost);
+    }
+
     // public void CostPay(int x)
     // {
     //         cost -= x;
     // }
 
-    public void SetPlayerCost(int cost){
+    public void SetPlayerCost(float cost){
         this.playerCost = cost;
     }
 
-    public void SetEnemyCost(int cost){
+    public void SetEnemyCost(float cost){
         this.enemyCost = cost;
     }
 
-    public int GetPlayerCost(){
+    public float GetPlayerCost(){
         return this.playerCost;
     }
 
-    public int GetEnemyCost(){
+    public float GetEnemyCost(){
         return this.enemyCost;
     }
 }

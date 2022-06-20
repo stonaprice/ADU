@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18316005, g: 0.2267233, b: 0.29434705, a: 1}
+  m_IndirectSpecularColor: {r: 0.1831596, g: 0.22672275, b: 0.29434586, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -920,7 +920,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: -75.70212
     y: 49.48935
-    width: 92.42053
+    width: 97.41119
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -965,7 +965,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 85.502975
     y: 53.936172
-    width: 72.45793
+    width: 70.58644
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -2138,6 +2138,11 @@ PrefabInstance:
       propertyPath: WaveTextAnime
       value: 
       objectReference: {fileID: 737983571}
+    - target: {fileID: 532285643277231594, guid: 97391f3329ff3d3459e6948cbe42cc1f,
+        type: 3}
+      propertyPath: CostGaugeAnime
+      value: 
+      objectReference: {fileID: 624268105}
     - target: {fileID: 532285643277231595, guid: 97391f3329ff3d3459e6948cbe42cc1f,
         type: 3}
       propertyPath: m_RootOrder
@@ -2600,7 +2605,6 @@ MonoBehaviour:
   vector_x: 8.3
   vector_y: 1
   vector_z: -1.5
-  CostGaugeAnime: {fileID: 0}
   costcontrol: {fileID: 0}
 --- !u!114 &364079234
 MonoBehaviour:
@@ -3399,7 +3403,6 @@ MonoBehaviour:
   vector_x: 0
   vector_y: 1
   vector_z: -1.71
-  CostGaugeAnime: {fileID: 0}
   costcontrol: {fileID: 173685812}
 --- !u!114 &446981659
 MonoBehaviour:
@@ -4033,7 +4036,6 @@ MonoBehaviour:
   vector_x: 0
   vector_y: 0
   vector_z: 0
-  CostGaugeAnime: {fileID: 0}
   costcontrol: {fileID: 0}
 --- !u!114 &493608935
 MonoBehaviour:
@@ -4052,7 +4054,6 @@ MonoBehaviour:
   vector_x: 0
   vector_y: 0
   vector_z: 0
-  CostGaugeAnime: {fileID: 0}
   costcontrol: {fileID: 0}
 --- !u!224 &494046367 stripped
 RectTransform:
@@ -4724,8 +4725,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   salmon: {fileID: 2080205166}
-  costControl: {fileID: 0}
-  rate: 0
+  costControl: {fileID: 173685812}
 --- !u!1 &635962047
 GameObject:
   m_ObjectHideFlags: 0
@@ -7775,7 +7775,6 @@ MonoBehaviour:
   vector_x: 0
   vector_y: 1
   vector_z: -1.71
-  CostGaugeAnime: {fileID: 0}
   costcontrol: {fileID: 0}
 --- !u!114 &942136198
 MonoBehaviour:
@@ -16689,6 +16688,11 @@ PrefabInstance:
       propertyPath: button3
       value: 
       objectReference: {fileID: 937615402}
+    - target: {fileID: 7419734839025923206, guid: 177d08be8f1b3b6459f5eb9fac397815,
+        type: 3}
+      propertyPath: CostGaugeAnime
+      value: 
+      objectReference: {fileID: 624268105}
     - target: {fileID: 7419734839025923207, guid: 177d08be8f1b3b6459f5eb9fac397815,
         type: 3}
       propertyPath: m_RootOrder

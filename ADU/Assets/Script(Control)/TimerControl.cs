@@ -16,8 +16,7 @@ public class TimerControl : MonoBehaviour
     public float totalTime;
     int seconds;
     int count = 0;
-    int maxEnemyCost;
-
+    float maxEnemyCost;
 
     // Start is called before the first frame update
     public void TimerStart()
@@ -32,6 +31,7 @@ public class TimerControl : MonoBehaviour
         this.gameObject.SetActive(false);
         // costControl.cost = 10;
         costControl.SetPlayerCost(10);
+        costControl.CostAnimation();
         costControl.ActivButton();
         WaveText.text = "Wave 2";
         Invoke(nameof(WaveAnime), 0f);
@@ -53,6 +53,7 @@ public class TimerControl : MonoBehaviour
         this.gameObject.SetActive(false);
         // costControl.cost = 10;
         costControl.SetPlayerCost(10);
+        costControl.CostAnimation();
         costControl.ActivButton();
         WaveText.text = "Wave 3";
         WaveAnimeReset();
@@ -76,6 +77,7 @@ public class TimerControl : MonoBehaviour
         this.gameObject.SetActive(false);
         // costControl.cost = 10;
         costControl.SetPlayerCost(10);
+        costControl.CostAnimation();
         costControl.ActivButton();
         WaveText.text = "Final Wave";
         WaveAnimeReset();
