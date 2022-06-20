@@ -4,14 +4,12 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 
 [RequireComponent(typeof(CanvasGroup))]
-public class DragAndDrop : MonoBehaviour
+public class Draggable : MonoBehaviour
 {
     private Transform root;
     private Transform area;
     private Transform self;
     private CanvasGroup canvasGroup = null;
-    
-    
 
     public void Awake()
     {
