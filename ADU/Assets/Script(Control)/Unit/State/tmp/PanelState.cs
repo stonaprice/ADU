@@ -8,6 +8,16 @@ using UnityEngine.UI;
 public class PanelState : MonoBehaviour
 {
     [SerializeField] private GameObject Kyu;
+    int a = 0;
+    public AudioClip open;
+    public AudioClip close;
+    AudioSource audioSource;
+
+    void Start()
+    {
+        //Component‚ðŽæ“¾
+        audioSource = GetComponent<AudioSource>();
+    }
 
     public void PanelOn()
     {
@@ -23,13 +33,25 @@ public class PanelState : MonoBehaviour
 
     public void PanelSlideActive()
     {
-        var sequence = DOTween.Sequence();
-        sequence.Append(Kyu.transform.DOMoveX(180,0.7f));
+        if (a == 1)
+        {
+            PanelSlidePassive();
+        }
+        else
+        {
+            var sequence = DOTween.Sequence();
+            sequence.Append(Kyu.transform.DOMoveX(180, 0.7f));
+            audioSource.PlayOneShot(open);
+            a = 1;
+        }
     }
 
     public void PanelSlidePassive()
     {
         var sequence = DOTween.Sequence();
         sequence.Append(Kyu.transform.DOMoveX(-260,0.7f));
+        audioSource.PlayOneShot(close);
+        a = 0;
+        
     }
 }
