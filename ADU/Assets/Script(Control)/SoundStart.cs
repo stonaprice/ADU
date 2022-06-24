@@ -2,19 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BGMManager : MonoBehaviour
+public class SoundStart : MonoBehaviour
 {
     public AudioClip bgm;
     public AudioSource audioSource;
 
-    void SoundPlay()
+    public void SoundPlay()
     {
         audioSource = gameObject.GetComponent<AudioSource>();
         audioSource.clip = bgm;
         audioSource.Play();
     }
 
-    void SoundStop()
+    public void SoundStop()
     {
         audioSource.Stop();
     }
