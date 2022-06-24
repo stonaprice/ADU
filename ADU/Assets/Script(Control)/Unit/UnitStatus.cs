@@ -1,26 +1,41 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class UnitStatus : MonoBehaviour
 {
-    // // 塔のHP
-	// [SerializeField]
-	// private int maxHp;
-	// // ユニットのHP
-	// [SerializeField]
-	// private int hp = 3;
-	// // ユニットの攻撃力
-	// [SerializeField]
-	// private int attackPower = 1;
+	// ユニットの攻撃力
+	[SerializeField] private int attackPower = 1;
 
-	// public void SetHp(int hp) {
-	// 	this.hp = hp;
-	// }
+	public int AttackPower
+	{
+		get { return this.attackPower; }
+	}
+	
+	// ユニットの敵探索範囲
+	[SerializeField] private float findDistance = 10;
 
-	// public int GetHp() {
-	// 	return hp;
-	// }
+	public float FindDistance
+	{
+		get { return this.findDistance; }
+	}
 
-    // //参考 ( https://gametukurikata.com/program/mystatus )
+	// ユニットの攻撃範囲
+	[SerializeField] private float attackDistance = 5;
+
+	public float AttackDistance
+	{
+		get { return this.attackDistance; }
+	}
+	
+	
+
+	
+	
+
+	
+
+
+	// //参考 ( https://gametukurikata.com/program/mystatus )
 }

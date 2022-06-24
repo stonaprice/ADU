@@ -10,6 +10,9 @@ public class UnitStateChild_MoveToTower : StateChildBase
     private GameObject unit;
     private bool isFinding = false;
     private float findDistance = 10;
+    
+    // private UnitStatus unitStatus = GetComponentInParent<UnitStatus>();
+    // private float findDistance = unitStatus.FindDistance;
 
     private GameObject closeEnemy;
 

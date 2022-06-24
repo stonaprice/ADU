@@ -8,6 +8,9 @@ public class UnitStateChild_Attack : StateChildBase
     private GameObject target;
     float attackDistance = 5;
     float countTime = 0;
+    
+    // private UnitStatus unitStatus = GetComponentInParent<UnitStatus>();
+    // private float attackDistance = unitStatus.AttackDistance;
 
     FireBullet fb;
     private bool isAttacking = true;

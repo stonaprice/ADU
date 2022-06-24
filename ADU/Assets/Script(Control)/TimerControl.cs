@@ -26,74 +26,44 @@ public class TimerControl : MonoBehaviour
         Invoke(nameof(Display), 4.5f);
     }
 
-    void Start2()
+    void Initiative(float playerCost, float enemyCost, string text)
     {
         this.gameObject.SetActive(false);
-        // costControl.cost = 10;
-        costControl.SetPlayerCost(10);
+        
+        costControl.SetPlayerCost(playerCost);
         costControl.CostAnimation();
         costControl.ActivButton();
-        WaveText.text = "Wave 2";
+        
+        WaveText.text = text;
+        WaveAnimeReset();
+        WaveTextAnime.text = text;
         Invoke(nameof(WaveAnime), 0f);
         Invoke(nameof(WaveAnime2), 2f);
-
+        
         // summonEnemyUnit
-        costControl.SetEnemyCost(10);
+        costControl.SetEnemyCost(enemyCost);
         maxEnemyCost = costControl.GetEnemyCost();
         for (int i = 0; i < maxEnemyCost; i++)
         {
             summonUnit.UnitSummon(true);
         }
-
+        
         Invoke(nameof(Display), 0f);
+    }
+
+    void Start2()
+    {
+        Initiative(10, 10, "Wave 2");
     }
 
     void Start3()
     {
-        this.gameObject.SetActive(false);
-        // costControl.cost = 10;
-        costControl.SetPlayerCost(10);
-        costControl.CostAnimation();
-        costControl.ActivButton();
-        WaveText.text = "Wave 3";
-        WaveAnimeReset();
-        WaveTextAnime.text = "Wave 3";
-        Invoke(nameof(WaveAnime), 0f);
-        Invoke(nameof(WaveAnime2), 2f);
-
-        // summonEnemyUnit
-        costControl.SetEnemyCost(10);
-        maxEnemyCost = costControl.GetEnemyCost();
-        for (int i = 0; i < maxEnemyCost; i++)
-        {
-            summonUnit.UnitSummon(true);
-        }
-
-        Invoke(nameof(Display), 0f);
+        Initiative(20, 20, "Wave 3");
     }
 
     void Start4()
     {
-        this.gameObject.SetActive(false);
-        // costControl.cost = 10;
-        costControl.SetPlayerCost(10);
-        costControl.CostAnimation();
-        costControl.ActivButton();
-        WaveText.text = "Final Wave";
-        WaveAnimeReset();
-        WaveTextAnime.text = "Final Wave";
-        Invoke(nameof(WaveAnime), 0f);
-        Invoke(nameof(WaveAnime2), 2f);
-
-        // summonEnemyUnit
-        costControl.SetEnemyCost(10);
-        maxEnemyCost = costControl.GetEnemyCost();
-        for (int i = 0; i < maxEnemyCost; i++)
-        {
-            summonUnit.UnitSummon(true);
-        }
-
-        Invoke(nameof(Display), 0f);
+        Initiative(40, 40, "FInal Wave");
     }
 
     void Display()
