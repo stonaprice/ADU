@@ -1094,7 +1094,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 85.502975
     y: 53.936172
-    width: 72.45793
+    width: 71.210266
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -2730,7 +2730,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Unit1: {fileID: 8857909479613860346, guid: 74bdef97ab2f7654ca154aa19afc8bd6, type: 3}
-  cost: 0
   vector_x: 8.3
   vector_y: 1
   vector_z: -1.5
@@ -3362,6 +3361,10 @@ MonoBehaviour:
   timercontrol: {fileID: 371880987}
   soundstart: {fileID: 974844305}
   loop: {fileID: 8300000, guid: b72d9324975afb84483c9155d9deff12, type: 3}
+  images:
+  - {fileID: 912020049}
+  - {fileID: 1068261646}
+  - {fileID: 937615402}
 --- !u!4 &443510775
 Transform:
   m_ObjectHideFlags: 0
@@ -3528,7 +3531,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Unit1: {fileID: 3105289529304451360, guid: 98579e72a18120d4285ff1c733d98d3c, type: 3}
-  cost: 1
   vector_x: 0
   vector_y: 1
   vector_z: -1.71
@@ -4163,7 +4165,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Unit1: {fileID: 0}
-  cost: 0
   vector_x: 0
   vector_y: 0
   vector_z: 0
@@ -4181,7 +4182,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Unit1: {fileID: 0}
-  cost: 0
   vector_x: 0
   vector_y: 0
   vector_z: 0
@@ -7915,7 +7915,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Unit1: {fileID: 3105289529304451360, guid: 98579e72a18120d4285ff1c733d98d3c, type: 3}
-  cost: 0
   vector_x: 0
   vector_y: 1
   vector_z: -1.71
@@ -8219,6 +8218,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a9d372f0b448e0c4a9e6e02501db0536, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bgm: {fileID: 0}
   audioSource: {fileID: 0}
 --- !u!82 &974844306
 AudioSource:

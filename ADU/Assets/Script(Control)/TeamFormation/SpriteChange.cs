@@ -1,25 +1,26 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 public class SpriteChange : MonoBehaviour
 {
     // Image コンポーネントを格納する変数
-    private Image m_Image { get; set; }
+    public Image m_Image { get; set; }
 
     // スプライトオブジェクトを格納する配列
-    [SerializeField] private Sprite[] tite_Sprite;
-    public Sprite[] Tite_Sprite
+    [FormerlySerializedAs("tite_Sprite")] [SerializeField] private Sprite[] titeSprite;
+    public Sprite[] TiteSprite
     {
-        get { return this.tite_Sprite; }
+        get { return this.titeSprite; }
     }
     
     // スプライトオブジェクトを格納する配列
-    [SerializeField] private Sprite[] gakuseisho_Sprite;
-    public Sprite[] Gakuseisho_Sprite
+    [FormerlySerializedAs("gakuseisho_Sprite")] [SerializeField] private Sprite[] gakuseishoSprite;
+    public Sprite[] GakuseishoSprite
     {
-        get { return this.gakuseisho_Sprite; }
+        get { return this.gakuseishoSprite; }
     }
 
     public int viewNumber { get; set; } = 10000;
@@ -34,15 +35,14 @@ public class SpriteChange : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        for (int i=0; i<Gakuseisho_Sprite.Length ; i++)
+        for (int i=0; i<GakuseishoSprite.Length ; i++)
         {
             if (i == viewNumber)
             {
-                m_Image.sprite = tite_Sprite[viewNumber];
+                m_Image.sprite = titeSprite[viewNumber];
 
                 viewNumber = 100000;
             }
         }
-        
     }
 }
