@@ -16,6 +16,7 @@ public class SoundStart : MonoBehaviour
 
     public void SoundStop()
     {
+        audioSource = gameObject.GetComponent<AudioSource>();
         audioSource.Stop();
     }
 }
