@@ -5,9 +5,15 @@ using UnityEngine;
 
 public class UnitStatus : MonoBehaviour
 {
+	// ユニットのコスト
+	[SerializeField] private float unitCost = 1;
+	public float UnitCost
+	{
+		get { return this.unitCost; }
+	}
+
 	// ユニットの攻撃力
 	[SerializeField] private int attackPower = 1;
-
 	public int AttackPower
 	{
 		get { return this.attackPower; }
@@ -15,7 +21,6 @@ public class UnitStatus : MonoBehaviour
 	
 	// ユニットの敵探索範囲
 	[SerializeField] private float findDistance = 10;
-
 	public float FindDistance
 	{
 		get { return this.findDistance; }
@@ -23,7 +28,6 @@ public class UnitStatus : MonoBehaviour
 
 	// ユニットの攻撃範囲
 	[SerializeField] private float attackDistance = 5;
-
 	public float AttackDistance
 	{
 		get { return this.attackDistance; }

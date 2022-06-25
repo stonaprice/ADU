@@ -5,7 +5,8 @@ using UnityEngine;
 public class SummonUnit : MonoBehaviour
 {
     public GameObject Unit1;
-    [SerializeField] private int cost;
+    // [SerializeField]
+    private float cost;
     public float vector_x;
     public float vector_y;
     public float vector_z;
@@ -14,6 +15,8 @@ public class SummonUnit : MonoBehaviour
 
     public void UnitSummon(bool enemy)
     {
+        cost = Unit1.GetComponent<UnitStatus>().UnitCost;
+        
         // enemyUnit
         if(enemy == true){
             costcontrol.SetEnemyCost(costcontrol.GetEnemyCost() - cost);
