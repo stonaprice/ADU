@@ -2,6 +2,8 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UIElements;
+using Image = UnityEngine.UI.Image;
 
 [RequireComponent(typeof(CanvasGroup))]
 public class Draggable : MonoBehaviour
@@ -10,6 +12,9 @@ public class Draggable : MonoBehaviour
     private Transform area;
     private Transform self;
     private CanvasGroup canvasGroup = null;
+    
+    [SerializeReference] private GameObject ViewArea;
+    private SpriteChange _spriteChange;
 
     public void Awake()
     {
@@ -31,6 +36,8 @@ public class Draggable : MonoBehaviour
     public void OnDrag(BaseEventData eventData)
     {
         this.self.localPosition = GetLocalPosition(((PointerEventData)eventData).position, this.transform);
+        
+        CardCheck();
     }
 
     private static Vector3 GetLocalPosition(Vector3 position, Transform transform)
@@ -51,6 +58,23 @@ public class Draggable : MonoBehaviour
         if (dropArea != null)
         {
             this.area = dropArea.transform;
+            
+            if (dropArea.name.Contains("SetArea"))
+            {
+                if (dropArea.name.Contains("1"))
+                {
+                    CardCheck();
+                    Debug.Log("SetArea1");
+                }else if (dropArea.name.Contains("2")) 
+                {
+                    CardCheck();
+                    Debug.Log("SetArea2");
+                }else if (dropArea.name.Contains("3"))
+                {
+                    CardCheck();
+                    Debug.Log("SetArea3");
+                }
+            }
         }
         this.self.SetParent(this.area);
 
@@ -70,5 +94,19 @@ public class Draggable : MonoBehaviour
 
         return results.Select(x => x.gameObject.GetComponent<DropArea>())
             .FirstOrDefault(x => x != null);
+    }
+
+    private void CardCheck()
+    {
+        _spriteChange =  ViewArea.GetComponent<SpriteChange>();
+        
+        for (int i=0; i<_spriteChange.Gakuseisho_Sprite.Length; i++)
+        {
+            if (this.gameObject.GetComponent<Image>().sprite == _spriteChange.Gakuseisho_Sprite[i])
+            {
+                Debug.Log(i);
+                _spriteChange.viewNumber = i;
+            }
+        }
     }
 }
