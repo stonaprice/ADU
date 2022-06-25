@@ -8,7 +8,7 @@ public class SubetenoHajimari : MonoBehaviour
     public TimerControl timercontrol;
     public SoundStart soundstart;
     public AudioClip loop;
-    private AudioSource audioSource;
+    AudioSource audioSource;
 
 
     //　会話終わったあとにWave1を呼び出すメソッド
@@ -17,7 +17,7 @@ public class SubetenoHajimari : MonoBehaviour
         soundstart.SoundStop();
         audioSource = gameObject.GetComponent<AudioSource>();
         audioSource.clip = loop;
-        audioSource.Play();
+        soundstart.SoundPlay();
         timercontrol.TimerStart();
 
         //GameObject obj = (GameObject)Resources.Load("Timer");
