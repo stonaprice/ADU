@@ -7,9 +7,17 @@ public class billboard : MonoBehaviour {
 	
 
 	void Update () {
+		Transform myTransform = this.transform;
+
+        Vector3 localAngle = myTransform.localEulerAngles;
+        localAngle.y = 0f;
+        myTransform.localEulerAngles = localAngle;
+
+		/*
 		Vector3 p = Camera.main.transform.position;
 		p.y = transform.position.y;
 		transform.LookAt (p);
+		*/
 
 		/*
 		// 前方の基準となるローカル空間ベクトル

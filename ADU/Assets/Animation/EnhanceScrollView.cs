@@ -27,7 +27,7 @@ public class EnhanceScrollView : MonoBehaviour
     // Offset width between item
     public float cellWidth = 10f;
     private float totalHorizontalWidth = 500.0f;
-    // vertical fixed position value 
+    // vertical fixed position value
     public float yFixedPositionValue = 46.0f;
 
     // Lerp duration
@@ -85,7 +85,9 @@ public class EnhanceScrollView : MonoBehaviour
     // targets enhance item in scroll view
     public List<EnhanceItem> listEnhanceItems;
     // sort to get right index
+    //え、てかこれはインスタンス化してないけど使えちゃうもんなの？それともしてるみたいなもんなの？
     private List<EnhanceItem> listSortedItems = new List<EnhanceItem>();
+           //   class               instance    new     constructor
 
     private static EnhanceScrollView instance;
     public static EnhanceScrollView GetInstance
@@ -112,7 +114,7 @@ public class EnhanceScrollView : MonoBehaviour
             listEnhanceItems[i].CurveOffSetIndex = i;
             listEnhanceItems[i].CenterOffSet = dFactor * (mCenterIndex - index);
             listEnhanceItems[i].SetSelectState(false);
-            GameObject obj = listEnhanceItems[i].gameObject;
+            GameObject obj = listEnhanceItems[i].gameObject; //ここに保存したオブジェクトを入れてあげればイケルと思います！
 
             if (inputType == InputSystemType.NGUIAndWorldInput)
             {
@@ -143,9 +145,9 @@ public class EnhanceScrollView : MonoBehaviour
         curHorizontalValue = 0.5f - curCenterItem.CenterOffSet;
         LerpTweenToTarget(0f, curHorizontalValue, false);
 
-        // 
+        //
         // enable the drag actions
-        // 
+        //
         EnableDrag(true);
     }
 
@@ -172,9 +174,9 @@ public class EnhanceScrollView : MonoBehaviour
         this.enableLerpTween = false;
     }
 
-    /// 
+    ///
     /// Update EnhanceItem state with curve fTime value
-    /// 
+    ///
     public void UpdateEnhanceScrollView(float fValue)
     {
         for (int i = 0; i < listEnhanceItems.Count; i++)
