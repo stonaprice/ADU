@@ -28,16 +28,10 @@ public class SaveUnit : MonoBehaviour
             Destroy(this.gameObject);
         }
     }
-    
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
     // Update is called once per frame
-    void Update()
-    {
+    // void Update()
+    // {
         // for (int i=0; i<unitPrefab.Length ; i++)
         // {
         //     if (i == selectedNumber)
@@ -53,5 +47,5 @@ public class SaveUnit : MonoBehaviour
         //         selectedNumber = 10000;
         //     }
         // }
-    }
+    // }
 }

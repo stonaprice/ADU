@@ -22,6 +22,8 @@ public class Draggable : MonoBehaviour
 
     public int _selectNumber = 10000;
 
+    public bool[] FullArea { get; set; } = {false,false,false};
+
     public void Awake()
     {
         this._self = this.transform;
@@ -67,29 +69,38 @@ public class Draggable : MonoBehaviour
         var dropArea = GetRaycastArea((PointerEventData)eventData);
         if (dropArea != null)
         {
-            this._area = dropArea.transform;
+            // this._area = dropArea.transform;
             
             if (dropArea.name.Contains("SetArea"))
             {
                 // カードイラストを表示
                 CardCheck();
 
-                if (dropArea.name.Contains("1"))
+                if (dropArea.name.Contains("0") && !FullArea[0])
                 {
-                    SaveCard(0);
+                    this._area = dropArea.transform;
 
+                    SaveCard(0);
+                    
                     Debug.Log("SetArea1");
-                }else if (dropArea.name.Contains("2")) 
+                }else if (dropArea.name.Contains("1") && !FullArea[1]) 
                 {
+                    this._area = dropArea.transform;
+
                     SaveCard(1);
 
                     Debug.Log("SetArea2");
-                }else if (dropArea.name.Contains("3"))
+                }else if (dropArea.name.Contains("2") && !FullArea[2])
                 {
+                    this._area = dropArea.transform;
+
                     SaveCard(2);
 
                     Debug.Log("SetArea3");
                 }
+            }else
+            {
+                this._area = dropArea.transform;
             }
         }
         this._self.SetParent(this._area);
@@ -126,7 +137,7 @@ public class Draggable : MonoBehaviour
         }
     }
 
-    private void SaveCard(int n)
+    public void SaveCard(int n)
     {
         for (int i=0; i<_spriteChange.GakuseishoSprite.Length; i++)
         {
@@ -141,6 +152,5 @@ public class Draggable : MonoBehaviour
                 return;
             }
         }
-        
     }
 }
