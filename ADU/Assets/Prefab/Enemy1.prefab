@@ -196,6 +196,7 @@ GameObject:
   - component: {fileID: 8870677798981740963}
   - component: {fileID: 5696197684353293420}
   - component: {fileID: 3596630069634074306}
+  - component: {fileID: 4923119731185090654}
   m_Layer: 0
   m_Name: Enemy1
   m_TagString: EnemyUnit
@@ -435,6 +436,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHp: 3
   HPUI: {fileID: 8857909479607325737}
+--- !u!114 &4923119731185090654
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8857909479613860346}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f641ae93d0f420049b44ed7f50fd1884, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  unitCost: 1
+  attackPower: 1
+  findDistance: 10
+  attackDistance: 5
 --- !u!1 &8857909480018716011
 GameObject:
   m_ObjectHideFlags: 0

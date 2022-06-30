@@ -17,6 +17,11 @@ public class TowerHitPoint : MonoBehaviour
     // HP表示用スライダー
     private Slider hpSlider;
 
+    public BreakDown breakdown;
+    public GameClearAnimation GameClearAnimation;
+    //public TanbaCutInTest TanbaCutInTest;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -46,10 +51,15 @@ public class TowerHitPoint : MonoBehaviour
         // HP表示用UIのアップデート
         UpdateHPValue();
 
-        // if(currentHp <= 0)
-        // {
-        //     Dead();
-        // }
+         if(currentHp <= 0)
+         {
+            //Dead();
+            this.gameObject.GetComponent<Detonator>().Explode();
+            breakdown.Explosion();
+            GameClearAnimation.TyoKaiSyoBun();
+            //TanbaCutInTest.Cutin();
+            
+         }
     }
 
     //武器に触れたらダメージ

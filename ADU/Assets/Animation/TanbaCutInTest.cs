@@ -11,7 +11,7 @@ public class TanbaCutInTest : MonoBehaviour
     [SerializeField] private GameObject Sword;
     
 
-    private void Cutin()
+    public void Cutin()
     {
         CutinCharacter();
         CutinBackGround();        
