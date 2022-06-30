@@ -55,11 +55,16 @@ public class TowerHitPoint : MonoBehaviour
          {
             //Dead();
             this.gameObject.GetComponent<Detonator>().Explode();
-            breakdown.Explosion();
             GameClearAnimation.TyoKaiSyoBun();
+            StartCoroutine(WaitTyokai());
             //TanbaCutInTest.Cutin();
-            
+            breakdown.Explosion();
          }
+    }
+
+    private IEnumerator WaitTyokai()
+    {
+        yield return new WaitForSeconds(5);
     }
 
     //武器に触れたらダメージ

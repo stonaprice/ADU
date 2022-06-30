@@ -6,16 +6,10 @@ using UnityEngine.UI;
 
 public class GameClearAnimation : MonoBehaviour
 {
-    [SerializeField] private Image Moji1;
-    [SerializeField] private Image Moji2;
-    [SerializeField] private Image Moji3;
-    [SerializeField] private Image Moji4;
+    [SerializeField] private GameObject Panel;
 
     public void TyoKaiSyoBun(){
-        ScaledownFadein(Moji1);
-        ScaledownFadein(Moji2);
-        ScaledownFadein(Moji3);
-        ScaledownFadein(Moji4);
+        Panel.transform.DOLocalMove(new Vector3(0,0,0),0);
     } 
 
     public void ScaledownFadein(Image image){
