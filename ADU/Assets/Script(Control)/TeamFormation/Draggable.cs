@@ -16,6 +16,9 @@ public class Draggable : MonoBehaviour
     
     [FormerlySerializedAs("ViewArea")] [SerializeReference] private GameObject viewArea;
     private SpriteChange _spriteChange;
+
+    [FormerlySerializedAs("ViewArea(1)")] [SerializeReference] private GameObject viewArea1;
+    private SpriteChange _spriteChange1;
     
     [FormerlySerializedAs("SaveUnit")] [SerializeReference] private GameObject saveUnit;
     private SaveUnit _saveUnit;
@@ -32,6 +35,7 @@ public class Draggable : MonoBehaviour
         this._canvasGroup = this.GetComponent<CanvasGroup>();
         
         _spriteChange =  viewArea.GetComponent<SpriteChange>();
+        _spriteChange1 =  viewArea1.GetComponent<SpriteChange>();
         _saveUnit =  saveUnit.GetComponent<SaveUnit>();
     }
 
@@ -131,10 +135,12 @@ public class Draggable : MonoBehaviour
             {
                 // Debug.Log(i);
                 _spriteChange.viewNumber = i;
+                _spriteChange1.viewNumber = i;
 
                 return;
             }
         }
+
     }
 
     public void SaveCard(int n)
