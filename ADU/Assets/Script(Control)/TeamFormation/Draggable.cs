@@ -143,50 +143,50 @@ public class Draggable : MonoBehaviour
 
                 switch(i)
                 {
+                    case 0:
+                        CharacterName.text = ("No.3");
+                        CharacterText.text = ("仏教学部の少女。\n見るからに謎だが\nとにかく謎に包まれている。\n実際に戦っているのは\n本人ではない\nように見えるが…？");
+                        break;
+
                     case 1:
                         CharacterName.text = ("No.1");
                         CharacterText.text = ("文学部の少女。\n実際はただ通りかかった\nだけだったが、\n何故か巻き込まれた\n可哀相な学生。");
-                    break;
+                        break;
 
                     case 2:
-                        CharacterName.text = ("No.2");
-                        CharacterText.text = ("獣医学部の獣人(?)。\n獣耳が生えているが\nそれが本物かどうかは不明。\n獣の権利は\n特に脅かされていないが\n医学部繋がりで参戦。\n");
-                    break;
+                        CharacterName.text = ("No.8");
+                        CharacterText.text = ("医学部の青年。\n正義感が強く、\n現状の打破を狙っていたが\n迂闊に行動できずに居た。\n何も考えていない男が\n来たことは決定打ではなさそうだが\n協力者の多さから\n参戦を決めたのか？"); 
+                        break;
 
                     case 3:
-                        CharacterName.text = ("No.3");
-                        CharacterText.text = ("仏教学部の少女。\n見るからに謎だが\nとにかく謎に包まれている。\n実際に戦っているのは\n本人ではない\nように見えるが…？");
-                    break;
+                        CharacterName.text = ("No.2");
+                        CharacterText.text = ("獣医学部の獣人(?)。\n獣耳が生えているが\nそれが本物かどうかは不明。\n獣の権利は\n特に脅かされていないが\n医学部繋がりで参戦。\n");
+                        break;
 
                     case 4:
                         CharacterName.text = ("No.4");
                         CharacterText.text = ("看護学部の少女。\nあまり深く考えてはいないが\n面白そうなので\n参戦した。\n注射器を持っているが\n殺傷道具としてしか\n使用経験はない。");
-                    break;
+                        break;
 
                     case 5:
-                        CharacterName.text = ("No.5");
-                        CharacterText.text = ("体育学部の青年(?)。\n最強のボディビルダーを目指し、\n筋肉を鍛えていたところ\n皮膚が全て消滅した。\nその結果脳までもが\n筋肉となり\n文字通り脳筋となった。");
-                    break;
-
-                    case 6:
                         CharacterName.text = ("No.6");
                         CharacterText.text = ("経済学部の青年。\n持ち前の狡猾さで\n密かに反抗していたが\nここまで捕まらずに来た。\nオタクの人脈が\n存外広かったため\n参戦の可能性を仄めかしている。");
-                    break;
+                        break;
+
+                    case 6:
+                        CharacterName.text = ("No.5");
+                        CharacterText.text = ("体育学部の青年(?)。\n最強のボディビルダーを目指し、\n筋肉を鍛えていたところ\n皮膚が全て消滅した。\nその結果脳までもが\n筋肉となり\n文字通り脳筋となった。");
+                        break;
 
                     case 7:
                         CharacterName.text = ("No.7");
-                        CharacterText.text = ("YouTuberの青年。\n大学を辞め\n動画サイトで小遣いを稼いでいた。\nそれどころではなくなったが\n本人がマスコミ気質で\n行動力があったことから\nついてきた。");
-                    break;
+                        CharacterText.text = ("YouTuberの青年。\n大学を辞め\n動画サイトで小遣いを稼いでいた。\nそれどころではなくなったが\n本人がマスコミ気質で\n行動力があったことから\nついてきた。"); 
+                        break;
 
                     case 8:
-                        CharacterName.text = ("No.8");
-                        CharacterText.text = ("医学部の青年。\n正義感が強く、\n現状の打破を狙っていたが\n迂闊に行動できずに居た。\n何も考えていない男が\n来たことは決定打ではなさそうだが\n協力者の多さから\n参戦を決めたのか？");
-                    break;
-
-                    case 9:
                         CharacterName.text = ("No.9");
-                        CharacterText.text = ("ごく一般的な少年。\nチーズ牛丼が好きで\nよく食べている。\n日本がこんな状況ではあるが\nオタクと仲が良いため\nなんとなく\n協力してくれている。");
-                    break;
+                        CharacterText.text = ("ごく一般的な少年。\nチーズ牛丼が好きで\nよく食べている。\n日本がこんな状況ではあるが\nオタクと仲が良いため\nなんとなく\n協力してくれている。"); 
+                        break;
                 }
 
                 return;
