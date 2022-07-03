@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using TMPro;
 using DG.Tweening;
 
@@ -9,10 +10,10 @@ public class TimerControl : MonoBehaviour
     public ToGameOver gameOver;
     public SummonUnit summonUnit;
     public CostControl costControl;
-    public TextMeshProUGUI TimerText;
-    public TextMeshProUGUI WaveText;
+    public Text TimerText;
+    public Text WaveText;
     public TextMeshProUGUI WaveTextAnime;
-    public TextMeshProUGUI CostText;
+    public Text CostText;
     public float totalTime;
     int seconds;
     int count = 0;
