@@ -6,9 +6,13 @@ using UnityEngine.UI;
 
 public class GameClearAnimation : MonoBehaviour
 {
+    public AudioClip se;
+    AudioSource audioSource;
     [SerializeField] private GameObject Panel;
 
     public void TyoKaiSyoBun(){
+        audioSource = GetComponent<AudioSource>();
+        audioSource.PlayOneShot(se);
         Panel.transform.DOLocalMove(new Vector3(0,0,0),0);
     } 
 

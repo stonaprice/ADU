@@ -104,13 +104,14 @@ public class TimerControl : MonoBehaviour
         //Gameover?��ֈڍs
         if (totalTime < 0 && count == 3)
         {
-            gameOver.GameOver();
+            Invoke("End", 1.0f);
+            count++;
         }
 
         //FinalWave?��ڍs?��̏�?��?��?��?��?��?��
         if (totalTime < 0 && count == 2)
         {
-            totalTime = 120;
+            totalTime = 100;
             count++;
             Start4();
         }
@@ -130,5 +131,10 @@ public class TimerControl : MonoBehaviour
             count++;
             Start2();
         }
+    }
+    
+    void End()
+    {
+            gameOver.ChangeScene();
     }
 }
