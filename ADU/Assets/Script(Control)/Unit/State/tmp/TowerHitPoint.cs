@@ -21,6 +21,8 @@ public class TowerHitPoint : MonoBehaviour
     public GameClearAnimation GameClearAnimation;
     //public TanbaCutInTest TanbaCutInTest;
 
+    [SerializeField]
+    private ToGameOver _gameOver;
 
     // Start is called before the first frame update
     void Start()
@@ -50,15 +52,22 @@ public class TowerHitPoint : MonoBehaviour
 
         // HP表示用UIのアップデート
         UpdateHPValue();
-
+        
          if(currentHp <= 0)
          {
-            //Dead();
-            this.gameObject.GetComponent<Detonator>().Explode();
-            GameClearAnimation.TyoKaiSyoBun();
-            StartCoroutine(WaitTyokai());
-            //TanbaCutInTest.Cutin();
-            breakdown.Explosion();
+             //Dead();
+             if (this.gameObject.CompareTag("PlayerTower"))
+             {
+                 _gameOver.ChangeScene();
+             }
+             else if (this.gameObject.CompareTag("EnemyTower"))
+             {
+                 this.gameObject.GetComponent<Detonator>().Explode();
+                 GameClearAnimation.TyoKaiSyoBun();
+                 StartCoroutine(WaitTyokai());
+                 //TanbaCutInTest.Cutin();
+                 breakdown.Explosion();
+             }
          }
     }
 

@@ -75,9 +75,9 @@ public class StartText : MonoBehaviour
         // summonEnemyUnit
         costControl.SetEnemyCost(10);
         float maxEnemyCost = costControl.GetEnemyCost();
-        // for(int i=0;i < maxEnemyCost;i++)
-        // {
-        //     summonUnit.UnitSummon(true);
-        // }
+        for(int i=0;i < maxEnemyCost;i++)
+        {
+            summonUnit.UnitSummon(true);
+        }
     }
 }

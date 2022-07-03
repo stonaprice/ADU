@@ -1,25 +1,32 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 public class UnitHitPoint : MonoBehaviour
 {
     // ユニットの最大HP
-	[SerializeField]
-	private int maxHp = 3;
+	// [SerializeField]
+	private int maxHp;
     // ユニットの現在HP
 	// [SerializeField]
-	private int currentHp = 3;
+	private int currentHp;
     // HP表示用UI
     [SerializeField]
     private GameObject HPUI;
     // HP表示用スライダー
     private Slider hpSlider;
+    // UnitStatusからmaxHPを持ってくる準備
+    [SerializeField]
+    private UnitStatus unitStatus;
 
     // Start is called before the first frame update
     void Start()
     {
+        // UnitStatusからHPを持ってくる
+        unitStatus = this.GetComponent<UnitStatus>();
+        this.maxHp = unitStatus.MaxHp;
         currentHp = maxHp;
         hpSlider = HPUI.transform.Find("HPBar").GetComponent<Slider>();
         hpSlider.value = 1f;

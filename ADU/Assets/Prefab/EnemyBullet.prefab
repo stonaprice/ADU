@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 4061309136633805372}
   - component: {fileID: 4439391504694996991}
   m_Layer: 0
-  m_Name: EnemyBuller
+  m_Name: EnemyBullet
   m_TagString: EnemyWeapon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -29,8 +29,8 @@ Transform:
   m_GameObject: {fileID: 2385141376720844248}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.15, y: 0.15, z: 0.15}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 895344164601773765}
   m_Father: {fileID: 0}
@@ -77,7 +77,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 5f91667eb77e6ad499d43ad6b3c2085f, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e7b34f1a08020a149ae191e8294cab66, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -112,7 +112,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2.9, y: 3.5, z: 0.2}
+  m_Size: {x: 9.8, y: 6, z: 0.2}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &4439391504694996991
 Rigidbody:
