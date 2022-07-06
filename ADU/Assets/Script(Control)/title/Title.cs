@@ -14,7 +14,7 @@ public class Title : MonoBehaviour
         {
             Debug.Log("Go Next Scene!");
             //ここに次のシーンへいく命令を書く
-            FadeManager.Instance.LoadScene("Start", 1.0f); ;//Fightシーンをロードする
+            FadeManager.Instance.LoadScene("Start", 1.0f);//Fightシーンをロードする
             //
             firstPush = true;
         }

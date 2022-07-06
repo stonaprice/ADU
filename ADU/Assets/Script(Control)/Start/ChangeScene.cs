@@ -1,13 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
-public class ToTeamformation : MonoBehaviour
+public class ChangeScene : MonoBehaviour
 {
-    public void ChangeScene()
+    public void Change()
     {
-        //GameOver„Ç∑„Éº„É≥„Å∏ÁßªË°å
+        //GameOverÉVÅ[ÉìÇ÷à⁄çs
         FadeManager.Instance.LoadScene("TeamFormation", 1.0f);
     }
 }
