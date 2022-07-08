@@ -1317,6 +1317,7 @@ GameObject:
   - component: {fileID: 746902427}
   - component: {fileID: 746902428}
   - component: {fileID: 746902426}
+  - component: {fileID: 746902433}
   m_Layer: 0
   m_Name: Flowchart
   m_TagString: Untagged
@@ -1348,8 +1349,10 @@ MonoBehaviour:
     y: -340
     width: 1114
     height: 859
-  selectedBlocks: []
-  selectedCommands: []
+  selectedBlocks:
+  - {fileID: 746902337}
+  selectedCommands:
+  - {fileID: 746902433}
   variables: []
   description: 
   stepPause: 0
@@ -1470,6 +1473,7 @@ MonoBehaviour:
   - {fileID: 746902426}
   - {fileID: 746902421}
   - {fileID: 746902420}
+  - {fileID: 746902433}
   - {fileID: 746902403}
   - {fileID: 746902415}
   - {fileID: 746902419}
@@ -3522,7 +3526,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 85
   indentLevel: 0
-  storyText: "{size=90}{b}{color=red}\u4ECA\u3059\u3050\u9000\u5B66\u3055\u305B\u308B{/size}{/b}{/color}\u4E8B\u306F\u3067\u304D\u306A\u3044\u3093\u3058\u3083\u3042\u306D\u3048\u304B\u3042\u30FC\u30FC\u3063\uFF1F"
+  storyText: "\u7D19\u304C\u306A\u304D\u3083{size=90}{b}{color=red}\u4ECA\u3059\u3050\u9000\u5B66\u3055\u305B\u308B{/size}{/b}{/color}\u4E8B\u306F\u3067\u304D\u306A\u3044\u3093\u3058\u3083\u3042\u306D\u3048\u304B\u3042\u30FC\u30FC\u3063\uFF1F"
   description: 
   character: {fileID: 1780521443}
   portrait: {fileID: 21300000, guid: feba67686fae3424cac52285c2242bc8, type: 3}
@@ -3823,6 +3827,33 @@ MonoBehaviour:
   description: 
   character: {fileID: 1478696097}
   portrait: {fileID: 0}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  stopVoiceover: 1
+  waitForVO: 0
+  setSayDialog: {fileID: 0}
+--- !u!114 &746902433
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 746902334}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 94
+  indentLevel: 0
+  storyText: "\u5C0F\u766A\u306A\u2026"
+  description: 
+  character: {fileID: 1823240232}
+  portrait: {fileID: 21300000, guid: a6a1bf09735343241935160eea394a07, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -4250,7 +4281,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -43.1, y: 0}
+  m_AnchoredPosition: {x: -44.13, y: 6.98}
   m_SizeDelta: {x: 129.6, y: 73.6}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &918319919
@@ -5070,7 +5101,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_Sprite: {fileID: 21300000, guid: 357768c5b4fdacf49bcd36abbbbac052, type: 3}
   m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_FlipX: 0
@@ -5238,7 +5269,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 197.3, y: -23.3}
+  m_AnchoredPosition: {x: 197.3, y: 47.8}
   m_SizeDelta: {x: 1106, y: 71}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1604573507

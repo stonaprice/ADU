@@ -2,10 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;//シーンマネジメントを有効にする
+using DG.Tweening;
+using UnityEngine.UI;
 
 public class Title : MonoBehaviour
 {
     private bool firstPush = false;
+    
 
     public void PressStart()
     {
@@ -23,5 +26,11 @@ public class Title : MonoBehaviour
     public void PressQuit()
     {
         Application.Quit();//ゲームプレイ終了
+    }
+
+    public void FadeLoop(){
+        var StartButton = GetComponent<Image>();
+        StartButton.DOFade(0.2f,1.5f)
+                    .SetLoops(-1,LoopType.Yoyo);
     }
 }
