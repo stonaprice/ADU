@@ -501,6 +501,8 @@ MonoBehaviour:
   firingPoint: {fileID: 3127251466222532027}
   bullet: {fileID: 2385141376720844248, guid: 30fb3716072df354cb45d0aa110f711c, type: 3}
   speed: 10
+  attackPower: 1
+  unitStatus: {fileID: 1866264599813952707}
 --- !u!114 &2031720279729785145
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -514,7 +516,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   HPUI: {fileID: 508084861272951488}
-  unitStatus: {fileID: 0}
+  unitStatus: {fileID: 1866264599813952707}
 --- !u!114 &1866264599813952707
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -532,6 +534,7 @@ MonoBehaviour:
   findDistance: 10
   attackDistance: 5
   maxHp: 3
+  moveSpeed: 10
 --- !u!1 &6671094396556417333
 GameObject:
   m_ObjectHideFlags: 0

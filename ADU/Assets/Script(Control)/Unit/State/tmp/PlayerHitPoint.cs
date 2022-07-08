@@ -57,6 +57,9 @@ public class PlayerHitPoint : MonoBehaviour
     {
         if(this.gameObject.CompareTag("Player")){
             if (collision.gameObject.CompareTag("EnemyWeapon")){
+                // 接触した弾を削除する
+                Destroy(collision.gameObject);
+                
                 int value = 1;
                 Damage(value);
             }

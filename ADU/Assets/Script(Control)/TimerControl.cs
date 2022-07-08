@@ -99,7 +99,7 @@ public class TimerControl : MonoBehaviour
         totalTime -= Time.deltaTime;
         seconds = (int)totalTime;
         TimerText.text = seconds.ToString();
-        CostText.text = string.Format("{0} / 10", costControl.GetPlayerCost());
+        CostText.text = string.Format("{0} / {0}", costControl.GetPlayerCost(), costControl.PlayerMaxCost);
 
         //Gameover?��ֈڍs
         if (totalTime < 0 && count == 3)

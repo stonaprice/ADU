@@ -68,13 +68,19 @@ public class UnitHitPoint : MonoBehaviour
     {
         if(this.gameObject.CompareTag("PlayerUnit")){
             if (collision.gameObject.CompareTag("EnemyWeapon")){
-                int value = 1;
+                // 接触した弾を削除する
+                Destroy(collision.gameObject);
+                
+                int value = collision.gameObject.GetComponent<HommingBullet>().attackPower;
                 Damage(value);
             }
         }
         else if(this.gameObject.CompareTag("EnemyUnit")){
             if (collision.gameObject.CompareTag("PlayerWeapon")){
-                int value = 1;
+                // 接触した弾を削除する
+                Destroy(collision.gameObject);
+                
+                int value = collision.gameObject.GetComponent<FireBullet>().attackPower;
                 Damage(value);
             }
         }

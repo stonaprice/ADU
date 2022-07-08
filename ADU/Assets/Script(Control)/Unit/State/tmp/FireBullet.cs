@@ -1,6 +1,8 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class FireBullet : MonoBehaviour
 {
@@ -15,6 +17,13 @@ public class FireBullet : MonoBehaviour
     [SerializeField]
     [Tooltip("弾の速さ")]
     private float speed = 10f;
+    
+    // [SerializeField]
+    // [Tooltip("弾の攻撃力")]
+    public int attackPower = 1;
+
+    // [SerializeField]
+    private UnitStatus unitStatus;
 
     private float timer = 0;
     private float attackInterval = 1000;
@@ -31,22 +40,42 @@ public class FireBullet : MonoBehaviour
     // private GameObject closeEnemy;
 
     // Update is called once per frame
+    private void Start()
+    {
+        unitStatus = this.gameObject.GetComponent<UnitStatus>();
+        this.attackPower = unitStatus.AttackPower;
+    }
+
     void Update()
     {
         // if(attackInterval <= timer){
-            if(isAttacking){
-                // 弾を発射する
-                LauncherShot();
+            if(isAttacking || Input.GetKeyDown(KeyCode.Space)){
+                if (this.gameObject.CompareTag("PlayerUnit"))
+                {
+                    //自身の子オブジェクトから名前検索で取得（一段階下の子オブジェクトのみ）
+                    Transform child = this.transform.Find("PlayerBullet");
+                    // GameObject child = transform.Find("PlayerBullet").gameObject;
+                    if (ReferenceEquals(child, null))
+                    {
+                        // 弾を発射する
+                        LauncherShot();
+                    }
+                }
+                else if (this.gameObject.CompareTag("EnemyUnit"))
+                {
+                    // 子オブジェクトをタグで検索
+                    Transform child = this.transform.Find("EnemyBullet");
+                    // GameObject child = transform.Find("EnemyBullet").gameObject;
+                    if (ReferenceEquals(child, null))
+                    {
+                        // 弾を発射する
+                        LauncherShot();
+                    }
+                }
 
                 isAttacking = false;
             }
         // }
-        // スペースキーが押されたかを判定
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            // 弾を発射する
-            LauncherShot();
-        }
 
         // timer += Time.deltaTime;
 
@@ -59,6 +88,7 @@ public class FireBullet : MonoBehaviour
         // }
     }
 
+    // ReSharper disable Unity.PerformanceAnalysis
     /// <summary>
 	/// 弾の発射
 	/// </summary>
@@ -68,6 +98,10 @@ public class FireBullet : MonoBehaviour
         Vector3 bulletPosition = firingPoint.transform.position;
         // 上で取得した場所に、"bullet"のPrefabを出現させる
         newBall = Instantiate(bullet, bulletPosition, transform.rotation);
+        // 弾をユニットの子オブジェクトにする
+        newBall.transform.parent = this.transform;
+        // 弾に攻撃力を設定する
+        newBall.AddComponent<HommingBullet>().attackPower = this.attackPower;
         // // 出現させたボールのforward(z軸方向)
         // Vector3 direction = newBall.transform.forward;
         // // 弾の発射方向にnewBallのz方向(ローカル座標)を入れ、弾オブジェクトのrigidbodyに衝撃力を加える

@@ -6,6 +6,7 @@ public class HommingBullet : MonoBehaviour
 {
     public float speed;
     // private GameObject[] targets;
+    
     private bool isSwitch = false;
 
     private GameObject closeEnemy;
@@ -16,6 +17,8 @@ public class HommingBullet : MonoBehaviour
 
     // 「初期値」の設定
     private float closeDist = 1000;
+
+    public int attackPower = 1;
 
     private void Start()
     {
@@ -72,7 +75,7 @@ public class HommingBullet : MonoBehaviour
 
         if(t){
             // コンソール画面での確認用コード
-            print(Vector3.Distance(transform.position, t.transform.position));
+            // print(Vector3.Distance(transform.position, t.transform.position));
             // このオブジェクト（砲弾）と敵までの距離を計測
             float tDist = Vector3.Distance(transform.position, t.transform.position);
 

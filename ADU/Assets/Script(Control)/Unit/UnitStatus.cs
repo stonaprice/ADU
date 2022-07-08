@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class UnitStatus : MonoBehaviour
 {
@@ -44,8 +45,21 @@ public class UnitStatus : MonoBehaviour
         get { return this.maxHp; }
     }
 
-    
+    // ユニットの移動速度
+    [SerializeField] private int moveSpeed = 10;
 
+    public int MoveSpeed
+    {
+        get { return this.moveSpeed; }
+    }
+
+    private void Start()
+    {
+        if (gameObject.CompareTag("PlayerUnit") || gameObject.CompareTag("EnemyUnit"))
+        {
+            this.gameObject.GetComponent<NavMeshAgent>().speed = moveSpeed;
+        }
+    }
 
     // //参考 ( https://gametukurikata.com/program/mystatus )
 }
