@@ -9,7 +9,7 @@ public class MoveToTarget : MonoBehaviour
 
     void Update()
     {
-        float step = speed * Time.deltaTime;
+        float step = speed * Time.deltaTime * 10;
 
 
         //自分の位置、ターゲット、速度
