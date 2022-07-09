@@ -67,6 +67,7 @@ public class TowerHitPoint : MonoBehaviour
                  StartCoroutine(WaitTyokai());
                  //TanbaCutInTest.Cutin();
                  breakdown.Explosion();
+                 // Invoke(nameof(GameClearAnimation.ChangeGameClearScene), 2.0f);
              }
          }
     }
@@ -91,10 +92,11 @@ public class TowerHitPoint : MonoBehaviour
         }
         else if(this.gameObject.CompareTag("EnemyTower")){
             if (collision.gameObject.CompareTag("PlayerWeapon")){
+                int value = collision.gameObject.GetComponent<HommingBullet>().attackPower;
+                
                 // 接触した弾を削除する
                 Destroy(collision.gameObject);
                 
-                int value = 1;
                 Damage(value);
             }
         }

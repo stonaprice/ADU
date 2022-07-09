@@ -84,7 +84,7 @@ public class UnitHitPoint : MonoBehaviour
         }
         else if(this.gameObject.CompareTag("EnemyUnit"))
         {
-            print("unchi = "+_scoreManager.CurrentSchoolCredit);
+            // print("unchi = "+_scoreManager.CurrentSchoolCredit);
             // _schoolCreditText = GameObject.Find("SchoolCreditText");
             
             _scoreManager.CurrentSchoolCredit++;

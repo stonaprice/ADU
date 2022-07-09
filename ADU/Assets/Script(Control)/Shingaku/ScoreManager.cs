@@ -27,7 +27,7 @@ public class ScoreManager : MonoBehaviour
     void Update()
     {
         // テキストの表示を入れ替える
-        print("credit = "+currentSchoolCredit);
+        // print("credit = "+currentSchoolCredit);
         schoolCreditText.text = ":" + currentSchoolCredit;
     }
 }

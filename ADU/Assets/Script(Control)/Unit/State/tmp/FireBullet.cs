@@ -30,6 +30,9 @@ public class FireBullet : MonoBehaviour
 
     private GameObject newBall;
     private bool isAttacking = false;
+    
+    // 弾の発射間隔
+    private int shotIntarval = 0;
 
     // private GameObject[] targets;
     // private GameObject[] targets1;
@@ -48,8 +51,12 @@ public class FireBullet : MonoBehaviour
 
     void Update()
     {
+        // 時間を進める
+        // shotIntarval++;
+        
         // if(attackInterval <= timer){
             // if(isAttacking || Input.GetKeyDown(KeyCode.Space)){
+            // if(isAttacking && ReferenceEquals(shotIntarval % 5, 0)){
             if(isAttacking){
                 if (this.gameObject.CompareTag("PlayerUnit"))
                 {
@@ -93,8 +100,12 @@ public class FireBullet : MonoBehaviour
     /// <summary>
 	/// 弾の発射
 	/// </summary>
+    // IEnumerator LauncherShot()
     private void LauncherShot()
     {
+        // //3秒停止
+        // yield return new WaitForSeconds(3);
+        
         // 弾を発射する場所を取得
         Vector3 bulletPosition = firingPoint.transform.position;
         // 上で取得した場所に、"bullet"のPrefabを出現させる

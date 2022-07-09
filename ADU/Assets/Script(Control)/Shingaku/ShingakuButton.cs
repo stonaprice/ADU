@@ -30,7 +30,7 @@ public class ShingakuButton : MonoBehaviour
     
     private UnitStatus _unitStatus;
     
-    private int ShingakuCost = 10;
+    private int ShingakuCost = 5;
 
     private void Start()
     {
@@ -43,7 +43,7 @@ public class ShingakuButton : MonoBehaviour
 
     public void PressShingaku()
     {
-        if (!firstPush && ShingakuCost < _scoreManager.CurrentSchoolCredit)
+        if (!firstPush && ShingakuCost < _scoreManager.CurrentSchoolCredit - 1)
         {
             _scoreManager.CurrentSchoolCredit -= ShingakuCost;
 
@@ -53,7 +53,7 @@ public class ShingakuButton : MonoBehaviour
             _shingakuCostText.text = "Cost" + ShingakuCost;
 
             firstPush = true;
-        }else if (!secoundPush && ShingakuCost < _scoreManager.CurrentSchoolCredit)
+        }else if (!secoundPush && ShingakuCost < _scoreManager.CurrentSchoolCredit - 1)
         {
             _scoreManager.CurrentSchoolCredit -= ShingakuCost;
 
