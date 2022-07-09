@@ -11,6 +11,7 @@ public class CostControl : MonoBehaviour
     public float PlayerMaxCost
     {
         get { return this.playerMaxCost; }
+        set => this.playerMaxCost = value;
     }
     [SerializeField] private float enemyCost = 10;
     public GameObject button1;

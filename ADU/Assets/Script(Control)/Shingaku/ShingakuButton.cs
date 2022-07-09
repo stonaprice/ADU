@@ -38,7 +38,7 @@ public class ShingakuButton : MonoBehaviour
     {
         if (!firstPush && ShingakuCost < _scoreManager.CurrentSchoolCredit)
         {
-            _scoreManager.CurrentSchoolCredit = -ShingakuCost;
+            _scoreManager.CurrentSchoolCredit -= ShingakuCost;
 
             _degreeText.text = "修士";
             PowerUp(1.5);
@@ -48,7 +48,7 @@ public class ShingakuButton : MonoBehaviour
             firstPush = true;
         }else if (!secoundPush && ShingakuCost < _scoreManager.CurrentSchoolCredit)
         {
-            _scoreManager.CurrentSchoolCredit = -ShingakuCost;
+            _scoreManager.CurrentSchoolCredit -= ShingakuCost;
 
             _degreeText.text = "博士";
             PowerUp(2);

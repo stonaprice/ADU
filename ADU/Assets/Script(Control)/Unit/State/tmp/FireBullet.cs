@@ -73,7 +73,7 @@ public class FireBullet : MonoBehaviour
                     }
                 }
 
-                isAttacking = false;
+                // isAttacking = false;
             }
         // }
 

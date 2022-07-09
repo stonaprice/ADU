@@ -32,6 +32,7 @@ public class TimerControl : MonoBehaviour
         this.gameObject.SetActive(false);
         
         costControl.SetPlayerCost(playerCost);
+        costControl.PlayerMaxCost = playerCost;
         costControl.CostAnimation();
         costControl.ActivButton();
         

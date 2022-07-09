@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class UnitStateChild_MoveToTower : StateChildBase
+public class UnitStateChild_Move : StateChildBase
 {
     private UnityEngine.AI.NavMeshAgent navMeshAgent;
 
@@ -15,7 +15,7 @@ public class UnitStateChild_MoveToTower : StateChildBase
     // private UnitStatus unitStatus = GetComponentInParent<UnitStatus>();
     // private float findDistance = unitStatus.FindDistance;
 
-    private GameObject closeEnemy;
+    private GameObject closeEnemy = null;
 
     private GameObject[] targets1;
     private GameObject[] targets2;
@@ -25,37 +25,34 @@ public class UnitStateChild_MoveToTower : StateChildBase
     private float closeDist = 1000;
 
     // private GraphicsBuffer.Target _target;
-
-    // void Start(){
-    //     // navMeshAgent = GetComponent<UnityEngine.AI.NavMeshAgent>();
-    //     // navMeshAgent.destination = enemyTower.position;
-    //     // navMeshAgent.destination = tower.position;
-    // }
-
+    
     public override void OnEnter()
     {
-        Debug.Log("Tower");
+        Debug.Log("Move");
         // navMeshAgent = GetComponent<UnityEngine.AI.NavMeshAgent>(); // NavMeshAgent
 
         navMeshAgent = unit.GetComponent<UnityEngine.AI.NavMeshAgent>();
-        // navMeshAgent.destination = tower.position;
+        navMeshAgent.destination = tower.position;
+        
+        navMeshAgent.speed = GetComponentInParent<UnitStatus>().MoveSpeed;
+        isFinding = false;
 
-        // タグを使って画面上の全ての敵の情報を取得
-        if(this.gameObject.CompareTag("PlayerUnit")){
-            // targets1 = GameObject.FindGameObjectsWithTag("Enemy");
-            targets2 = GameObject.FindGameObjectsWithTag("EnemyUnit");
-            targets3 = GameObject.FindGameObjectsWithTag("EnemyTower");
-        }
-        else if(this.gameObject.CompareTag("EnemyUnit")){
-            targets1 = GameObject.FindGameObjectsWithTag("Player");
-            targets2 = GameObject.FindGameObjectsWithTag("PlayerUnit");
-            targets3 = GameObject.FindGameObjectsWithTag("PlayerTower");
-        }
+        // // タグを使って画面上の全ての敵の情報を取得
+        // if(this.gameObject.CompareTag("PlayerUnit")){
+        //     // targets1 = GameObject.FindGameObjectsWithTag("Enemy");
+        //     targets2 = GameObject.FindGameObjectsWithTag("EnemyUnit");
+        //     targets3 = GameObject.FindGameObjectsWithTag("EnemyTower");
+        // }
+        // else if(this.gameObject.CompareTag("EnemyUnit")){
+        //     targets1 = GameObject.FindGameObjectsWithTag("Player");
+        //     targets2 = GameObject.FindGameObjectsWithTag("PlayerUnit");
+        //     targets3 = GameObject.FindGameObjectsWithTag("PlayerTower");
+        // }
     }
 
     public override void OnExit()
     {
-        // Do Nothing.
+        navMeshAgent.speed = 0f;
     }
 
     public override int StateUpdate()
@@ -64,11 +61,13 @@ public class UnitStateChild_MoveToTower : StateChildBase
         if(this.gameObject.CompareTag("PlayerUnit")){
             // targets1 = GameObject.FindGameObjectsWithTag("Enemy");
             targets2 = GameObject.FindGameObjectsWithTag("EnemyUnit");
+            targets3 = GameObject.FindGameObjectsWithTag("EnemyTower");
         }
         else if (this.gameObject.CompareTag("EnemyUnit"))
         {
             targets1 = GameObject.FindGameObjectsWithTag("Player");
             targets2 = GameObject.FindGameObjectsWithTag("PlayerUnit");
+            targets3 = GameObject.FindGameObjectsWithTag("PlayerTower");
         }
 
         if(this.gameObject.CompareTag("EnemyUnit")){
@@ -85,21 +84,20 @@ public class UnitStateChild_MoveToTower : StateChildBase
 
         if(closeEnemy){
             CheckDistance();
+            
+            // 一番近い敵や塔に向かって移動します。
+            // navMeshAgent.SetDestination(closeEnemy.transform.position);
+            navMeshAgent.destination = closeEnemy.transform.position;
         }
 
         if(isFinding){
-            UnitStateChild_MoveToEnemy mte = GetComponent<UnitStateChild_MoveToEnemy>();
-            mte.SetTarget(closeEnemy);
+            // UnitStateChild_MoveToEnemy mte = GetComponent<UnitStateChild_MoveToEnemy>();
+            // mte.SetTarget(closeEnemy);
 
-            return (int)UnitStateController.StateType.MoveToEnemy;
+            return (int)UnitStateController.StateType.Attack2;
         }
-        
-        // targetに向かって移動します。
-        navMeshAgent.SetDestination(tower.position);
 
-        // navMeshAgent.destination = tower.position;
-
-        return (int)UnitStateController.StateType.MoveToTower;
+        return (int)UnitStateController.StateType.Move;
     }
 
     void SearchNearest(GameObject t){

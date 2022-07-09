@@ -13,63 +13,51 @@ public class UnitStateController : StateControllerBase
         MoveToTower,
         MoveToEnemy,
         Attack,
+        Move,
+        Attack2,
     }
     // 初期化処理
     public override void Initialize(int initializeStateType)
     {
-        // 塔へ移動
-        stateDic[(int)StateType.MoveToTower] = gameObject.AddComponent<UnitStateChild_MoveToTower>();
-        stateDic[(int)StateType.MoveToTower].Initialize((int)StateType.MoveToTower);
+	    // 移動
+	    stateDic[(int)StateType.Move] = gameObject.AddComponent<UnitStateChild_Move>();
+	    stateDic[(int)StateType.Move].Initialize((int)StateType.Move);
 
-        // 同じオブジェクト内の他のスクリプトを参照する場合
-		UnitStateChild_MoveToTower mmt = GetComponent<UnitStateChild_MoveToTower>();
-        mmt.SetTower(tower);
-        mmt.SetUnit(unit);
+	    // 同じオブジェクト内の他のスクリプトを参照する場合
+	    UnitStateChild_Move move = GetComponent<UnitStateChild_Move>();
+	    move.SetTower(tower);
+	    move.SetUnit(unit);
 
-        // 敵へ移動
-        stateDic[(int)StateType.MoveToEnemy] = gameObject.AddComponent<UnitStateChild_MoveToEnemy>();
-        stateDic[(int)StateType.MoveToEnemy].Initialize((int)StateType.MoveToEnemy);
+	    // 攻撃
+	    stateDic[(int)StateType.Attack2] = gameObject.AddComponent<UnitStateChild_Attack2>();
+	    stateDic[(int)StateType.Attack2].Initialize((int)StateType.Attack2);
 
-        // 攻撃
-        stateDic[(int)StateType.Attack] = gameObject.AddComponent<UnitStateChild_Attack>();
-        stateDic[(int)StateType.Attack].Initialize((int)StateType.Attack);
-
-        CurrentState = initializeStateType;
-        // stateDic[CurrentState].SetTower(tower);
-        // stateDic[CurrentState].SetUnit(unit);
-        stateDic[CurrentState].OnEnter();
-    }
-
-    // 近くに敵がいる場合
-    public void OnDetectObject(Collider collider)
-    {
-        // // 同じオブジェクト内の他のスクリプトを参照する場合
-		// UnitStateChild_MoveToTower mtt = GetComponent<UnitStateChild_MoveToTower>();
-        // UnitStateChild_MoveToEnemy mte = GetComponent<UnitStateChild_MoveToEnemy>();
-
-        // // Debug.Log(collider.tag);
-
-        // if(CurrentState == (int)StateType.MoveToTower){
-        //     if(this.gameObject.CompareTag("PlayerUnit")){
-        //         if(collider.CompareTag("EnemyUnit")){
-        //             mte.SetTarget(collider);
-        //             mtt.SetIsFinding(true);
-        //         }
-        //         // if (collider.CompareTag("Enemy")){
-        //         //     mte.SetTarget(collider);
-        //         //     mtt.SetIsFinding(true);
-        //         // }
-        //     }else if(this.gameObject.CompareTag("EnemyUnit")){
-        //         if(collider.CompareTag("PlayerUnit")){
-        //             mte.SetTarget(collider);
-        //             mtt.SetIsFinding(true);
-        //         }
-        //         if(collider.CompareTag("Player")){
-        //             mte.SetTarget(collider);
-        //             mtt.SetIsFinding(true);
-        //         }
-        //     }
-        // }
+	    CurrentState = initializeStateType;
+	    // stateDic[CurrentState].SetTower(tower);
+	    // stateDic[CurrentState].SetUnit(unit);
+	    stateDic[CurrentState].OnEnter();
+	    
+  //       // 塔へ移動
+  //       stateDic[(int)StateType.MoveToTower] = gameObject.AddComponent<UnitStateChild_MoveToTower>();
+  //       stateDic[(int)StateType.MoveToTower].Initialize((int)StateType.MoveToTower);
+  //
+  //       // 同じオブジェクト内の他のスクリプトを参照する場合
+		// UnitStateChild_MoveToTower mmt = GetComponent<UnitStateChild_MoveToTower>();
+  //       mmt.SetTower(tower);
+  //       mmt.SetUnit(unit);
+  //
+  //       // 敵へ移動
+  //       stateDic[(int)StateType.MoveToEnemy] = gameObject.AddComponent<UnitStateChild_MoveToEnemy>();
+  //       stateDic[(int)StateType.MoveToEnemy].Initialize((int)StateType.MoveToEnemy);
+  //
+  //       // 攻撃
+  //       stateDic[(int)StateType.Attack] = gameObject.AddComponent<UnitStateChild_Attack>();
+  //       stateDic[(int)StateType.Attack].Initialize((int)StateType.Attack);
+  //
+  //       CurrentState = initializeStateType;
+  //       // stateDic[CurrentState].SetTower(tower);
+  //       // stateDic[CurrentState].SetUnit(unit);
+  //       stateDic[CurrentState].OnEnter();
     }
 
     public void SetUnit(GameObject unit) {
