@@ -49,7 +49,7 @@ public class PanelState : MonoBehaviour
     public void PanelSlidePassive()
     {
         var sequence = DOTween.Sequence();
-        sequence.Append(Kyu.transform.DOMoveX(-260,0.7f));
+        sequence.Append(Kyu.transform.DOMoveX(-215,0.7f));
         audioSource.PlayOneShot(close);
         a = 0;
         
