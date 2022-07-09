@@ -24,6 +24,9 @@ public class UnitHitPoint : MonoBehaviour
     // 習得単位のテキスト
     [SerializeField] private GameObject schoolCreditText;
 
+    // 死亡時ログを表示するパネル
+    [SerializeField] private GameObject ChatPanel;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -65,6 +68,8 @@ public class UnitHitPoint : MonoBehaviour
     {
         if (this.gameObject.CompareTag("PlayerUnit"))
         {
+            // ChatPanel.GetComponent<PanelState>().PanelSlideActive();
+            // ChatPanel.GetComponent<PanelState>().PanelOn();
         }
         else if(this.gameObject.CompareTag("EnemyUnit"))
         {
@@ -80,19 +85,21 @@ public class UnitHitPoint : MonoBehaviour
     {
         if(this.gameObject.CompareTag("PlayerUnit")){
             if (collision.gameObject.CompareTag("EnemyWeapon")){
+                int value = collision.gameObject.GetComponent<HommingBullet>().attackPower;
+                
                 // 接触した弾を削除する
                 Destroy(collision.gameObject);
                 
-                int value = collision.gameObject.GetComponent<HommingBullet>().attackPower;
                 Damage(value);
             }
         }
         else if(this.gameObject.CompareTag("EnemyUnit")){
             if (collision.gameObject.CompareTag("PlayerWeapon")){
+                int value = collision.gameObject.GetComponent<HommingBullet>().attackPower;
+                
                 // 接触した弾を削除する
                 Destroy(collision.gameObject);
                 
-                int value = collision.gameObject.GetComponent<FireBullet>().attackPower;
                 Damage(value);
             }
         }

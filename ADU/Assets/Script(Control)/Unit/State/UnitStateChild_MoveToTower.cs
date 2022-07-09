@@ -57,6 +57,16 @@ public class UnitStateChild_MoveToTower : StateChildBase
 
     public override int StateUpdate()
     {
+        // タグを使って画面上の全ての敵の情報を取得
+        if(this.gameObject.CompareTag("PlayerUnit")){
+            // targets1 = GameObject.FindGameObjectsWithTag("Enemy");
+            targets2 = GameObject.FindGameObjectsWithTag("EnemyUnit");
+        }
+        else if (this.gameObject.CompareTag("EnemyUnit"))
+        {
+            targets1 = GameObject.FindGameObjectsWithTag("Player");
+            targets2 = GameObject.FindGameObjectsWithTag("PlayerUnit");
+        }
 
         if(this.gameObject.CompareTag("EnemyUnit")){
             foreach (GameObject t in targets1){

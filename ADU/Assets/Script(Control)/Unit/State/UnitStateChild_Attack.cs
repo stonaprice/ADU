@@ -25,7 +25,7 @@ public class UnitStateChild_Attack : StateChildBase
 
     public override void OnExit()
     {
-        // Do Nothing.
+        fb.SetIsAttacking(false);
     }
 
     public override int StateUpdate()
@@ -39,13 +39,16 @@ public class UnitStateChild_Attack : StateChildBase
 
         // Debug.Log(countTime);
 
-        if(isAttacking){
-            if(1000 < countTime){
-                fb.SetIsAttacking(false);
-                countTime = 0;
-            }
-            return (int)UnitStateController.StateType.Attack;
-        }
+        // if(isAttacking){
+        //     if(1000 < countTime){
+        //         fb.SetIsAttacking(false);
+        //         countTime = 0;
+        //     }
+        //     return (int)UnitStateController.StateType.Attack;
+        // }
+
+        return (int)UnitStateController.StateType.Attack;
+
 
         return (int)UnitStateController.StateType.MoveToTower;
     }

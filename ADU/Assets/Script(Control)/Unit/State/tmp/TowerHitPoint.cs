@@ -81,10 +81,11 @@ public class TowerHitPoint : MonoBehaviour
     {
         if(this.gameObject.CompareTag("PlayerTower")){
             if (collision.gameObject.CompareTag("EnemyWeapon")){
+                int value = collision.gameObject.GetComponent<HommingBullet>().attackPower;
+                
                 // 接触した弾を削除する
                 Destroy(collision.gameObject);
                 
-                int value = 1;
                 Damage(value);
             }
         }
