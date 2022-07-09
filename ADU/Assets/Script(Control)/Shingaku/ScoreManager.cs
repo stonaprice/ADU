@@ -19,9 +19,17 @@ public class ScoreManager : MonoBehaviour
 
     private Text schoolCreditText;
 
+    [SerializeField] private GameObject[] ShingakuButton = new GameObject[3];
+    // private ShingakuButton[] _shingakuButton = new ShingakuButton[3];
+
     private void Start()
     {
         schoolCreditText = schoolCredit.GetComponent<Text>();
+
+        // for (int i = 0; i < 3; i++)
+        // {
+        //     _shingakuButton = ShingakuButton[i].GetComponent<ShingakuButton>();
+        // }
     }
 
     void Update()
@@ -29,5 +37,17 @@ public class ScoreManager : MonoBehaviour
         // テキストの表示を入れ替える
         // print("credit = "+currentSchoolCredit);
         schoolCreditText.text = ":" + currentSchoolCredit;
+
+        for (int i = 0; i < 3; i++)
+        {
+            if (ShingakuButton[i].GetComponent<ShingakuButton>().requiredCost <= CurrentSchoolCredit)
+            {
+                ShingakuButton[i].GetComponent<Button>().interactable = true;
+            }
+            else
+            {
+                ShingakuButton[i].GetComponent<Button>().interactable = false;
+            }
+        }
     }
 }

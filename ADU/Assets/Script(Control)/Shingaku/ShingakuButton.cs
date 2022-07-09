@@ -29,8 +29,8 @@ public class ShingakuButton : MonoBehaviour
 
     
     private UnitStatus _unitStatus;
-    
-    private int ShingakuCost = 5;
+
+    [FormerlySerializedAs("ShingakuCost")] public int requiredCost = 5;
 
     private void Start()
     {
@@ -43,24 +43,26 @@ public class ShingakuButton : MonoBehaviour
 
     public void PressShingaku()
     {
-        if (!firstPush && ShingakuCost < _scoreManager.CurrentSchoolCredit - 1)
+        if (!firstPush && requiredCost <= _scoreManager.CurrentSchoolCredit)
         {
-            _scoreManager.CurrentSchoolCredit -= ShingakuCost;
+            _scoreManager.CurrentSchoolCredit -= requiredCost;
 
             _degreeText.text = "修士";
             PowerUp(1.5);
-            ShingakuCost *= 2;
-            _shingakuCostText.text = "Cost" + ShingakuCost;
+            requiredCost *= 2;
+            _shingakuCostText.text = "Cost" + requiredCost;
 
             firstPush = true;
-        }else if (!secoundPush && ShingakuCost < _scoreManager.CurrentSchoolCredit - 1)
+            gameObject.GetComponent<Button>().interactable = false;
+        }else if (!secoundPush && requiredCost <= _scoreManager.CurrentSchoolCredit)
         {
-            _scoreManager.CurrentSchoolCredit -= ShingakuCost;
+            _scoreManager.CurrentSchoolCredit -= requiredCost;
 
             _degreeText.text = "博士";
             PowerUp(2);
 
             secoundPush = true;
+            gameObject.GetComponent<Button>().interactable = false;
         }
     }
 

@@ -4000,7 +4000,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 291299157}
   m_OnClick:
     m_PersistentCalls:
@@ -4071,6 +4071,7 @@ MonoBehaviour:
   degree: {fileID: 1016266307}
   shingakuCost: {fileID: 1854200295}
   unit: {fileID: 3105289529304451360, guid: 98579e72a18120d4285ff1c733d98d3c, type: 3}
+  requiredCost: 5
 --- !u!43 &298744348
 Mesh:
   m_ObjectHideFlags: 0
@@ -8494,7 +8495,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 582876243}
   m_OnClick:
     m_PersistentCalls:
@@ -8565,6 +8566,7 @@ MonoBehaviour:
   degree: {fileID: 1201311729}
   shingakuCost: {fileID: 229726688}
   unit: {fileID: 3105289529304451360, guid: 98579e72a18120d4285ff1c733d98d3c, type: 3}
+  requiredCost: 5
 --- !u!1 &586293845
 GameObject:
   m_ObjectHideFlags: 0
@@ -8796,7 +8798,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 607596756}
   m_OnClick:
     m_PersistentCalls:
@@ -8867,6 +8869,7 @@ MonoBehaviour:
   degree: {fileID: 738824036}
   shingakuCost: {fileID: 1520735786}
   unit: {fileID: 3105289529304451360, guid: 98579e72a18120d4285ff1c733d98d3c, type: 3}
+  requiredCost: 5
 --- !u!1 &611118113 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6432921982757239684, guid: baae45f62a5f21a45aca117d39e3cd51,
@@ -33882,6 +33885,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5646041155801814988, guid: 1f51810b33d228846bf108f26161b0a9,
+        type: 3}
+      propertyPath: ShingakuButton.Array.data[0]
+      value: 
+      objectReference: {fileID: 582876240}
+    - target: {fileID: 5646041155801814988, guid: 1f51810b33d228846bf108f26161b0a9,
+        type: 3}
+      propertyPath: ShingakuButton.Array.data[1]
+      value: 
+      objectReference: {fileID: 607596753}
+    - target: {fileID: 5646041155801814988, guid: 1f51810b33d228846bf108f26161b0a9,
+        type: 3}
+      propertyPath: ShingakuButton.Array.data[2]
+      value: 
+      objectReference: {fileID: 291299154}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1f51810b33d228846bf108f26161b0a9, type: 3}
 --- !u!1001 &6290207164134057807
