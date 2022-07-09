@@ -20,7 +20,7 @@ public class StartText : MonoBehaviour
 
         //?��{?��^?��?��?��?��?��\?��?��?��ɂ�?��?��
         cardbutton.SetActive(false);
-        //sum.SetActive(false);
+        CardSelectButton.SetActive(false);
 
         //?��X?��N?��?��?��v?��g?��̖�?��?��?��?��?��i?��?��?��?��?��?��ł�?��Ȃ�?��悤?��ɂ�?��邽?��߁j
         GameObject playerObj = GameObject.Find("Player");
@@ -55,13 +55,14 @@ public class StartText : MonoBehaviour
         Text.text = "START!!";
         //?��?��?��?��?��F?��?��ύX
         Text.color = Color.red;
-        CardSelectButton.SetActive(true);
+        
     }
 
     void DisplayOff()
     {
         //?��?��?��?��?��?��\?��?��?��?��?��?��
         this.gameObject.SetActive(false);
+        CardSelectButton.SetActive(true);
 
         //?��{?��^?��?��?��?��\?��?��?��ɂ�?��?��
         cardbutton.SetActive(true);
