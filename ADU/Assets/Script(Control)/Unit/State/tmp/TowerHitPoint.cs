@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class TowerHitPoint : MonoBehaviour
 {
@@ -16,6 +17,8 @@ public class TowerHitPoint : MonoBehaviour
     private GameObject HPUI;
     // HP表示用スライダー
     private Slider hpSlider;
+    //フラグ
+    private bool flag = true;
 
     public BreakDown breakdown;
     public GameClearAnimation GameClearAnimation;
@@ -53,23 +56,26 @@ public class TowerHitPoint : MonoBehaviour
         // HP表示用UIのアップデート
         UpdateHPValue();
         
-         if(currentHp <= 0)
+         if(currentHp <= 0 && flag)
          {
              //Dead();
              if (this.gameObject.CompareTag("PlayerTower"))
              {
-                 _gameOver.ChangeScene();
+                 _gameOver.ChangeScene();              
              }
-             else if (this.gameObject.CompareTag("EnemyTower"))
+             else if(this.gameObject.CompareTag("EnemyTower"))
              {
-                 this.gameObject.GetComponent<Detonator>().Explode();
+                flag = false;
+                Debug.Log("OK");
+                this.gameObject.GetComponent<Detonator>().Explode();
                  GameClearAnimation.TyoKaiSyoBun();
                  StartCoroutine(WaitTyokai());
                  //TanbaCutInTest.Cutin();
                  breakdown.Explosion();
-                 // Invoke(nameof(GameClearAnimation.ChangeGameClearScene), 2.0f);
-             }
-         }
+                //Invoke(nameof(GameClearAnimation.ChangeGameClearScene), 2.0f);
+            }
+            flag = false;
+        }
     }
 
     private IEnumerator WaitTyokai()

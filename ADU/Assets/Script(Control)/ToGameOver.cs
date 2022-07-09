@@ -15,4 +15,11 @@ public class ToGameOver : MonoBehaviour
         //GameOverシーンへ移行
         FadeManager.Instance.LoadScene("GameOver", 1.0f);
     }
+
+    public void ChangeClearScene()
+    {
+        //GameOverシーンへ移行
+        FadeManager.Instance.LoadScene("GameClear", 1.0f);
+    }
+
 }
