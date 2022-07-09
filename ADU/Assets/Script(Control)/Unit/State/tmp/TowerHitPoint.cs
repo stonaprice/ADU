@@ -22,7 +22,7 @@ public class TowerHitPoint : MonoBehaviour
 
     public BreakDown breakdown;
     public GameClearAnimation GameClearAnimation;
-    //public TanbaCutInTest TanbaCutInTest;
+    public TanbaCutInTest TanbaCutInTest;
 
     [SerializeField]
     private ToGameOver _gameOver;
@@ -61,20 +61,21 @@ public class TowerHitPoint : MonoBehaviour
              //Dead();
              if (this.gameObject.CompareTag("PlayerTower"))
              {
-                 _gameOver.ChangeScene();              
-             }
+                flag = false;
+                _gameOver.ChangeScene();
+                
+            }
              else if(this.gameObject.CompareTag("EnemyTower"))
              {
                 flag = false;
                 Debug.Log("OK");
                 this.gameObject.GetComponent<Detonator>().Explode();
-                 GameClearAnimation.TyoKaiSyoBun();
-                 StartCoroutine(WaitTyokai());
-                 //TanbaCutInTest.Cutin();
-                 breakdown.Explosion();
+                GameClearAnimation.TyoKaiSyoBun();
+                StartCoroutine(WaitTyokai());
+                TanbaCutInTest.Cutin();
+                breakdown.Explosion();
                 //Invoke(nameof(GameClearAnimation.ChangeGameClearScene), 2.0f);
             }
-            flag = false;
         }
     }
 
