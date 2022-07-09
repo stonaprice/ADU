@@ -40,7 +40,7 @@ public class ShingakuButton : MonoBehaviour
         {
             _scoreManager.CurrentSchoolCredit = -ShingakuCost;
 
-            _degreeText.text = "Shushi";
+            _degreeText.text = "修士";
             PowerUp(1.5);
             ShingakuCost *= 2;
             _shingakuCostText.text = "Cost" + ShingakuCost;
@@ -50,7 +50,7 @@ public class ShingakuButton : MonoBehaviour
         {
             _scoreManager.CurrentSchoolCredit = -ShingakuCost;
 
-            _degreeText.text = "Hakushi";
+            _degreeText.text = "博士";
             PowerUp(2);
 
             secoundPush = true;

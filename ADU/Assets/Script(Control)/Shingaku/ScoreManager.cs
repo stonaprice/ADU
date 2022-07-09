@@ -20,6 +20,6 @@ public class ScoreManager : MonoBehaviour
     {
         // テキストの表示を入れ替える
         Text schoolCreditText = schoolCredit.GetComponent<Text>();
-        schoolCreditText.text = "SchoolCredit:" + currentSchoolCredit;
+        schoolCreditText.text = ":" + currentSchoolCredit;
     }
 }
