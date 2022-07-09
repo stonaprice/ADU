@@ -22,7 +22,9 @@ public class UnitHitPoint : MonoBehaviour
     [SerializeField]
     private UnitStatus unitStatus;
     // 習得単位のテキスト
-    [SerializeField] private GameObject schoolCreditText;
+    // [SerializeField] 
+    private GameObject schoolCreditText;
+    private ScoreManager _scoreManager;
 
     // 死亡時ログを表示するパネル
     [SerializeField] private GameObject ChatPanel;
@@ -36,6 +38,15 @@ public class UnitHitPoint : MonoBehaviour
         currentHp = maxHp;
         hpSlider = HPUI.transform.Find("HPBar").GetComponent<Slider>();
         hpSlider.value = 1f;
+        
+        if (this.gameObject.CompareTag("EnemyUnit"))
+        {
+            schoolCreditText = GameObject.Find("SchoolCreditText");
+            if (schoolCreditText)
+            {
+                _scoreManager = schoolCreditText.GetComponent<ScoreManager>();
+            }
+        }
     }
 
     // Update is called once per frame
@@ -73,8 +84,10 @@ public class UnitHitPoint : MonoBehaviour
         }
         else if(this.gameObject.CompareTag("EnemyUnit"))
         {
+            print("unchi = "+_scoreManager.CurrentSchoolCredit);
             // _schoolCreditText = GameObject.Find("SchoolCreditText");
-            schoolCreditText.GetComponent<ScoreManager>().CurrentSchoolCredit += 1;
+            
+            _scoreManager.CurrentSchoolCredit++;
         }
 
         Destroy(gameObject);

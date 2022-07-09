@@ -49,7 +49,8 @@ public class FireBullet : MonoBehaviour
     void Update()
     {
         // if(attackInterval <= timer){
-            if(isAttacking || Input.GetKeyDown(KeyCode.Space)){
+            // if(isAttacking || Input.GetKeyDown(KeyCode.Space)){
+            if(isAttacking){
                 if (this.gameObject.CompareTag("PlayerUnit"))
                 {
                     //自身の子オブジェクトから名前検索で取得（一段階下の子オブジェクトのみ）

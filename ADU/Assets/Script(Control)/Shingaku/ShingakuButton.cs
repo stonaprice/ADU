@@ -20,7 +20,14 @@ public class ShingakuButton : MonoBehaviour
     [SerializeField] private GameObject shingakuCost;
     private Text _shingakuCostText;
 
-    public GameObject unit;
+    [SerializeField] private GameObject unit;
+    public GameObject Unit
+    {
+        get { return this.unit; }
+        set => this.unit = value;
+    }
+
+    
     private UnitStatus _unitStatus;
     
     private int ShingakuCost = 10;

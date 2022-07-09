@@ -33,7 +33,7 @@ public class SubetenoHajimari : MonoBehaviour
                     
                     shingakuImages[i].GetComponent<Image>().sprite = _saveUnit.selectedSprite[i];
                     
-                    shingakuButton[i].GetComponent<ShingakuButton>().unit = _saveUnit.selectedUnit[i];
+                    shingakuButton[i].GetComponent<ShingakuButton>().Unit = _saveUnit.selectedUnit[i];
                 }
             }
         }
