@@ -434,7 +434,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.7
-  m_Speed: 10
+  m_Speed: 5
   m_Acceleration: 1
   avoidancePriority: 0
   m_AngularSpeed: 120
@@ -518,7 +518,6 @@ MonoBehaviour:
   bullet: {fileID: 2385141376720844248, guid: 30fb3716072df354cb45d0aa110f711c, type: 3}
   speed: 10
   attackPower: 1
-  unitStatus: {fileID: 755864541025981383}
 --- !u!114 &1911146676307279621
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -533,6 +532,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HPUI: {fileID: 8187409161632541147}
   unitStatus: {fileID: 755864541025981383}
+  schoolCreditText: {fileID: 0}
 --- !u!114 &755864541025981383
 MonoBehaviour:
   m_ObjectHideFlags: 0

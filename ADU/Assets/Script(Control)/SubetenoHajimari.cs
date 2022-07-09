@@ -12,7 +12,8 @@ public class SubetenoHajimari : MonoBehaviour
     AudioSource audioSource;
     
     public GameObject[] images = new GameObject[3];
-
+    public GameObject[] shingakuImages = new GameObject[3];
+    public GameObject[] shingakuButton = new GameObject[3];
 
     //　会話終わったあとにWave1を呼び出すメソッド
     private void battleStart()
@@ -25,8 +26,14 @@ public class SubetenoHajimari : MonoBehaviour
             {
                 if (!ReferenceEquals(images[i], null))
                 {
-                    images[i].GetComponent<SummonUnit>().Unit1 = saveUnit.GetComponent<SaveUnit>().selectedUnit[i];
-                    images[i].GetComponent<Image>().sprite = saveUnit.GetComponent<SaveUnit>().selectedSprite[i];
+                    SaveUnit _saveUnit = saveUnit.GetComponent<SaveUnit>();
+                    
+                    images[i].GetComponent<SummonUnit>().Unit1 = _saveUnit.selectedUnit[i];
+                    images[i].GetComponent<Image>().sprite = _saveUnit.selectedSprite[i];
+                    
+                    shingakuImages[i].GetComponent<Image>().sprite = _saveUnit.selectedSprite[i];
+                    
+                    shingakuButton[i].GetComponent<ShingakuButton>().unit = _saveUnit.selectedUnit[i];
                 }
             }
         }

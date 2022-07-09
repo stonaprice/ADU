@@ -48,7 +48,7 @@ public class TowerHitPoint : MonoBehaviour
 
         currentHp -= value;
 
-        Debug.Log(currentHp);
+        // Debug.Log(currentHp);
 
         // HP表示用UIのアップデート
         UpdateHPValue();

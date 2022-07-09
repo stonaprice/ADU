@@ -31,7 +31,7 @@ public class UnitStateChild_MoveToTower : StateChildBase
 
     public override void OnEnter()
     {
-        Debug.Log("kani");
+        Debug.Log("Tower");
         // navMeshAgent = GetComponent<UnityEngine.AI.NavMeshAgent>(); // NavMeshAgent
 
         navMeshAgent = unit.GetComponent<UnityEngine.AI.NavMeshAgent>();

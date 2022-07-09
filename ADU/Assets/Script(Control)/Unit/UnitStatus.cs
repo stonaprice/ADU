@@ -43,6 +43,7 @@ public class UnitStatus : MonoBehaviour
     public int MaxHp
     {
         get { return this.maxHp; }
+        set => this.maxHp = value;
     }
 
     // ユニットの移動速度

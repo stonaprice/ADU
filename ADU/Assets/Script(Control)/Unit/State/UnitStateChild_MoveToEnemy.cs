@@ -13,7 +13,7 @@ public class UnitStateChild_MoveToEnemy : StateChildBase
 
     public override void OnEnter()
     {
-        Debug.Log("suitou");
+        // Debug.Log("Enemy");
         navMeshAgent = GetComponentInParent<UnityEngine.AI.NavMeshAgent>();//一番上の親についているコンポーネントを取得する
         // navMeshAgent = GetComponent<UnityEngine.AI.NavMeshAgent>(); // NavMeshAgent
 

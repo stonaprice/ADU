@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.Serialization;
 using UnityEngine.UI;
@@ -20,6 +21,8 @@ public class UnitHitPoint : MonoBehaviour
     // UnitStatusからmaxHPを持ってくる準備
     [SerializeField]
     private UnitStatus unitStatus;
+    // 習得単位のテキスト
+    [SerializeField] private GameObject schoolCreditText;
 
     // Start is called before the first frame update
     void Start()
@@ -60,6 +63,15 @@ public class UnitHitPoint : MonoBehaviour
   // 死亡時の処理
     void Dead()
     {
+        if (this.gameObject.CompareTag("PlayerUnit"))
+        {
+        }
+        else if(this.gameObject.CompareTag("EnemyUnit"))
+        {
+            // _schoolCreditText = GameObject.Find("SchoolCreditText");
+            schoolCreditText.GetComponent<ScoreManager>().CurrentSchoolCredit += 1;
+        }
+
         Destroy(gameObject);
     }
 
