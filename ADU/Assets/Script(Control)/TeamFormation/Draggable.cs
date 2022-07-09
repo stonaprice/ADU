@@ -40,6 +40,8 @@ public class Draggable : MonoBehaviour
         
         _spriteChange =  viewArea.GetComponent<SpriteChange>();
         _spriteChange1 =  viewArea1.GetComponent<SpriteChange>();
+        
+        saveUnit = GameObject.Find("SaveUnit");
         _saveUnit =  saveUnit.GetComponent<SaveUnit>();
     }
 

@@ -14,6 +14,8 @@ public class GoButton : MonoBehaviour
 
     private void Start()
     {
+        _firstPush = false;
+        
         saveUnit = GameObject.Find("SaveUnit");
         _saveUnit = saveUnit.GetComponent<SaveUnit>();
     }
@@ -55,11 +57,11 @@ public class GoButton : MonoBehaviour
             
             if (!_empty)
             {
+                _firstPush = true;
+
                 Debug.Log("Go Next Scene!");
                 //ここに次のシーンへいく命令を書く
                 SceneManager.LoadScene("Fight");//Fightシーンをロードする
-            
-                _firstPush = true;
             }
         }
 

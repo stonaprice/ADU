@@ -16,6 +16,8 @@ public class TanbaCutInTest : MonoBehaviour
         CutinCharacter();
         CutinBackGround();        
         CutinSword();
+        Invoke(nameof(ChangeGameOverScene), 2.0f);
+        
     }
 
     private void CutinCharacter()
@@ -52,5 +54,11 @@ public class TanbaCutInTest : MonoBehaviour
                             strength: 2.2f
                         ))
                         .Append(Sword.transform.DOScale(new Vector3(0,0,0), 0.1f));
+    }
+
+    private void ChangeGameOverScene()
+    {
+        //GameOverシーンへ移行
+        FadeManager.Instance.LoadScene("GameOver", 1.0f);
     }
 }

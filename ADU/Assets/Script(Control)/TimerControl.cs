@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using DG.Tweening;
+using UnityEngine.Serialization;
 
 public class TimerControl : MonoBehaviour
 {
@@ -18,6 +19,9 @@ public class TimerControl : MonoBehaviour
     int seconds;
     int count = 0;
     float maxEnemyCost;
+    
+    [SerializeField] private TanbaCutInTest tanbaCutInTest;
+
 
     // Start is called before the first frame update
     public void TimerStart()
@@ -113,6 +117,7 @@ public class TimerControl : MonoBehaviour
         if (totalTime < 0 && count == 2)
         {
             totalTime = 100;
+            // totalTime = 1;
             count++;
             Start4();
         }
@@ -121,6 +126,7 @@ public class TimerControl : MonoBehaviour
         if (totalTime < 0 && count == 1)
         {
             totalTime = 30;
+            // totalTime = 1;
             count++;
             Start3();
         }
@@ -129,6 +135,7 @@ public class TimerControl : MonoBehaviour
         if (totalTime < 0 && count == 0)
         {
             totalTime = 30;
+            // totalTime = 1;
             count++;
             Start2();
         }
@@ -136,6 +143,7 @@ public class TimerControl : MonoBehaviour
     
     void End()
     {
-            gameOver.ChangeScene();
+            // gameOver.ChangeScene();
+            tanbaCutInTest.Cutin();
     }
 }
