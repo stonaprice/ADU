@@ -50,7 +50,7 @@ public class ShingakuButton : MonoBehaviour
             _degreeText.text = "修士";
             PowerUp(1.5);
             requiredCost *= 2;
-            _shingakuCostText.text = "Cost" + requiredCost;
+            _shingakuCostText.text = "Cost:" + requiredCost;
 
             firstPush = true;
             gameObject.GetComponent<Button>().interactable = false;
@@ -60,6 +60,8 @@ public class ShingakuButton : MonoBehaviour
 
             _degreeText.text = "博士";
             PowerUp(2);
+            requiredCost = 10000;
+            _shingakuCostText.text = "MaxDegree";
 
             secoundPush = true;
             gameObject.GetComponent<Button>().interactable = false;
