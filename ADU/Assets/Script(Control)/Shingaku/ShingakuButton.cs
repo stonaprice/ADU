@@ -48,7 +48,8 @@ public class ShingakuButton : MonoBehaviour
             _scoreManager.CurrentSchoolCredit -= requiredCost;
 
             _degreeText.text = "修士";
-            PowerUp(1.5);
+            _unitStatus.Degree = 1;
+            // PowerUp(1.5);
             requiredCost *= 2;
             _shingakuCostText.text = "Cost:" + requiredCost;
 
@@ -59,7 +60,8 @@ public class ShingakuButton : MonoBehaviour
             _scoreManager.CurrentSchoolCredit -= requiredCost;
 
             _degreeText.text = "博士";
-            PowerUp(2);
+            _unitStatus.Degree = 2;
+            // PowerUp(2);
             requiredCost = 10000;
             _shingakuCostText.text = "MaxDegree";
 

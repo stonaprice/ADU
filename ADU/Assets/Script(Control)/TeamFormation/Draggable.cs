@@ -6,6 +6,8 @@ using UnityEngine.EventSystems;
 using UnityEngine.Serialization;
 using UnityEngine.UIElements;
 using Image = UnityEngine.UI.Image;
+using System.Collections;
+using System.Collections.Generic;
 
 [RequireComponent(typeof(CanvasGroup))]
 public class Draggable : MonoBehaviour
@@ -30,7 +32,11 @@ public class Draggable : MonoBehaviour
     public int _selectNumber = 10000;
 
     public bool[] FullArea { get; set; } = {false,false,false};
-
+    
+    // private GameObject filledSetArea;
+    // private Transform filledSetArea_child;
+    private GameObject selectArea;
+    
     public void Awake()
     {
         this._self = this.transform;
@@ -43,6 +49,8 @@ public class Draggable : MonoBehaviour
         
         saveUnit = GameObject.Find("SaveUnit");
         _saveUnit =  saveUnit.GetComponent<SaveUnit>();
+
+        selectArea = GameObject.Find("SelectArea");
     }
 
     public void OnBeginDrag(BaseEventData eventData)
@@ -86,27 +94,57 @@ public class Draggable : MonoBehaviour
                 // カードイラストを表示
                 CardCheck();
 
-                if (dropArea.name.Contains("0") && !FullArea[0])
+                // if (dropArea.name.Contains("0") && !FullArea[0]) 
+                if (dropArea.name.Contains("0"))
                 {
+                    // セットエリアが埋まっているときに、埋まっている学生証をセレクトエリアに戻す
+                    if (FullArea[0])
+                    {
+                        ReturnSelectArea(0);
+                    }
+                    
                     this._area = dropArea.transform;
+
+                    // セレクトエリアに２つ以上置かれていないかの確認
+                    CheckChild(0);
 
                     SaveCard(0);
                     
-                    Debug.Log("SetArea1");
-                }else if (dropArea.name.Contains("1") && !FullArea[1]) 
+                    Debug.Log("SetArea0");
+                // }else if (dropArea.name.Contains("1") && !FullArea[1]) 
+                }else if (dropArea.name.Contains("1"))
                 {
+                    // セットエリアが埋まっているときに、埋まっている学生証をセレクトエリアに戻す
+                    if (FullArea[1])
+                    {
+                        ReturnSelectArea(1);
+                    }
+                    
                     this._area = dropArea.transform;
-
+                    
+                    // セレクトエリアに２つ以上置かれていないかの確認
+                    CheckChild(1);
+                    
                     SaveCard(1);
 
-                    Debug.Log("SetArea2");
-                }else if (dropArea.name.Contains("2") && !FullArea[2])
+                    Debug.Log("SetArea1");
+                // }else if (dropArea.name.Contains("2") && !FullArea[2])
+                }else if (dropArea.name.Contains("2"))
                 {
+                    // セットエリアが埋まっているときに、埋まっている学生証をセレクトエリアに戻す
+                    if (FullArea[2])
+                    {
+                        ReturnSelectArea(2);
+                    }
+                    
                     this._area = dropArea.transform;
 
+                    // セレクトエリアに２つ以上置かれていないかの確認
+                    CheckChild(2);
+                    
                     SaveCard(2);
 
-                    Debug.Log("SetArea3");
+                    Debug.Log("SetArea2");
                 }
             }else
             {
@@ -189,6 +227,10 @@ public class Draggable : MonoBehaviour
                         CharacterName.text = ("No.9");
                         CharacterText.text = ("ごく一般的な少年。\nチーズ牛丼が好きで\nよく食べている。\n日本がこんな状況ではあるが\nオタクと仲が良いため\nなんとなく\n協力してくれている。"); 
                         break;
+                    case 9:
+                        CharacterName.text = ("No.9");
+                        CharacterText.text = ("一般的なオタク\nオタク大学に所属していたが\n悪徳大学が日本を支配したため\nオタク活動ができなくなった。\n二次元への愛のために\n悪徳大学との戦いに出る。");
+                        break;
                 }
 
                 return;
@@ -213,4 +255,36 @@ public class Draggable : MonoBehaviour
             }
         }
     }
+
+    private void ReturnSelectArea(int areaNumber)
+    {
+        GameObject filledSetArea = GameObject.Find("SetArea"+areaNumber);
+        Transform filledSetArea_child = filledSetArea.transform.GetChild(0);
+        // print(filledSetArea_child);
+        // print(selectArea);
+        // filledSetArea_child.parent = selectArea.transform;
+        filledSetArea_child.SetParent(selectArea.transform, true);
+    }
+
+    private void CheckChild(int areaNumber)
+    {
+        GameObject filledSetArea = GameObject.Find("SetArea"+areaNumber);
+
+        int childNumber = filledSetArea.transform.childCount;
+
+        if (1 <= childNumber)
+        {
+            for (int i = 0; i < childNumber; i++)
+            {
+                Transform filledSetArea_child = filledSetArea.transform.GetChild(i);
+                filledSetArea_child.SetParent(selectArea.transform, true);
+            }
+        }
+    }
+    
+    // public IEnumerator ReturnSelecArea()
+    // {
+    //     // 待ち
+    //     yield return new WaitForSeconds(10f);
+    // }
 }

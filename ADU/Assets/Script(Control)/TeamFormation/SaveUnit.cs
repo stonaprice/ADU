@@ -27,6 +27,12 @@ public class SaveUnit : MonoBehaviour
         }else{
             Destroy(this.gameObject);
         }
+
+        for (int i = 0; i < unitPrefab.Length; i++)
+        {
+            print("kani");
+            UnitPrefab[i].GetComponent<UnitStatus>().Degree = 0;
+        }
     }
 
     // Update is called once per frame

@@ -16,10 +16,10 @@ public class DropArea : MonoBehaviour
         saveUnit = GameObject.Find("SaveUnit");
         _saveUnit = saveUnit.GetComponent<SaveUnit>();
 
-        Debug.Log("card 長さ"+cards.Length);
+        // Debug.Log("card 長さ"+cards.Length);
         for (int i = 0; i < cards.Length; i++)
         {
-            Debug.Log(cards[i]);
+            // Debug.Log(cards[i]);
             draggable[i] = cards[i].GetComponent<Draggable>();
         }
     }
@@ -31,7 +31,7 @@ public class DropArea : MonoBehaviour
 
         if (this.name.Equals("SelectArea"))
         {
-            Debug.Log("SelectArea");
+            // Debug.Log("SelectArea");
         }
         // SetAreaに学生証がセットされていないとき
         else if (_ChildCount == 0)

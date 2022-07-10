@@ -40,6 +40,15 @@ public class SpriteChange : MonoBehaviour
             if (i == viewNumber)
             {
                 m_Image.sprite = titeSprite[viewNumber];
+                // m_Image.preserveAspect = true;
+                //
+                // // if (viewNumber == 9 && ReferenceEquals(gameObject.name, "ViewArea1"))
+                // if (viewNumber == 9 && gameObject.name == "ViewArea1")
+                // {
+                //     print("SetNativeSize");
+                //     m_Image.preserveAspect = false;
+                //     // m_Image.SetNativeSize();
+                // }
 
                 viewNumber = 100000;
             }
