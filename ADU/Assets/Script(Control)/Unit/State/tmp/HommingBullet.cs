@@ -22,6 +22,8 @@ public class HommingBullet : MonoBehaviour
 
     private void Start()
     {
+        attackPower = GetComponentInParent<UnitStatus>().AttackPower;
+            
         // タグを使って画面上の全ての敵の情報を取得
         if(this.gameObject.CompareTag("PlayerWeapon")){
             // targets1 = GameObject.FindGameObjectsWithTag("Enemy");

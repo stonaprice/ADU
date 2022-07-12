@@ -15,7 +15,12 @@ public class UnitClient : MonoBehaviour
         stateController.SetTower(tower);
         stateController.SetUnit(unit);
 
-        stateController.Initialize((int)UnitStateController.StateType.Move);
+        // ３回目
+        stateController.Initialize((int)UnitStateController.StateType.MoveAndAttack);
+        // // ２回目
+        // stateController.Initialize((int)UnitStateController.StateType.Move);
+        // // １回目
+        // stateController.Initialize((int)UnitStateController.StateType.MoveToTower);
     }
 
     void Update()

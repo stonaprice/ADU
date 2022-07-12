@@ -20,7 +20,7 @@ public class FireBullet : MonoBehaviour
     
     // [SerializeField]
     // [Tooltip("弾の攻撃力")]
-    public int attackPower = 1;
+    // public int attackPower = 1;
 
     // [SerializeField]
     private UnitStatus unitStatus;
@@ -45,8 +45,8 @@ public class FireBullet : MonoBehaviour
     // Update is called once per frame
     private void Start()
     {
-        unitStatus = this.gameObject.GetComponent<UnitStatus>();
-        this.attackPower = unitStatus.AttackPower;
+        // unitStatus = this.gameObject.GetComponent<UnitStatus>();
+        // this.attackPower = unitStatus.AttackPower;
     }
 
     void Update()
@@ -112,16 +112,16 @@ public class FireBullet : MonoBehaviour
         newBall = Instantiate(bullet, bulletPosition, transform.rotation);
         // 弾をユニットの子オブジェクトにする
         newBall.transform.parent = this.transform;
-        // 弾に攻撃力を設定する
-        newBall.AddComponent<HommingBullet>().attackPower = this.attackPower;
-        // // 出現させたボールのforward(z軸方向)
-        // Vector3 direction = newBall.transform.forward;
+        // // 弾に攻撃力を設定する
+        // newBall.AddComponent<HommingBullet>().attackPower = this.attackPower;
+        // 出現させたボールのforward(z軸方向)
+        Vector3 direction = newBall.transform.forward;
         // // 弾の発射方向にnewBallのz方向(ローカル座標)を入れ、弾オブジェクトのrigidbodyに衝撃力を加える
         // newBall.GetComponent<Rigidbody>().AddForce(direction * speed, ForceMode.Impulse);
         // 出現させたボールの名前を"bullet"に変更
         newBall.name = bullet.name;
         // 出現させたボールを0.8秒後に消す
-        Destroy(newBall, 2.0f);
+        Destroy(newBall, 5.0f);
         // Invoke("SwitchOff", 2.0f);
 
 
